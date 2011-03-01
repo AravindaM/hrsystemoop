@@ -9,7 +9,6 @@ import hrsystemoop.actions.UserCommands;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.logging.Logger;
 
 /**
  * @author Amila Manoj, Prasath
@@ -21,6 +20,7 @@ public class EmployeeImpl implements Employee {
     private Level level;
     private String userName;
     private String passwordHash;
+    private static final UserCommands commands = new UserCommands();
 
     public EmployeeImpl(String name, Level level, String userName) {
         this.name = name;
@@ -74,7 +74,7 @@ public class EmployeeImpl implements Employee {
     }
 
     public UserCommands getUserCommands() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return commands;
     }
 
     private String getHash(String password) {
