@@ -5,10 +5,12 @@
 package hrsystemoop.modle;
 
 import hrsystemoop.Level;
+import hrsystemoop.actions.Command;
 import hrsystemoop.actions.UserCommands;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.HashMap;
 
 /**
  * @author Amila Manoj, Prasath
@@ -20,6 +22,10 @@ public class EmployeeImpl implements Employee {
     private Level level;
     private String userName;
     private String passwordHash;
+    static{
+    HashMap<String, Command> commands = new HashMap<String, Command>();
+    commands.pu
+    }
     private static final UserCommands commands = new UserCommands();
 
     public EmployeeImpl(String name, Level level, String userName) {
