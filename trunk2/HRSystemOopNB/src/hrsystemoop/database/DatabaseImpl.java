@@ -48,7 +48,7 @@ public class DatabaseImpl extends Database {
 
 	@Override
 	public synchronized void updateEmployee(int id, Employee emp) throws EmployeeDoesNotExist {
-		if (data.containsKey(id)) {
+		if (!data.containsKey(id)) {
 			throw new EmployeeDoesNotExist(id);
 		}
 		if (emp.getId() == id) {
