@@ -3,8 +3,10 @@ package hrsystemoop.database;
 import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.database.exeption.EmployeeDoesNotExist;
 import hrsystemoop.modle.Employee;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -57,7 +59,13 @@ public class DatabaseImpl extends Database {
     }
 
     @Override
-    public Employee getEmployee(String name) throws DatabaseExeption {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Employee getEmployee(String userName) throws DatabaseExeption {
+        Collection<Employee> all = data.values();
+        for (Employee employee : all) {
+            if (employee.getUserName().equals(userName)) {
+                return employee;
+            }
+        }
+        throw new EmployeeDoesNotExist(userName);
     }
 }
