@@ -18,7 +18,7 @@ public interface Employee {
 
     String getName();
 
-    void setName();
+    void setName(String name);
 
     Level getLevel();
 
