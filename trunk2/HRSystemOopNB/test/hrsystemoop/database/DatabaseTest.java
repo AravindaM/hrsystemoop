@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Manuranga
+ * @author R.C.M. Perera
  */
 public class DatabaseTest {
 
@@ -153,25 +153,5 @@ public class DatabaseTest {
 		}
 	}
 
-	public class DatabaseImpl extends Database {
 
-		public Employee getEmployee(int id) throws DatabaseExeption {
-			return null;
-		}
-
-		public Employee getEmployee(String name) throws DatabaseExeption {
-			return null;
-		}
-
-		public void updateEmployee(int id, Employee emp) throws DatabaseExeption {
-		}
-
-		public int addEmployee(Employee emp) throws DatabaseExeption {
-			return 0;
-		}
-
-		public Employee deleteEmployee(int id) throws DatabaseExeption {
-			return null;
-		}
-	}
 }
