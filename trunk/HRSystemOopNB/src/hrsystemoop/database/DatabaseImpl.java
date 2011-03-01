@@ -4,8 +4,8 @@
  */
 package hrsystemoop.database;
 
-import hrsystemoop.database.exeption.EmployeeDoesNotExist;
 import hrsystemoop.database.exeption.DatabaseExeption;
+import hrsystemoop.database.exeption.EmployeeDoesNotExist;
 import hrsystemoop.modle.Employee;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,9 +18,8 @@ public class DatabaseImpl extends Database {
 
     private Map<Integer, Employee> data = new HashMap<Integer, Employee>();
 
-    protected  DatabaseImpl() {
+    protected DatabaseImpl() {
     }
-
 
     @Override
     public Employee getEmployee(int id) throws EmployeeDoesNotExist {
@@ -32,17 +31,25 @@ public class DatabaseImpl extends Database {
     }
 
     @Override
-    public Employee updateEmployee(int id) {
+    public synchronized void addEmployee(Employee emp) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public void addEmployee(Employee emp) {
+    public synchronized Employee deleteEmployee(int id) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public Employee deleteEmployee(int id) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public synchronized void updateEmployee(int id, Employee emp) throws DatabaseExeption {
+        if (data.containsKey(id)) {
+            throw new EmployeeDoesNotExist(id);
+        }
+        if (emp.getId() == id) {
+            data.put(emp.getId(), emp);
+        } else {
+            data.remove(id);
+            data.put(emp.getId(), emp);
+        }
     }
 }
