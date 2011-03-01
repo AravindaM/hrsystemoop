@@ -10,5 +10,5 @@ package hrsystemoop.modle;
  * @author prasath
  */
 public interface HREmployer extends Employee {
-
+    
 }

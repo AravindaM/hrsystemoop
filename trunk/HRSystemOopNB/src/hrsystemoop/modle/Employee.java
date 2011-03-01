@@ -4,6 +4,8 @@
  */
 package hrsystemoop.modle;
 
+import hrsystemoop.Level;
+
 /**
  *
  * @author R.C.M. Perera
@@ -17,5 +19,8 @@ public interface Employee {
     String getName();
 
     void setName();
-    
+
+    Level getLevel();
+
+    void setLevel(Level level);
 }
