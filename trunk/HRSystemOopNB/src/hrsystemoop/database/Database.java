@@ -4,6 +4,7 @@
  */
 package hrsystemoop.database;
 
+import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.modle.Employee;
 
 /**
@@ -14,11 +15,17 @@ public abstract class Database {
 
     private Database instance;
 
+    protected Database() {
+    }
+
     public Database getInstance() {
+        if (instance == null) {
+            instance = new DatabaseImpl();
+        }
         return instance;
     }
 
-    public abstract Employee getEmployee(int id);
+    public abstract Employee getEmployee(int id) throws DatabaseExeption;
 
     /**
      *
