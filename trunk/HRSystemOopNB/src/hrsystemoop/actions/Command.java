@@ -25,4 +25,6 @@ public interface Command {
      * @return List of attributes
      */
     public ArrayList<String> getAtrributesList();
+
+    public String getName();
 }

@@ -12,8 +12,10 @@ public class UserCommands {
 
     private Map<String, Command> commands;
 
-    public UserCommands(Map<String, Command> commands) {
-        this.commands = commands;
+    public UserCommands(Command[] commandsArr) {
+        for (Command command : commandsArr) {
+            commands.put(command.getName(), command);
+        }
     }
 
     public Set<String> getAvailabeCommands() {
