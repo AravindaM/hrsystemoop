@@ -12,8 +12,10 @@ public interface Employee {
 
     int getId();
 
+    void setID();
+
     String getName();
 
     void setName();
-
+    
 }
