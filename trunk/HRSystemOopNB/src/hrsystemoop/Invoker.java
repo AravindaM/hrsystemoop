@@ -9,8 +9,6 @@ package hrsystemoop;
  *
  * @author Amila Manoj
  */
-/* The Command interface */
-public interface Command {
-    
-    void execute();
+public class Invoker {
+
 }

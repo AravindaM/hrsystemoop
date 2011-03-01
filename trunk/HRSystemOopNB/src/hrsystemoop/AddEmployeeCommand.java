@@ -9,8 +9,10 @@ package hrsystemoop;
  *
  * @author Amila Manoj
  */
-/* The Command interface */
-public interface Command {
-    
-    void execute();
+public class AddEmployeeCommand implements Command{
+
+    public void execute() {
+        
+    }
+
 }
