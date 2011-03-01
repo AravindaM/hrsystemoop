@@ -80,11 +80,14 @@ public class MonthAttendance implements MonthAttendanceProcess{
 
     private void calcleaves(){
 
+        annualLeaves = employeeAnnualLeaves.size();
+        
+                totalLeaves= annualLeaves + casualLeaves+ medicalLeaves;
+
 
     }
     public int getTotalLeaves() {
 
-        
         return totalLeaves;
     }
 
