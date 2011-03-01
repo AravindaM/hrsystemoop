@@ -28,14 +28,14 @@ public class EmployeeImpl implements Employee {
     }
 
     public String getName() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void setName() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return name;
     }
 
     public void setID() {
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
