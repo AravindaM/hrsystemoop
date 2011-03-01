@@ -1,5 +1,6 @@
 package hrsystemoop.database;
 
+import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.database.exeption.EmployeeDoesNotExist;
 import hrsystemoop.modle.Employee;
 import java.util.HashMap;
@@ -53,5 +54,10 @@ public class DatabaseImpl extends Database {
             data.remove(id);
             data.put(emp.getId(), emp);
         }
+    }
+
+    @Override
+    public Employee getEmployee(String name) throws DatabaseExeption {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

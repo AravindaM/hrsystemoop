@@ -20,6 +20,7 @@ public abstract class Database {
         }
         return instance;
     }
+
     /**
      *
      * @param id id of the employee to be fetched from database
@@ -27,8 +28,9 @@ public abstract class Database {
      */
     public abstract Employee getEmployee(int id) throws DatabaseExeption;
 
+    public abstract Employee getEmployee(String name) throws DatabaseExeption;
 
-    public abstract void updateEmployee(int id,Employee emp) throws DatabaseExeption;
+    public abstract void updateEmployee(int id, Employee emp) throws DatabaseExeption;
 
     /**
      * adds a new Employee to the database.
