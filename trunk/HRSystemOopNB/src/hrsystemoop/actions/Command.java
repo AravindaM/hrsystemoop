@@ -17,11 +17,12 @@ public interface Command {
      * depending on the implemented commands
       * @param argList passes arguments needed to complete the action, if any
      */
-    public void execute(String argList);
+    public boolean execute(Map<String,String> argList);
 
     /**
-     * Returns the set of attributes 
-     * @return
+     * Returns the set of attributes that user need to input to perform
+     * a particular command
+     * @return List of attributes
      */
     public ArrayList<String> getAtrributesList();
 }
