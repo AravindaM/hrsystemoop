@@ -6,6 +6,7 @@ package hrsystemoop.modle;
 
 import hrsystemoop.Level;
 import hrsystemoop.actions.UserCommands;
+import hrsystemoop.attendancedata.MonthAttendance;
 
 /**
  *
@@ -37,13 +38,5 @@ public interface Employee {
 
     int getSalary();
 
-    // all type of leave must be supported here so there would be threee constructors
-    int noOfLeaves();
-
-    int noOfShortLeaves();
-
-    int noOfCasualLeaves();
-
-    
-
+    MonthAttendance getMonthAttendance();
 }

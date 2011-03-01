@@ -27,7 +27,6 @@ public class EmployeeImpl implements Employee {
     private String passwordHash;
 
     private static final UserCommands commands = new UserCommands(new Command[]{
-    
         new ShowSelfIDCommand()
     
     });
@@ -102,5 +101,15 @@ public class EmployeeImpl implements Employee {
             return null;
         }
     }
+
+    public int getSalary() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public MonthAttendance getMonthAttendance() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+
      
 }
