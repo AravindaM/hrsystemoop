@@ -7,7 +7,7 @@ package hrsystemoop;
 
 /**
  *
- * @author Amila Manoj
+ * @author Amila Manoj, Prasath
  */
 public class Employer {
 
