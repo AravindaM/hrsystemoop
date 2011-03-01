@@ -25,7 +25,7 @@ public interface Employee {
 
     String getUserName();
 
-    void setPassword();
+    void setPassword(String password);
 
     boolean checkPass(String password);
 

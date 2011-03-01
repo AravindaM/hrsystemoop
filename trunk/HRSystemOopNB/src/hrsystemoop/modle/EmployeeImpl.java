@@ -6,6 +6,10 @@ package hrsystemoop.modle;
 
 import hrsystemoop.Level;
 import hrsystemoop.actions.UserCommands;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Logger;
 
 /**
  * @author Amila Manoj, Prasath
@@ -15,10 +19,14 @@ public class EmployeeImpl implements Employee {
     private int  Id;
     private String name;
     private Level level;
+    private String userName;
+    private String passwordHash;
 
-    public EmployeeImpl(String name, Level level) {
+    public EmployeeImpl(String name, Level level, String userName) {
         this.name = name;
         this.level = level;
+        this.userName = userName;
+        this.passwordHash = getHash(passwordHash);
     }
 
     public Level getLevel() {
@@ -46,25 +54,41 @@ public class EmployeeImpl implements Employee {
     }
 
     public void setUserName(String uname) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.userName = userName;
     }
 
     public String getUserName() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return userName;
     }
 
-    public void setPassword() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void setPassword(String password) {
+        this.passwordHash = getHash(password);
     }
 
     public boolean checkPass(String password) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        if(getHash(password).equals(this.passwordHash))
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public UserCommands getUserCommands() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-
-    
+    private String getHash(String password) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-1");
+            
+        } catch (NoSuchAlgorithmException ex) {
+            return null;
+        } catch(UnsupportedEncodingException ex) {
+            return null;
+        }
+        digest.reset();
+        byte[] input = digest.digest(password.getBytes("UTF-8"));
+        return new String(input);
+    }
+     
 }
