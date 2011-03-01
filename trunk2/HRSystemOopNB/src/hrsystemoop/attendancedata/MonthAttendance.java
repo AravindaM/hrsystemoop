@@ -25,6 +25,8 @@ public class MonthAttendance implements MonthAttendanceProcess{
     private ArrayList<MedicalLeave> employeeMedicalLeaves =new ArrayList<MedicalLeave>();
 
     private ArrayList<OverTime>  employeeOvertime = new ArrayList<OverTime>();
+    private int fulldays;       // total of casual leaves of full day
+
     
 
     public MonthAttendance(){
@@ -90,7 +92,7 @@ public class MonthAttendance implements MonthAttendanceProcess{
 
     public int getTotalLeaves() {
 
-        totalLeaves = employeeAnnualLeaves.size() + employeeCasualLeaves.size()+ employeeMedicalLeaves.size();
+        totalLeaves = getTotalAnaualLeaves() + getTotalCasualLeaves()+ getTotalMedicalLeaves();
         return totalLeaves;
     }
 
@@ -111,6 +113,14 @@ public class MonthAttendance implements MonthAttendanceProcess{
 
     public int getTotalCasualLeaves() {
 
+        for (int y=0; y< employeeCasualLeaves.size(); y++){
+            if(employeeCasualLeaves.get(y).getLeaveType().equals("fullday")){
+                fulldays++;
+            }
+            else if (employeeCasualLeaves.get(y).getLeaveType().equals("halfday")){
+                
+            }
+        }
         casualLeaves= employeeCasualLeaves.size();
         return casualLeaves;
 
