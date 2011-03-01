@@ -5,7 +5,6 @@
 
 package hrsystemoop.attendancedata;
 
-import java.util.Date;
 
 /**
  *
@@ -13,12 +12,9 @@ import java.util.Date;
  */
 interface MonthAttendanceProcess {
 
-    public  int getFullLeaves();
-    public  int getShortLeaves();
+    
     public  int getTotalLeaves();
-    public  Date[] getLeaveDates();
-    public  int getLeaveTimes();
-    public int getOvertimeHours();
+    public  int getTotalOTHours();
 
 
 }

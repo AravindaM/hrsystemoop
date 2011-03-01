@@ -17,6 +17,7 @@ public class Leave {
     private String reason;
     private int starttime;
     private int endtime;
+    private String leavetype;
 //    private int totalLeaves;
 
 //    private int year;
@@ -58,7 +59,7 @@ public class Leave {
 
     }
 
-    public int setStartTime(){
+    public int getStartTime(){
 
          return starttime;
     }
@@ -79,9 +80,5 @@ public class Leave {
 
     }
 
-//get total leaves
-//    public int getLeaveCount(){
-//
-//        return totalLeaves;
-//    }
+
 }
