@@ -36,7 +36,7 @@ public abstract class Database {
      *
      * @param emp Employee to be added
      */
-    public abstract void addEmployee(Employee emp) throws DatabaseExeption;
+    public abstract int addEmployee(Employee emp) throws DatabaseExeption;
 
     public abstract Employee deleteEmployee(int id) throws DatabaseExeption;
 }
