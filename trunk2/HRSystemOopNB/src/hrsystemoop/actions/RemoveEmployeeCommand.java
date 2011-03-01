@@ -5,6 +5,7 @@
 
 package hrsystemoop.actions;
 
+import hrsystemoop.modle.Level;
 import hrsystemoop.*;
 import hrsystemoop.database.Database;
 import hrsystemoop.database.exeption.DatabaseExeption;

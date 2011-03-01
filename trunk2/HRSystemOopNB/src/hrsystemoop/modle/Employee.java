@@ -4,7 +4,6 @@
  */
 package hrsystemoop.modle;
 
-import hrsystemoop.Level;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.attendancedata.MonthAttendance;
 

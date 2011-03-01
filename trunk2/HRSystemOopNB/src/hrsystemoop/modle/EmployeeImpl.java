@@ -4,7 +4,6 @@
  */
 package hrsystemoop.modle;
 
-import hrsystemoop.Level;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.ShowSelfIDCommand;
 import hrsystemoop.actions.UserCommands;
@@ -25,6 +24,7 @@ public class EmployeeImpl implements Employee {
     private Level level;
     private String userName;
     private String passwordHash;
+
 
     private static final UserCommands commands = new UserCommands(new Command[]{
         new ShowSelfIDCommand()
