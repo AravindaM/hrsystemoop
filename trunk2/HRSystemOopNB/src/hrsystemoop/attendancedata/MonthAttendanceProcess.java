@@ -19,4 +19,8 @@ interface MonthAttendanceProcess {
     public int getTotalCasualLeaves();
 
     public int getTotalMedicalLeaves();
+
+    public int getAdditionalLeaves();
+
+    public void resetAdditonalLeaves(int additionalLeaves);
 }
