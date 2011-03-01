@@ -16,11 +16,12 @@ public class MonthAttendance implements MonthAttendanceProcess{
 
     private int totalLeaves;
     private ArrayList<Leave> employeeLeaves;
-private ArrayList<OverTime>  employeeOvertime;
-    public MonthAttendance(ArrayList<Leave> employeeLeaves, ArrayList<Leave> overtimes){
+    private ArrayList<OverTime>  employeeOvertime;
+    
+    public MonthAttendance(ArrayList<Leave> employeeLeaves, ArrayList<OverTime> employeeOvertime){
 
     this.employeeLeaves= employeeLeaves;
-    this.
+    this.employeeOvertime= employeeOvertime;
     }
 
     public int getFullLeaves() {
@@ -47,8 +48,6 @@ private ArrayList<OverTime>  employeeOvertime;
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public int getFullLeaves() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    
 
 }
