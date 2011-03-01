@@ -14,19 +14,17 @@ import java.util.ArrayList;
 public class MonthAttendance implements MonthAttendanceProcess{
 
     private int totalLeaves;
-
+    private int annualLeaves;
+    private int casualLeaves;
+    private int medicalLeaves;
     private int totalOTHours;
+
     private ArrayList<AnnualLeave> employeeAnnualLeaves =new ArrayList<AnnualLeave>();
     private ArrayList<CasualLeave> employeeCasualLeaves =new ArrayList<CasualLeave>();
     private ArrayList<MedicalLeave> employeeMedicalLeaves =new ArrayList<MedicalLeave>();
 
     private ArrayList<OverTime>  employeeOvertime = new ArrayList<OverTime>();
-    private int annualLeaves;
-    private int casualLeaves;
-    private int medicalLeaves;
-//    private HashMap<Date, String> leavedetails= new HashMap<Date, String>();
-//    private HashMap<Date, Integer> OTdetails= new HashMap<Date, Integer>();
-
+    
 
     public MonthAttendance(){
 
@@ -79,17 +77,11 @@ public class MonthAttendance implements MonthAttendanceProcess{
         return totalOTHours;
     }
 
-//    public HashMap <Date, String> getLeaveDetails() {
-//
-//        for (int x= 0; x < employeeLeaves.size(); x++){
-//
-//            leavedetails.put(employeeLeaves.get(x).getLeaveDate(), employeeLeaves.get(x).getReason());
-//
-//        }
-//
-//        return leavedetails;
-//    }
 
+    private void calcleaves(){
+
+
+    }
     public int getTotalLeaves() {
 
         
