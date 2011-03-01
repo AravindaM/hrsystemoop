@@ -1,6 +1,5 @@
 package hrsystemoop.database;
 
-import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.database.exeption.EmployeeDoesNotExist;
 import hrsystemoop.modle.Employee;
 import java.util.HashMap;
@@ -30,6 +29,7 @@ public class DatabaseImpl extends Database {
     @Override
     public synchronized int addEmployee(Employee emp) {
         data.put(maxId++, emp);
+        emp.setID(maxId);
         return maxId;
     }
 
