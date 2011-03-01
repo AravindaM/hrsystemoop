@@ -5,17 +5,6 @@
 
 package hrsystemoop.modle;
 /**
- *
- * @author Amila Manoj, Prasath
- */
-public class EmployeeImpl implements Employee/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-package hrsystemoop.modle;
-/**
- *
  * @author Amila Manoj, Prasath
  */
 public class EmployeeImpl implements Employee {
