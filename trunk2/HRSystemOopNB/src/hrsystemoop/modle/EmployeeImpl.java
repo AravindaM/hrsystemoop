@@ -12,10 +12,9 @@ import hrsystemoop.loanscheme.LoanProcessorImpl;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
 
 /**
- * @author Amila Manoj, Prasath
+ * @author Prasath
  */
 public class EmployeeImpl implements Employee {
 
@@ -39,6 +38,8 @@ public class EmployeeImpl implements Employee {
         this.level = level;
         this.userName = userName;
         this.passwordHash = getHash(passwordHash);
+        loanProcessor = new LoanProcessorImpl();
+        monthAttendance = new MonthAttendance();
     }
 
     public Level getLevel() {
@@ -77,6 +78,9 @@ public class EmployeeImpl implements Employee {
         this.passwordHash = getHash(password);
     }
 
+    /*
+     * Checks whether a given passwordHasjmatches with the current password hash
+     */
     public boolean checkPass(String password) {
         if(getHash(password).equals(this.passwordHash)){
             return true;
@@ -107,7 +111,11 @@ public class EmployeeImpl implements Employee {
     }
 
     public MonthAttendance getMonthAttendance() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return monthAttendance;
+    }
+
+    public LoanProcessorImpl getLoanProcessor() {
+        return loanProcessor;
     }
 
 

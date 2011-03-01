@@ -11,4 +11,11 @@ package hrsystemoop.loanscheme;
  */
 public interface LoanProcessor {
 
+    public int getTotalLoan();
+
+    /*
+     * checks the monthly rate we have to pay and return it
+     */
+    public int getMonthlyPayment();
+
 }
