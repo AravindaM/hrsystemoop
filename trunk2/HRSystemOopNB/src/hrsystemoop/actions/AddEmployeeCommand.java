@@ -21,13 +21,11 @@ import java.util.*;
 public class AddEmployeeCommand implements Command{
 
    private Database database;
-   private ArrayList<String> attributesList;
+   private String[] attributesList;
+
 public AddEmployeeCommand(String name, Level level){
     database = database.getInstance();
-    attributesList = new ArrayList<String>();
-    attributesList.add("Username");
-    attributesList.add("Designation");
-    attributesList.add("Name");
+    attributesList = new String[] {"Username","Designation","Name"};
 }
 
 /**
@@ -50,8 +48,16 @@ public AddEmployeeCommand(String name, Level level){
      * Returns the list of attributes that are needed to add a new employee
      * @return list of required attributes of an employer
      */
-    public ArrayList<String> getAtrributesList() {
+    public String[] getAtrributesList() {
         return attributesList;
+    }
+
+    public boolean execute(Map<String, String> argList, Employee currentUser) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public String getName() {
+        return "Add New Employee";
     }
 
 }

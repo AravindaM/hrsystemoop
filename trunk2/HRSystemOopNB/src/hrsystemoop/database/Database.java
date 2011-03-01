@@ -9,16 +9,18 @@ import hrsystemoop.modle.Employee;
  */
 public abstract class Database {
 
-    private Database instance;
+    private static Database instance;
 
     protected Database() {
     }
 
-    public Database getInstance() {
+    public static Database getInstance() {
         if (instance == null) {
             instance = new DatabaseImpl();
+            return instance;
+        } else {
+            return instance;
         }
-        return instance;
     }
 
     /**
@@ -37,7 +39,6 @@ public abstract class Database {
      */
     public abstract Employee getEmployee(String name) throws DatabaseExeption;
 
-    
     public abstract void updateEmployee(int id, Employee emp) throws DatabaseExeption;
 
     /**

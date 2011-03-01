@@ -22,7 +22,7 @@ public class HRMain {
     private Employee loggedEmployee;
     public HRMain() {
         this.scanner = new Scanner(System.in);
-        this.database=database.getInstance();
+        this.database=Database.getInstance();
     }
 
     /**
@@ -76,7 +76,11 @@ public class HRMain {
         public void showLoggedUI(){
             System.out.println("Welcome "+ loggedEmployee.getName());
             System.out.println("====================================");
-            
+            Set<String> commands = loggedEmployee.getUserCommands().getAvailabeCommands();
+            System.out.println("Please select what you want to do:");
+            for (String command: commands){
+                System.out.println("0 - "+command);
+            }
         }
 
 
