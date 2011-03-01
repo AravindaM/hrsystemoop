@@ -17,6 +17,7 @@ public class MonthAttendance implements MonthAttendanceProcess{
     private int annualLeaves;
     private int casualLeaves;
     private int medicalLeaves;
+    private int extraleaves;
     private int totalOTHours;
 
     private ArrayList<AnnualLeave> employeeAnnualLeaves =new ArrayList<AnnualLeave>();
@@ -78,16 +79,15 @@ public class MonthAttendance implements MonthAttendanceProcess{
     }
 
 
-    private void calcleaves(){
+    public int getExtraLeaves() {
+        int max = MedicalLeave.maxleave;
+        extraleaves = employeeMedicalLeaves.size() - max;
 
-        annualLeaves = employeeAnnualLeaves.size();
-        casualLeaves= employeeCasualLeaves.size();
-        medicalLeaves= employeeMedicalLeaves.size();
-
-        totalLeaves= annualLeaves + casualLeaves+ medicalLeaves;
-
-
+        return extraleaves;
     }
+
+    
+
     public int getTotalLeaves() {
 
         totalLeaves = employeeAnnualLeaves.size() + employeeCasualLeaves.size()+ employeeMedicalLeaves.size();

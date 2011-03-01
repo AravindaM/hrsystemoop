@@ -11,7 +11,8 @@ package hrsystemoop.attendancedata;
  */
 public class CasualLeave  extends Leave implements ShortLeave{
 
-    static  final int maxleave = 7;
+    static  final int maxhours = 56;
+    private String[] type = {"fullday", "halfday"};
 
     public CasualLeave() {
     }
