@@ -12,12 +12,12 @@ import hrsystemoop.modle.Employee;
  */
 public class EmployeeDoesNotExist extends DatabaseExeption {
 
-    public EmployeeDoesNotExist(int id) {
+	public EmployeeDoesNotExist(int id) {
 
-        super("Employee does not with id=" + id);
-    }
+		super("no Employee exist with id=" + id);
+	}
 
-    public EmployeeDoesNotExist(String userName) {
-      super("Employee does not with name=" + userName);
-    }
+	public EmployeeDoesNotExist(String userName) {
+		super("no Employee exist with name=" + userName);
+	}
 }
