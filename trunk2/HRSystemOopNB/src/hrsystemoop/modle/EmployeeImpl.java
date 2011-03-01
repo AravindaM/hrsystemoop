@@ -106,8 +106,11 @@ public class EmployeeImpl implements Employee {
         }
     }
 
-    public int getSalary() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    /*
+     * final salary = (basesalary+overtimerate*overtime)-(loansum+extraleave*leavepenalty)
+     */
+    public int getSalary(int overTime) {
+        return level.getSalary(overTime);
     }
 
     public MonthAttendance getMonthAttendance() {

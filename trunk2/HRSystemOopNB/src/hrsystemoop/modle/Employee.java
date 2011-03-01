@@ -36,7 +36,7 @@ public interface Employee {
 
     UserCommands getUserCommands();
 
-    int getSalary();
+    int getSalary(int overTime);
 
     MonthAttendance getMonthAttendance();
 
