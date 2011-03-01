@@ -10,6 +10,7 @@ import hrsystemoop.actions.UserCommands;
 import hrsystemoop.attendancedata.MonthAttendance;
 import hrsystemoop.loanscheme.LoanProcessorImpl;
 import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -18,109 +19,106 @@ import java.security.NoSuchAlgorithmException;
  */
 public class EmployeeImpl implements Employee {
 
-    private int  Id;
-    private String name;
-    private Level level;
-    private String userName;
-    private String passwordHash;
+	private int Id;
+	private String name;
+	private Level level;
+	private String userName;
+	private String passwordHash;
+	private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
+			new ShowSelfIDCommand()
+		});
+	private LoanProcessorImpl loanProcessor;
+	private MonthAttendance monthAttendance;
 
+	public EmployeeImpl(String name, Level level, String userName) {
+		this.name = name;
+		this.level = level;
+		this.userName = userName;
+		loanProcessor = new LoanProcessorImpl();
+		monthAttendance = new MonthAttendance();
+	}
 
-    private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
-        new ShowSelfIDCommand()
-    
-    });
+	public Level getLevel() {
+		return level;
+	}
 
-    private LoanProcessorImpl loanProcessor;
-    private MonthAttendance monthAttendance;
+	public void setLevel(Level level) {
+		this.level = level;
+	}
 
-    public EmployeeImpl(String name, Level level, String userName) {
-        this.name = name;
-        this.level = level;
-        this.userName = userName;
-        this.passwordHash = getHash(passwordHash);
-        loanProcessor = new LoanProcessorImpl();
-        monthAttendance = new MonthAttendance();
-    }
+	public int getId() {
+		return Id;
+	}
 
-    public Level getLevel() {
-        return level;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setLevel(Level level) {
-        this.level = level;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public int getId() {
-        return Id;
-    }
+	public void setID(int Id) {
+		this.Id = Id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setUserName(String uname) {
+		this.userName = userName;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getUserName() {
+		return userName;
+	}
 
-    public void setID(int Id) {
-        this.Id = Id;
-    }
+	public void setPassword(String password) {
+		this.passwordHash = getHash(password);
+	}
 
-    public void setUserName(String uname) {
-        this.userName = userName;
-    }
+	/*
+	 * Checks whether a given passwordHasjmatches with the current password hash
+	 */
+	public boolean checkPass(String password) {
+		if (getHash(password).equals(this.passwordHash)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-    public String getUserName() {
-        return userName;
-    }
+	public UserCommands getUserCommands() {
+		return commands;
+	}
 
-    public void setPassword(String password) {
-        this.passwordHash = getHash(password);
-    }
+	private String getHash(String password) {
+		try {
+			MessageDigest digest = MessageDigest.getInstance("MD5");
+			digest.reset();
+			byte[] input = digest.digest(password.getBytes("UTF-8"));
+			BigInteger bigInt = new BigInteger(1, input);
+			String hashtext = bigInt.toString(16);
+			while (hashtext.length() < 32) {
+				hashtext = "0" + hashtext;
+			}
+			return hashtext;
+		} catch (UnsupportedEncodingException ex) {
+			return null;
+		} catch (NoSuchAlgorithmException ex) {
+			return null;
+		}
+	}
 
-    /*
-     * Checks whether a given passwordHasjmatches with the current password hash
-     */
-    public boolean checkPass(String password) {
-        if(getHash(password).equals(this.passwordHash)){
-            return true;
-        } else {
-            return false;
-        }
-    }
+	/*
+	 * final salary = (basesalary+overtimerate*overtime)-(loansum+extraleave*leavepenalty)
+	 */
+	public int getSalary(int overTime) {
+		return level.getSalary(overTime);
+	}
 
-    public UserCommands getUserCommands() {
-        return commands;
-    }
+	public MonthAttendance getMonthAttendance() {
+		return monthAttendance;
+	}
 
-    private String getHash(String password) {
-        try {
-            MessageDigest digest = MessageDigest.getInstance("SHA-1");
-            digest.reset();
-            byte[] input = digest.digest(password.getBytes("UTF-8"));
-            return new String(input);
-        } catch (UnsupportedEncodingException ex) {
-            return  null;
-        } catch (NoSuchAlgorithmException ex) {
-            return null;
-        }
-    }
-
-    /*
-     * final salary = (basesalary+overtimerate*overtime)-(loansum+extraleave*leavepenalty)
-     */
-    public int getSalary(int overTime) {
-        return level.getSalary(overTime);
-    }
-
-    public MonthAttendance getMonthAttendance() {
-        return monthAttendance;
-    }
-
-    public LoanProcessorImpl getLoanProcessor() {
-        return loanProcessor;
-    }
-
-
-     
+	public LoanProcessorImpl getLoanProcessor() {
+		return loanProcessor;
+	}
 }
