@@ -28,7 +28,7 @@ public abstract class Database {
      * @param id id of the employee to be fetched from database
      * @return employee object which will when called  <code>getId()</code> will return the given id
      */
-    public abstract Employee updateEmployee(int id);
+    public abstract Employee updateEmployee(int id) throws DatabaseExeption;
 
     /**
      * adds a new Employee to the database.
@@ -36,7 +36,7 @@ public abstract class Database {
      *
      * @param emp Employee to be added
      */
-    public abstract void addEmployee(Employee emp);
+    public abstract void addEmployee(Employee emp) throws DatabaseExeption;
 
-    public abstract Employee deleteEmployee(int id);
+    public abstract Employee deleteEmployee(int id) throws DatabaseExeption;
 }
