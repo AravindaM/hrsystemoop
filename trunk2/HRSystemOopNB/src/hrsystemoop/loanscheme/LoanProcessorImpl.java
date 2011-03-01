@@ -12,11 +12,11 @@ import java.util.Date;
  *
  * @author araLDAM
  */
-public class LoanProcessor {
+public class LoanProcessorImpl {
     private String userId;
     String details;
-    ArrayList<Loan>  loanDirectory;
-    Loan aLoan;
+    ArrayList<LoanImpl>  loanDirectory;
+    LoanImpl aLoan;
 
     public String viewLoanDetails(String userId){
 
@@ -55,7 +55,7 @@ public class LoanProcessor {
 
 
     public void removeLoanDetails(String loanId){
-        Loan removeLoan;
+        LoanImpl removeLoan;
         if (loanId!=null){
             for (int i=1;i<loanDirectory.size();i++)
                 removeLoan = loanDirectory[i];

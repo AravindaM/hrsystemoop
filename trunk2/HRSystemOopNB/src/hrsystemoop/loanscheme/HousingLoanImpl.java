@@ -9,7 +9,7 @@ package hrsystemoop.loanscheme;
  *
  * @author araLDAM
  */
-public class HousingLoan extends Loan{
+public class HousingLoanImpl extends LoanImpl{
     private Double houseEstimateValue;
     String loantype = "Housing";
 }
