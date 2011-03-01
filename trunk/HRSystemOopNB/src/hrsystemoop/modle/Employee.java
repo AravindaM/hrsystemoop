@@ -5,6 +5,7 @@
 package hrsystemoop.modle;
 
 import hrsystemoop.Level;
+import hrsystemoop.actions.UserCommands;
 
 /**
  *
@@ -31,5 +32,7 @@ public interface Employee {
     Level getLevel();
 
     void setLevel(Level level);
+
+    UserCommands getUserCommands();
 
 }

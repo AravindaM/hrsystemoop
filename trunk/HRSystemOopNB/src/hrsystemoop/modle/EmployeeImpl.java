@@ -5,6 +5,7 @@
 package hrsystemoop.modle;
 
 import hrsystemoop.Level;
+import hrsystemoop.actions.UserCommands;
 
 /**
  * @author Amila Manoj, Prasath
@@ -57,6 +58,10 @@ public class EmployeeImpl implements Employee {
     }
 
     public boolean checkPass(String password) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public UserCommands getUserCommands() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
