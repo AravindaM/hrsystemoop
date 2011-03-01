@@ -20,15 +20,15 @@ public abstract class Database {
         }
         return instance;
     }
-
-    public abstract Employee getEmployee(int id) throws DatabaseExeption;
-
     /**
      *
      * @param id id of the employee to be fetched from database
      * @return employee object which will when called  <code>getId()</code> will return the given id
      */
-    public abstract Employee updateEmployee(int id) throws DatabaseExeption;
+    public abstract Employee getEmployee(int id) throws DatabaseExeption;
+
+
+    public abstract void updateEmployee(int id,Employee emp) throws DatabaseExeption;
 
     /**
      * adds a new Employee to the database.
