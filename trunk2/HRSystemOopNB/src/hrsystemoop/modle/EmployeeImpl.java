@@ -8,7 +8,7 @@ import hrsystemoop.actions.Command;
 import hrsystemoop.actions.ShowSelfIDCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.attendancedata.MonthAttendance;
-import hrsystemoop.loanscheme.LoanProcessor;
+import hrsystemoop.loanscheme.LoanProcessorImpl;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -31,7 +31,7 @@ public class EmployeeImpl implements Employee {
     
     });
 
-    private LoanProcessor loanProcessor;
+    private LoanProcessorImpl loanProcessor;
     private MonthAttendance monthAttendance;
 
     public EmployeeImpl(String name, Level level, String userName) {
