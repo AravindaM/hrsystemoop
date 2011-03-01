@@ -9,6 +9,6 @@ package hrsystemoop.loanscheme;
  *
  * @author prasath
  */
-public interface WeddingLoan {
+public interface WeddingLoan extends Loan {
 
 }

@@ -9,7 +9,7 @@ package hrsystemoop.loanscheme;
  *
  * @author araLDAM
  */
-public class WeddingLoanImpl extends LoanImpl{
+public class WeddingLoanImpl extends LoanImpl implements WeddingLoan {
 String loantype = "Wedding";
 }
 

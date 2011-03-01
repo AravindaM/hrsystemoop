@@ -11,7 +11,7 @@ import javax.xml.datatype.Duration;
  *
  * @author araLDAM
  */
-public class TravelLoanImpl extends LoanImpl {
+public class TravelLoanImpl extends LoanImpl implements TravelLoan {
 
 private String travelLocation;
 private Duration travelDuration;

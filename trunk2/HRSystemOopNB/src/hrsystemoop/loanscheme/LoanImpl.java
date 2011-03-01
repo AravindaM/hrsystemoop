@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author araLDAM
  */
-public class LoanImpl {
+public class LoanImpl implements Loan {
  private String loanId;
  private String borrowerId;
  private Date borrowedDate;

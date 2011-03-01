@@ -9,6 +9,6 @@ package hrsystemoop.loanscheme;
  *
  * @author prasath
  */
-public interface TravelLoan {
+public interface TravelLoan extends Loan {
 
 }

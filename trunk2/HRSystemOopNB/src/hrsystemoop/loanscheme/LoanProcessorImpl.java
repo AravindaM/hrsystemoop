@@ -12,7 +12,7 @@ import java.util.Date;
  *
  * @author araLDAM
  */
-public class LoanProcessorImpl {
+public class LoanProcessorImpl implements LoanProcessor {
     private String userId;
     String details;
     ArrayList<LoanImpl>  loanDirectory;
