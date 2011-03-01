@@ -16,53 +16,83 @@ import java.util.HashMap;
 public class MonthAttendance implements MonthAttendanceProcess{
 
     private int totalLeaves;
-    private ArrayList<Leave> employeeLeaves;
-    private ArrayList<OverTime>  employeeOvertime;
-    private HashMap<Date, String> leavedates= new HashMap<Date, String>();
-    private HashMap<Date, Integer> OTdates= new HashMap<Date, Integer>();
+    private int totalOTHours;
+    private ArrayList<Leave> employeeLeaves =new ArrayList<Leave>();
+    private ArrayList<OverTime>  employeeOvertime = new ArrayList<OverTime>();
+    private HashMap<Date, String> leavedetails= new HashMap<Date, String>();
+    private HashMap<Date, Integer> OTdetails= new HashMap<Date, Integer>();
 
 
-    public MonthAttendance(ArrayList<Leave> employeeLeaves, ArrayList<OverTime> employeeOvertime){
+    public MonthAttendance(){
 
-    this.employeeLeaves= employeeLeaves;
-    this.employeeOvertime= employeeOvertime;
-//    this.leavedates= new HashMap<Date, String>();
     }
 
-    
+    /**
+     *
+     * @param leave a single leave day of an employee
+     */
 
-    public int getTotalLeaves() {
-        return employeeLeaves.size();
+    private void addToleaves(Leave leave){
+
+        employeeLeaves.add(leave);
+    }
+
+    /**
+     *
+     * @param overtime a single overtime day of an employee
+     */
+    private  void addToovertime(OverTime overtime){
+
+        employeeOvertime.add(overtime);
+    }
+
+    /**
+     *
+     * @return totalOTHours number of overtime ours of an employee for a time period of single month
+     */
+    public int getTotalOTHours() {
+
+        for (int x= 0; x < employeeOvertime.size(); x++){
+
+            int time = employeeOvertime.get(x).getDuration();
+            totalOTHours = totalOTHours+time;
+        }  
+        
+        return totalOTHours;
     }
 
     public HashMap <Date, String> getLeaveDetails() {
 
         for (int x= 0; x < employeeLeaves.size(); x++){
 
-            leavedates.put(employeeLeaves.get(x).getLeaveDate(), employeeLeaves.get(x).getReason());
+            leavedetails.put(employeeLeaves.get(x).getLeaveDate(), employeeLeaves.get(x).getReason());
 
         }
 
-        return leavedates;
+        return leavedetails;
     }
 
-    public int getTotalOTHours() {
-        return employeeOvertime.size();
+    public int getTotalLeaves() {
 
+        totalLeaves= employeeOvertime.size();
+        return totalLeaves;
     }
 
     public HashMap <Date, Integer> getOTDetails() {
 
         for (int x= 0; x < employeeOvertime.size(); x++){
 
-            OTdates.put(employeeOvertime.get(x).getOvertimeDate(), employeeOvertime.get(x).getDuration());
+            OTdetails.put(employeeOvertime.get(x).getOvertimeDate(), employeeOvertime.get(x).getDuration());
 
         }
 
-        return OTdates;
+        return OTdetails;
     }
     
-
+    public MonthAttendance getReport (){
+    
+        return  this;
+    }
     
 
     
