@@ -16,4 +16,8 @@ public class EmployeeDoesNotExist extends DatabaseExeption {
 
         super("Employee does not with id=" + id);
     }
+
+    public EmployeeDoesNotExist(String userName) {
+      super("Employee does not with name=" + userName);
+    }
 }
