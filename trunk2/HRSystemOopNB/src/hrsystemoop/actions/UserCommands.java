@@ -1,8 +1,7 @@
 package hrsystemoop.actions;
 
 import java.util.Collections;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  *
@@ -13,6 +12,7 @@ public class UserCommands {
     private Map<String, Command> commands;
 
     public UserCommands(Command[] commandsArr) {
+        commands = new HashMap<String, Command>();
         for (Command command : commandsArr) {
             commands.put(command.getName(), command);
         }

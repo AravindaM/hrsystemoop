@@ -18,12 +18,12 @@ import java.util.*;
  *
  * @author Amila Manoj
  */
-public class AddEmployeeCommand implements Command{
+public class CheckSalaryCommand implements Command{
 
    private Database database;
    private String[] attributesList;
 
-public AddEmployeeCommand(String name, Level level){
+public CheckSalaryCommand(String name, Level level){
     database = database.getInstance();
     attributesList = new String[] {"Username","Designation","Name"};
 }

@@ -5,10 +5,10 @@
 
 package hrsystemoop.actions;
 
-import hrsystemoop.modle.*;
+import hrsystemoop.modle.Level;
 import hrsystemoop.*;
-import hrsystemoop.database.*;
-import hrsystemoop.database.exeption.*;
+import hrsystemoop.database.Database;
+import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.modle.*;
 import hrsystemoop.database.*;
 import java.util.*;
@@ -18,12 +18,12 @@ import java.util.*;
  *
  * @author Amila Manoj
  */
-public class AddEmployeeCommand implements Command{
+public class RequestLeaveCommand implements Command{
 
    private Database database;
    private String[] attributesList;
 
-public AddEmployeeCommand(String name, Level level){
+public RequestLeaveCommand(String name, Level level){
     database = database.getInstance();
     attributesList = new String[] {"Username","Designation","Name"};
 }

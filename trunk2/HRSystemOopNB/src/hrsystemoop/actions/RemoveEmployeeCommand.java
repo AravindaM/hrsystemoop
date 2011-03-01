@@ -21,11 +21,12 @@ import java.util.*;
 public class RemoveEmployeeCommand implements Command{
 
    private Database database;
-   private ArrayList<String> attributesList;
+   private String[] attributesList;
 public RemoveEmployeeCommand(String name, Level level){
     database = database.getInstance();
-    attributesList = new ArrayList<String>();
-    attributesList.add("Emplyee id");
+
+    attributesList = new String[] {"Emplyee id"};
+   
 }
 
 /**
@@ -48,8 +49,17 @@ public RemoveEmployeeCommand(String name, Level level){
      * Returns the list of attributes that are needed to remove the employee
      * @return list of required attributes of an employer
      */
-    public ArrayList<String> getAtrributesList() {
-        return attributesList;
+    public String[] getAtrributesList() {
+        return  attributesList;
+    }
+
+    public boolean execute(Map<String, String> argList, Employee currentUser) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+
+    public String getName() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

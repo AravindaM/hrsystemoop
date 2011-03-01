@@ -25,7 +25,7 @@ public class EmployeeImpl implements Employee {
     private String passwordHash;
 
 
-    private static final UserCommands commands = new UserCommands(new Command[]{
+    private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
         new ShowSelfIDCommand()
     
     });

@@ -2,22 +2,41 @@
 package hrsystemoop.actions;
 
 import java.util.*;
+import hrsystemoop.database.*;
+import hrsystemoop.database.exeption.*;
+import hrsystemoop.modle.Employee;
 /**
  *
  * @author Amila Manoj
  */
 public class Invoker {
-
-    private Vector<Command> commandList;
-    private Vector<Command> startCommandList;
+    private Database database;
+    private Employee loggedEmployee;
     public Invoker() {
-        this.commandList = new HashMap<String,Command>();
-        commandList.put("addEmp", new AddEmployeeCommand())
+       this.database=Database.getInstance();
     }
-    commandList.
 
-    public Vector getStartCommands(){
+    public boolean validateUser(String username){
+         try {
+            loggedEmployee = database.getEmployee(username);
+            return true;
+             } catch (DatabaseExeption ex) {
 
+            return false;
+        }
+    }
+
+    public boolean validatePassword(String password){
+
+           return loggedEmployee.checkPass(password);
+        }
+
+    public Set<String> getAvailabeCommands(){
+        return loggedEmployee.getUserCommands().getAvailabeCommands();
+    }
+
+    public void perform(int action){
+        //this is just a dummy method for now
     }
 
 }

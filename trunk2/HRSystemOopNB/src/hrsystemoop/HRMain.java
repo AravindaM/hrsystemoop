@@ -4,6 +4,7 @@
  */
 package hrsystemoop;
 
+import hrsystemoop.actions.Invoker;
 import hrsystemoop.database.exeption.DatabaseExeption;
 import java.util.*;
 
@@ -18,11 +19,11 @@ import java.util.logging.Logger;
 public class HRMain {
 
     private Scanner scanner;
-    private Database database;
-    private Employee loggedEmployee;
+    private Invoker invoker = new Invoker();
+    
     public HRMain() {
         this.scanner = new Scanner(System.in);
-        this.database=Database.getInstance();
+        
     }
 
     /**
@@ -35,16 +36,17 @@ public class HRMain {
 
     public void run() {
         while (true) {
+            System.out.println();
             System.out.println("Welcome to TechNinja Human Resourse Management System");
             System.out.println("=====================================================");
             System.out.println("1 - Login");
             System.out.println("2 -Exit");
             int command = scanner.nextInt();
             switch (command) {
-                case 0:
+                case 1:
                     showLogin();
                     break;
-                case 1:
+                case 2:
                     System.exit(0);
                     break;
                 default:
@@ -56,31 +58,36 @@ public class HRMain {
 
         public void showLogin(){
             System.out.println("Enter your username and passord below");
-            System.out.print("Username:");
-            String username = scanner.nextLine();
-            System.out.print("Password:");
-            String password = scanner.nextLine();
-        try {
-            loggedEmployee = database.getEmployee(username);
-            if (loggedEmployee.checkPass(password)){
+            System.out.print("Username: ");
+            String username= scanner.next();
+            //String username = scanner.nextLine();
+            
+            System.out.print("Password: ");
+            String password = scanner.next();
+       if (invoker.validateUser(username))
+            if (invoker.validatePassword(password)){
                 showLoggedUI();
             } else {
                 System.out.println("The password you provided is incorrect");
             }
-        } catch (DatabaseExeption ex) {
-            System.out.println("There is no such user named "+ username);
-        }
+       else {
+                System.out.println("There is no such user named "+ username);
+       }
 
         }
 
         public void showLoggedUI(){
-            System.out.println("Welcome "+ loggedEmployee.getName());
+            System.out.println("Welcome ");
             System.out.println("====================================");
-            Set<String> commands = loggedEmployee.getUserCommands().getAvailabeCommands();
+            Set<String> commands = invoker.getAvailabeCommands();
             System.out.println("Please select what you want to do:");
+            int i=0;
             for (String command: commands){
                 System.out.println("0 - "+command);
+                i++;
             }
+            int action=scanner.nextInt();
+            invoker.perform(action);
         }
 
 

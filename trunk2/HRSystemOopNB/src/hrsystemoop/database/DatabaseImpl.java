@@ -2,7 +2,7 @@ package hrsystemoop.database;
 
 import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.database.exeption.EmployeeDoesNotExist;
-import hrsystemoop.modle.Employee;
+import hrsystemoop.modle.*;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,9 +15,16 @@ import java.util.Set;
 public class DatabaseImpl extends Database {
 
     private Map<Integer, Employee> data = new HashMap<Integer, Employee>();
+    ///////////temporary:
+    
+    
+    //////////
     private int maxId;
 
     protected DatabaseImpl() {
+        Employee a = new EmployeeImpl("HRMan", Level.LEVELTWO, "hrman");
+        a.setPassword("pw");
+        data.put(0, a);
     }
 
     @Override
