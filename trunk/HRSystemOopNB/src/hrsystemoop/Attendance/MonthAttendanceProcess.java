@@ -18,4 +18,7 @@ interface MonthAttendanceProcess {
     public  int getTotalLeaves();
     public  Date[] getLeaveDates();
     public  int getLeaveTimes();
+    public int getOvertimeHours();
+
+
 }

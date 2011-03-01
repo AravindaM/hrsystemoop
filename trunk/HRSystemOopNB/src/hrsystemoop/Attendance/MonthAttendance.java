@@ -33,4 +33,8 @@ public class MonthAttendance implements MonthAttendanceProcess{
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    public int getOvertimeHours() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }
