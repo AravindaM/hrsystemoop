@@ -14,7 +14,7 @@ public interface Employee {
 
     int getId();
 
-    void setID();
+    void setID(int Id);
 
     String getName();
 

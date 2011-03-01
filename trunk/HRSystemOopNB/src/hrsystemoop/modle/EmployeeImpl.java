@@ -11,7 +11,7 @@ import hrsystemoop.Level;
  */
 public class EmployeeImpl implements Employee {
 
-    private int Id;
+    private int  Id;
     private String name;
     private Level level;
 
@@ -31,11 +31,12 @@ public class EmployeeImpl implements Employee {
         return name;
     }
 
-    public void setID() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setID(int Id) {
+        this.Id = Id;
+    }
+    
 }
