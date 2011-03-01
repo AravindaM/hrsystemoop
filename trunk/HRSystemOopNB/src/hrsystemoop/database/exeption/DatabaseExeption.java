@@ -6,7 +6,7 @@ package hrsystemoop.database.exeption;
 
 /**
  *
- * @author toshiba
+ * @author R.C.M. Perera
  */
 public class DatabaseExeption extends Exception {
 

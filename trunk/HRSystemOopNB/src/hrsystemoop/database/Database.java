@@ -28,8 +28,16 @@ public abstract class Database {
      */
     public abstract Employee getEmployee(int id) throws DatabaseExeption;
 
+    /**
+     *
+     * @param name User Name of the Employee
+     *
+     * @return if an Employee exists with that name Employee will be returned
+     * @throws DatabaseExeption when a user dose not exist with that name exception will be thrown
+     */
     public abstract Employee getEmployee(String name) throws DatabaseExeption;
 
+    
     public abstract void updateEmployee(int id, Employee emp) throws DatabaseExeption;
 
     /**
