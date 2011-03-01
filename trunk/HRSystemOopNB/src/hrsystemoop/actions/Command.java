@@ -22,9 +22,9 @@ public interface Command {
     /**
      * Returns the set of attributes that user need to input to perform
      * a particular command
-     * @return List of attributes
+     * @return array of attributes that is requead to execute 
      */
-    public ArrayList<String> getAtrributesList();
+    public String[] getAtrributesList();
 
     public String getName();
 }
