@@ -11,6 +11,9 @@ package hrsystemoop.actions;
  */
 public class AddEmployeeCommand implements Command{
 
+public AddEmployeeCommand(int id, String name){
+    
+}
     public void execute() {
         
     }

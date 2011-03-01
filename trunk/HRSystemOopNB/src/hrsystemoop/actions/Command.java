@@ -12,5 +12,9 @@ package hrsystemoop.actions;
 /* The Command interface */
 public interface Command {
     
+     /**
+     * Executes the appropriate sequence of actions
+     * depending on the implemented commands
+     */
     void execute();
 }
