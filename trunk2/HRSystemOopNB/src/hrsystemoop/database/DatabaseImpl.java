@@ -22,9 +22,6 @@ public class DatabaseImpl extends Database {
     private int maxId;
 
     protected DatabaseImpl() {
-        Employee a = new EmployeeImpl("HRMan", Level.LEVELTWO, "hrman");
-        a.setPassword("pw");
-        data.put(0, a);
     }
 
     @Override
