@@ -43,5 +43,23 @@ public class EmployeeImpl implements Employee {
     public void setID(int Id) {
         this.Id = Id;
     }
+
+    public void setUserName(String uname) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public String getUserName() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setPassword() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public boolean checkPass(String password) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+
     
 }

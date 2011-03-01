@@ -20,7 +20,16 @@ public interface Employee {
 
     void setName(String name);
 
+    void setUserName(String uname);
+
+    String getUserName();
+
+    void setPassword();
+
+    boolean checkPass(String password);
+
     Level getLevel();
 
     void setLevel(Level level);
+
 }
