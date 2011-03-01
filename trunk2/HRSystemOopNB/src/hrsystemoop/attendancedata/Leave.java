@@ -11,18 +11,16 @@ import java.util.Date;
  *
  * @author TOSHIBA
  */
-public class Leave {
+public abstract class Leave {
 
     private Date leavedate;
     private String reason;
     private int starttime;
     private int endtime;
-    private String leavetype;
-//    private int totalLeaves;
 
-//    private int year;
-//    private int month;
-//    private int date;
+    //    private int totalLeaves;
+
+
 
     
     
@@ -75,10 +73,7 @@ public class Leave {
          return endtime;
     }
 
-    private void process(){
-
-
-    }
+    
 
 
 }

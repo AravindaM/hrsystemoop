@@ -15,6 +15,9 @@ interface MonthAttendanceProcess {
     
     public  int getTotalLeaves();
     public  int getTotalOTHours();
+public int getTotalAnaualLeaves();
+public int getTotalCasualLeaves();
+public int getTotalMedicalLeaves();
 
 
 }

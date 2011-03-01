@@ -6,8 +6,6 @@
 package hrsystemoop.attendancedata;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
 
 /**
  *
@@ -16,11 +14,18 @@ import java.util.HashMap;
 public class MonthAttendance implements MonthAttendanceProcess{
 
     private int totalLeaves;
+
     private int totalOTHours;
-    private ArrayList<Leave> employeeLeaves =new ArrayList<Leave>();
+    private ArrayList<AnnualLeave> employeeAnnualLeaves =new ArrayList<AnnualLeave>();
+    private ArrayList<CasualLeave> employeeCasualLeaves =new ArrayList<CasualLeave>();
+    private ArrayList<MedicalLeave> employeeMedicalLeaves =new ArrayList<MedicalLeave>();
+
     private ArrayList<OverTime>  employeeOvertime = new ArrayList<OverTime>();
-    private HashMap<Date, String> leavedetails= new HashMap<Date, String>();
-    private HashMap<Date, Integer> OTdetails= new HashMap<Date, Integer>();
+    private int annualLeaves;
+    private int casualLeaves;
+    private int medicalLeaves;
+//    private HashMap<Date, String> leavedetails= new HashMap<Date, String>();
+//    private HashMap<Date, Integer> OTdetails= new HashMap<Date, Integer>();
 
 
     public MonthAttendance(){
@@ -32,10 +37,12 @@ public class MonthAttendance implements MonthAttendanceProcess{
      * @param leave a single leave day of an employee
      */
 
-    private void addToleaves(Leave leave){
+    private void addToAnnualLeaves(AnnualLeave annualleave){
 
-        employeeLeaves.add(leave);
+        employeeAnnualLeaves.add(annualleave);
     }
+
+
 
     /**
      *
@@ -45,6 +52,17 @@ public class MonthAttendance implements MonthAttendanceProcess{
 
         employeeOvertime.add(overtime);
     }
+
+    /**
+     *
+     * @param leave a single leave day of an employee
+     */
+
+    private void addToMedicalLeaves(MedicalLeave medicalleave){
+
+        employeeMedicalLeaves.add(medicalleave);
+    }
+
 
     /**
      *
@@ -61,37 +79,49 @@ public class MonthAttendance implements MonthAttendanceProcess{
         return totalOTHours;
     }
 
-    public HashMap <Date, String> getLeaveDetails() {
-
-        for (int x= 0; x < employeeLeaves.size(); x++){
-
-            leavedetails.put(employeeLeaves.get(x).getLeaveDate(), employeeLeaves.get(x).getReason());
-
-        }
-
-        return leavedetails;
-    }
+//    public HashMap <Date, String> getLeaveDetails() {
+//
+//        for (int x= 0; x < employeeLeaves.size(); x++){
+//
+//            leavedetails.put(employeeLeaves.get(x).getLeaveDate(), employeeLeaves.get(x).getReason());
+//
+//        }
+//
+//        return leavedetails;
+//    }
 
     public int getTotalLeaves() {
 
-        totalLeaves= employeeOvertime.size();
+        
         return totalLeaves;
     }
 
-    public HashMap <Date, Integer> getOTDetails() {
 
-        for (int x= 0; x < employeeOvertime.size(); x++){
 
-            OTdetails.put(employeeOvertime.get(x).getOvertimeDate(), employeeOvertime.get(x).getDuration());
-
-        }
-
-        return OTdetails;
-    }
     
     public MonthAttendance getReport (){
     
         return  this;
+    }
+
+    public int getTotalAnaualLeaves() {
+
+        annualLeaves= employeeAnnualLeaves.size();
+        return annualLeaves;
+
+    }
+
+    public int getTotalCasualLeaves() {
+
+        casualLeaves= employeeCasualLeaves.size();
+        return casualLeaves;
+
+    }
+
+
+    public int getTotalMedicalLeaves() {
+        medicalLeaves= employeeMedicalLeaves.size();
+        return medicalLeaves;
     }
     
 
