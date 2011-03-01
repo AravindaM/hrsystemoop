@@ -66,7 +66,7 @@ public class EmployeeImpl implements Employee {
     }
 
     public boolean checkPass(String password) {
-        if(getHash(password).equals(this.passwordHash))
+        if(getHash(password).equals(this.passwordHash)){
             return true;
         } else {
             return false;
@@ -80,15 +80,14 @@ public class EmployeeImpl implements Employee {
     private String getHash(String password) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-1");
-            
+            digest.reset();
+            byte[] input = digest.digest(password.getBytes("UTF-8"));
+            return new String(input);
+        } catch (UnsupportedEncodingException ex) {
+            return  null;
         } catch (NoSuchAlgorithmException ex) {
             return null;
-        } catch(UnsupportedEncodingException ex) {
-            return null;
         }
-        digest.reset();
-        byte[] input = digest.digest(password.getBytes("UTF-8"));
-        return new String(input);
     }
      
 }
