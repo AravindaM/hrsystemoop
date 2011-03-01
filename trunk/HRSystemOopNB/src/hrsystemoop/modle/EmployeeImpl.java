@@ -6,6 +6,7 @@ package hrsystemoop.modle;
 
 import hrsystemoop.Level;
 import hrsystemoop.actions.Command;
+import hrsystemoop.actions.ShowSelfIDCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.attendancedata.MonthAttendance;
 import hrsystemoop.loanscheme.LoanProcessor;
@@ -27,7 +28,7 @@ public class EmployeeImpl implements Employee {
 
     private static final UserCommands commands = new UserCommands(new Command[]{
     
-        
+        new ShowSelfIDCommand()
     
     });
 
