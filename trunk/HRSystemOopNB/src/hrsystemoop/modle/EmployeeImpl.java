@@ -15,6 +15,11 @@ public class EmployeeImpl implements Employee {
     private String name;
     private Level level;
 
+    public EmployeeImpl(String name, Level level) {
+        this.name = name;
+        this.level = level;
+    }
+
     public Level getLevel() {
         return level;
     }
