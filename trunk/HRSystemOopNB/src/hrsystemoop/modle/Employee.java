@@ -35,4 +35,15 @@ public interface Employee {
 
     UserCommands getUserCommands();
 
+    int getSalary();
+
+    // all type of leave must be supported here so there would be threee constructors
+    int noOfLeaves();
+
+    int noOfShortLeaves();
+
+    int noOfCasualLeaves();
+
+    
+
 }

@@ -7,6 +7,8 @@ package hrsystemoop.modle;
 import hrsystemoop.Level;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.UserCommands;
+import hrsystemoop.attendancedata.MonthAttendance;
+import hrsystemoop.loanscheme.LoanProcessor;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -22,11 +24,15 @@ public class EmployeeImpl implements Employee {
     private Level level;
     private String userName;
     private String passwordHash;
-    static{
-    HashMap<String, Command> commands = new HashMap<String, Command>();
-    commands.pu
-    }
-    private static final UserCommands commands = new UserCommands();
+
+    private static final UserCommands commands = new UserCommands(new Command[]{
+    
+        
+    
+    });
+
+    private LoanProcessor loanProcessor;
+    private MonthAttendance monthAttendance;
 
     public EmployeeImpl(String name, Level level, String userName) {
         this.name = name;
