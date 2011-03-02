@@ -34,7 +34,7 @@ public RemoveEmployeeCommand(String name, Level level){
  * @param inputList List of attributes of employee
  * @return Success or Failure
  */
-    public boolean execute(Map<String,String> inputList) {
+    public CommandContext execute(CommandContext context) {
 
         int id =Integer.getInteger(inputList.get("Emplyee id"));
         try {

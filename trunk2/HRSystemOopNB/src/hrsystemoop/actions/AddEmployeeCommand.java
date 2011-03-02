@@ -52,7 +52,7 @@ public AddEmployeeCommand(String name, Level level){
         return attributesList;
     }
 
-    public boolean execute(CommandContext context) {
+    public CommandContext execute(CommandContext context) {
                 Map<String,String> inputList = context.getArgList();
         Level newLevel= Level.valueOf(inputList.get("Designation"));
         Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));

@@ -52,8 +52,8 @@ public UpdateEmployeeCommand(String name, Level level){
         return attributesList;
     }
 
-    public boolean execute(CommandContext context) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public CommandContext execute(CommandContext context) {
+        return context;
     }
 
     public String getName() {

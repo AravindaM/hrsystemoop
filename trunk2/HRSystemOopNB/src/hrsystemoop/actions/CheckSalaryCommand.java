@@ -33,7 +33,7 @@ public CheckSalaryCommand(String name, Level level){
  * @param inputList List of attributes of employee
  * @return Success or Failure
  */
-    public boolean execute(Map<String,String> inputList) {
+    public CommandContext execute(CommandContext context) {
         Level newLevel= Level.valueOf(inputList.get("Designation"));
         Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));
         try {

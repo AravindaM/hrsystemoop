@@ -14,7 +14,7 @@ public interface Command {
      * depending on the implemented commands
       * @param argList passes arguments needed to complete the action, if any
      */
-    public boolean execute(CommandContext context);
+    public CommandContext execute(CommandContext context);
 
     /**
      * Returns the set of attributes that user need to input to perform

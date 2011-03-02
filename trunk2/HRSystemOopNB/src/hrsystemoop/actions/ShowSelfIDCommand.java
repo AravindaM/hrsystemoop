@@ -13,9 +13,11 @@ import java.util.Map;
  */
 public class ShowSelfIDCommand implements Command {
 
-    public boolean execute(Map<String, String> argList, Employee currentUser) {
-        System.out.println(currentUser.getId());
-        return true;
+    public CommandContext execute(CommandContext context) {
+        int id=context.getCurrentuser().getId();
+        context.setResults(new String[] {String.valueOf(id)});
+        context.setReturnStatus(true);
+        return context;
     }
 
     public String[] getAtrributesList() {
@@ -25,4 +27,6 @@ public class ShowSelfIDCommand implements Command {
     public String getName() {
         return "Show My Id";
     }
+
+
 }

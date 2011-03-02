@@ -15,10 +15,13 @@ import java.util.*;
 public class CommandContext {
     Employee currentuser;
     Map<String,String> argList;
+    String[] results;
+    boolean returnStatus;
 
     public CommandContext(Employee currentuser, Map<String, String> argList) {
         this.currentuser = currentuser;
         this.argList = argList;
+        this.returnStatus=false;
     }
 
     public Map<String, String> getArgList() {
@@ -29,5 +32,15 @@ public class CommandContext {
         return currentuser;
     }
 
+    public void setReturnStatus(boolean returnStatus) {
+        this.returnStatus = returnStatus;
+    }
 
+    public void printResults(){
+        
+    }
+
+    public void setResults(String[] results) {
+        this.results = results;
+    }
 }
