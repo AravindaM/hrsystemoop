@@ -12,11 +12,14 @@ import hrsystemoop.actions.UserCommands;
  *
  * @author prasath
  */
-public class HREmployerImpl {
+public abstract class HREmployerImpl extends EmployeeImpl {
 
-    static final UserCommands commands = new UserCommands(new Command[]{
-        // Set of commands unique for HREmployee
+    public HREmployerImpl(String name, Level level, String userName, String userPassword) {
+        super(name, level, userName, userPassword);
+    }
 
-    });
+
+
+
 
 }

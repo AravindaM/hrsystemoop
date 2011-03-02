@@ -14,6 +14,7 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 
 /**
  * @author Prasath
@@ -135,6 +136,22 @@ public class EmployeeImpl implements Employee {
         } catch (CloneNotSupportedException ex) {
             return null;
         }
+    }
+
+    public int getAge() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public int getBirthDate() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setBirthDate(Date birthDate) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setAge(int age) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

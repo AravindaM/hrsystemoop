@@ -17,4 +17,10 @@ public class HRAssistantImpl {
         new AddEmployeeCommand()
 
     });
+
+    public  UserCommands getCommands() {
+        return commands;
+    }
+    
+
 }

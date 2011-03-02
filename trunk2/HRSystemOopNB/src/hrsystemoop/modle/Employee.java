@@ -7,6 +7,7 @@ package hrsystemoop.modle;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.attendancedata.MonthAttendanceImpl;
 import hrsystemoop.loanscheme.LoanProcessor;
+import java.util.Date;
 
 /**
  *
@@ -16,7 +17,15 @@ public interface Employee extends Cloneable {
 
     int getId();
 
-    void setID(int Id);
+    int getAge();
+
+    int getBirthDate();
+
+    void setBirthDate(Date birthDate);
+
+    void setAge(int age);
+
+    void setID(int id);
 
     String getName();
 
