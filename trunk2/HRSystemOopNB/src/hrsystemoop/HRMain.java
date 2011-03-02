@@ -93,37 +93,43 @@ public class HRMain {
 
     public void showLoggedUI() {
         System.out.println("Welcome ");
-        System.out.println("====================================");
         Set<String> commandNames = invoker.getAvailabeCommands();
-        while (true){
-        System.out.println("Please select what you want to do:");
-        int i = 0;
-        String[] commandNamesArr = commandNames.toArray(new String[0]);
+        while (true) {
+            System.out.println("====================================");
+            System.out.println("Please select what you want to do:");
+            int i = 0;
+            String[] commandNamesArr = commandNames.toArray(new String[0]);
 
-        for (String command : commandNamesArr) {
-            System.out.println(i+ " - " + command);
-            i++;
-        }
-        System.out.println(i+ " - Logout");
-        int action = scanner.nextInt();
-        if (action==commandNamesArr.length){
-            break;
-        } else {
-            String selectedAction = commandNamesArr[action];
-            String[] attributes = invoker.getAttributesForCommand(selectedAction);
-            HashMap<String,String> responseList = new HashMap();
-            for (String attrib: attributes){
-                System.out.print(attrib + ": ");
-                responseList.put(attrib, scanner.next());
+            for (String command : commandNamesArr) {
+                System.out.println(i + " - " + command);
+                i++;
             }
-            CommandContext context= invoker.perform(selectedAction, responseList);
-
-            if (context.getReturnStatus()==false){
-                System.out.print("There was an error executing that command");
+            System.out.println(i + " - Logout");
+            int action = scanner.nextInt();
+            if (action == commandNamesArr.length) {
+                break;
             } else {
-                System.out.println(context.getResults());
+                String selectedAction = commandNamesArr[action];
+                String[] attributes = invoker.getAttributesForCommand(selectedAction);
+                HashMap<String, String> responseList = new HashMap();
+                for (String attrib : attributes) {
+                    System.out.print(attrib + ": ");
+                    responseList.put(attrib, scanner.next());
+                }
+                CommandContext context = invoker.perform(selectedAction, responseList);
+
+                if (context.getReturnStatus() == false) {
+                    System.out.print("[ERROR]: There was an error executing that command");
+                } else {
+                    if (context.getReturnStatus() == true) {
+                        System.out.println("[INFO]: Acton sucessully completed");
+                    }
+                    String results = context.getResults();
+                    if (results != null) {
+                        System.out.println();
+                    }
+                }
             }
-        }
 
         }
     }
