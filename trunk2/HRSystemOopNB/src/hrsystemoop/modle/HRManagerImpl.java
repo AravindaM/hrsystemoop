@@ -18,7 +18,7 @@ import hrsystemoop.actions.show.ShowSelfIDCommand;
 public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     static final UserCommands commands = new UserCommands(new Command[]{
-        new ShowSelfIDCommand(),
+        new ShowSelfIDCommand()
         new AddEmployeeCommand()
         //acceptleave command, add remove update employee employeee
 
