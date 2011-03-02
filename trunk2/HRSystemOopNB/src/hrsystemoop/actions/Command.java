@@ -12,7 +12,8 @@ public interface Command {
      /**
      * Executes the appropriate sequence of actions
      * depending on the implemented commands
-      * @param argList passes arguments needed to complete the action, if any
+      * @param context passes arguments needed to complete the action, if any and stores state and resluts
+      *
      */
     public void execute(CommandContext context);
 

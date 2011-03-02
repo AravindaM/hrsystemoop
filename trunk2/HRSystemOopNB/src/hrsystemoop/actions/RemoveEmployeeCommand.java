@@ -5,9 +5,6 @@
 
 package hrsystemoop.actions;
 
-import hrsystemoop.modle.Level;
-import hrsystemoop.*;
-import hrsystemoop.database.Database;
 import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.modle.*;
 import hrsystemoop.database.*;
@@ -36,12 +33,12 @@ public RemoveEmployeeCommand(){
  */
     public void execute(CommandContext context) {
 
-        int id =Integer.getInteger(inputList.get("Emplyee id"));
+        int id =Integer.getInteger(context.getArgList().get("Emplyee id"));
         try {
             database.deleteEmployee(id);
-            //return true;
+            context.setReturnStatus(true);
         } catch (DatabaseExeption ex) {
-            //return false;
+            context.setReturnStatus(false);
         }
     }
 
