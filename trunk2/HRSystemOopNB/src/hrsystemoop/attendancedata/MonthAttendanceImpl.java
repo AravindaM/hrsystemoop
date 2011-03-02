@@ -35,7 +35,6 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     private int medi_length = employeeMedicalLeaves.size();
     private int OT_length = employeeOvertime.size();
 
-
     private int fulldays;       // total of casual leaves of full day
     private int halfdays;       //total amount of 4 hour half day leaves
     private int halfday_hours;   // totalhours of halfday leaves
@@ -51,7 +50,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param annualleave, a single annual leave day of an employee
      */
-    private void addToAnnualLeaves(AnnualLeave annualleave){
+    public  void addToAnnualLeaves(AnnualLeave annualleave){
 
         employeeAnnualLeaves.add(annualleave);
     }
@@ -60,7 +59,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param medical leave, a single medical leave day of an employee
      */
-    private void addToMedicalLeaves(MedicalLeave medicalleave){
+    public  void addToMedicalLeaves(MedicalLeave medicalleave){
 
         employeeMedicalLeaves.add(medicalleave);
     }
@@ -152,6 +151,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
 
         return employeeMedicalLeaves;
     }
+
 
     // @ return overtime leave details
     public ArrayList<OverTime> getOTDetails() {
