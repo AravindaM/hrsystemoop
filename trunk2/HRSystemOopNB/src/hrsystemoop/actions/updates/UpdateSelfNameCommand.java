@@ -4,6 +4,7 @@
  */
 package hrsystemoop.actions.updates;
 
+import hrsystemoop.actions.CommandContext;
 import hrsystemoop.modle.Employee;
 
 /**
@@ -20,4 +21,5 @@ public class UpdateSelfNameCommand extends UpdateSelfCommand {
     public void update(String attribValue, Employee currentUser) {
         currentUser.setName(attribValue);
     }
+
 }

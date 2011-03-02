@@ -6,6 +6,8 @@ package hrsystemoop.actions.updates;
 
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.CommandContext;
+import hrsystemoop.database.Database;
+import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.modle.Employee;
 
 /**
@@ -20,8 +22,14 @@ public abstract class UpdateSelfCommand implements Command {
         this.attribute = attribute;
     }
 
-    public CommandContext execute(CommandContext context) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void execute(CommandContext context) {
+        update(context.getArgList().get(attribute), context.getCurrentuser());
+        try {
+            Database.getInstance().updateEmployee(context.getCurrentuser().getId(), context.getCurrentuser());
+            context.setResults(attribute);
+        } catch (DatabaseExeption ex) {
+            System.out.println("can't change " + attribute + " : " + ex.getMessage());
+        }
     }
 
     public String[] getAtrributesList() {
@@ -33,6 +41,4 @@ public abstract class UpdateSelfCommand implements Command {
     }
 
     public abstract void update(String attribValue, Employee currentUser);
-
-
 }
