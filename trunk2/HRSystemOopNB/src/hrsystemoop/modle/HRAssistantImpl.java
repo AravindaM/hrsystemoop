@@ -5,9 +5,8 @@
 
 package hrsystemoop.modle;
 
-import hrsystemoop.actions.Command;
-import hrsystemoop.actions.ShowSelfIDCommand;
-import hrsystemoop.actions.UserCommands;
+import hrsystemoop.actions.*;
+
 
 /**
  *
@@ -15,7 +14,7 @@ import hrsystemoop.actions.UserCommands;
  */
 public class HRAssistantImpl {
     static final UserCommands commands = new UserCommands(new Command[]{
-        // Set of commands unique for employee
+        new AddEmployeeCommand()
 
     });
 }
