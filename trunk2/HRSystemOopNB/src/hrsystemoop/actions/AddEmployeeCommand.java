@@ -52,8 +52,16 @@ public AddEmployeeCommand(String name, Level level){
         return attributesList;
     }
 
-    public boolean execute(Map<String, String> argList, Employee currentUser) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean execute(CommandContext context) {
+                Map<String,String> inputList = context.getArgList();
+        Level newLevel= Level.valueOf(inputList.get("Designation"));
+        Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));
+        try {
+            database.addEmployee(newEmployee);
+            return true;
+        } catch (DatabaseExeption ex) {
+            return false;
+        }
     }
 
     public String getName() {
