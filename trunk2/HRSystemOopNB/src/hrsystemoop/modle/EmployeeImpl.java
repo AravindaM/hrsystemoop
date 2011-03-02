@@ -30,10 +30,11 @@ public class EmployeeImpl implements Employee {
 	private LoanProcessor loanProcessor;
 	private MonthAttendance monthAttendance;
 
-	public EmployeeImpl(String name, Level level, String userName) {
+	public EmployeeImpl(String name, Level level, String userName, String userPassword) {
 		this.name = name;
 		this.level = level;
 		this.userName = userName;
+                this.passwordHash = getHash(userPassword);
 		loanProcessor = new LoanProcessor();
 		monthAttendance = new MonthAttendance();
 	}
@@ -121,4 +122,12 @@ public class EmployeeImpl implements Employee {
 	public LoanProcessor getLoanProcessor() {
 		return loanProcessor;
 	}
+
+        public boolean requestLeave() {
+            return true;
+        }
+
+        public boolean requestLoan() {
+            return true;
+        }
 }
