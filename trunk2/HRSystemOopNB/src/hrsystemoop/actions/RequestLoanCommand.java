@@ -34,14 +34,14 @@ public RequestLoanCommand(){
  * @return Success or Failure
  */
     public void execute(CommandContext context) {
-        Level newLevel= Level.valueOf(inputList.get("Designation"));
-        Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));
-        try {
-            database.addEmployee(newEmployee);
+        // newLevel= Level.valueOf(inputList.get("Designation"));
+        //Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));
+        //try {
+        //    database.addEmployee(newEmployee);
             //return true;
-        } catch (DatabaseExeption ex) {
+        //} catch (DatabaseExeption ex) {
             //return false;
-        }
+        //}
         //return context;
     }
 
