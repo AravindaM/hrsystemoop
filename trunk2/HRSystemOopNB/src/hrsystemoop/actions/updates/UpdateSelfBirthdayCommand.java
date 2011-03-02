@@ -20,8 +20,7 @@ public class UpdateSelfBirthdayCommand extends UpdateSelfCommand {
 
     @Override
     public void update(String attribValue, Employee currentUser) {
-
-        currentUser.setBirthDate(null);
+        //TODO:
     }
 
 }
