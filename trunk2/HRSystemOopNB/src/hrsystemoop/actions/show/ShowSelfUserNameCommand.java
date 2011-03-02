@@ -15,6 +15,6 @@ public class ShowSelfUserNameCommand extends ShowSelfCommand {
 
     @Override
     public void insertResults(CommandContext context, Employee currentuser) {
-        context.setResults("your id user name is " + currentuser.getId());
+        context.setResults("your id user name is " + currentuser.getUserName());
     }
 }
