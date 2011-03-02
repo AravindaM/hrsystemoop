@@ -44,7 +44,8 @@ public class EmployeeImpl implements Employee {
                         new ShowSelfNameCommand(),
                         new ShowSelfIDCommand(),
                         new ShowSelfUserNameCommand(),
-                        new ShowSelfAttendanceSummaryCommand()
+                        new ShowSelfAttendanceSummaryCommand(),
+                     
 		});
 
 	private LoanProcessor loanProcessor;
@@ -130,9 +131,9 @@ public class EmployeeImpl implements Employee {
 	/*
 	 * final salary = (basesalary+overtimerate*overtime)-(loansum+extraleave*leavepenalty)
 	 */
-    public int getSalary(int overTime) {
+    public int getSalary() {
         monthAttendance.resetAdditonalLeaves(level.getMaxNoOfLeaves());
-        return (level.getSalary(overTime))-((monthAttendance.getTotalLeaves()-level.getMaxNoOfLeaves())*(level.getLeavePenalty()));
+        return (level.getSalary(monthAttendance.getTotalOTHours()))-((monthAttendance.getTotalLeaves()-level.getMaxNoOfLeaves())*(level.getLeavePenalty()));
     }
 
     public MonthAttendanceImpl getMonthAttendance() {

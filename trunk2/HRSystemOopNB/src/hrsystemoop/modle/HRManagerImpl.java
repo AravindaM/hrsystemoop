@@ -28,15 +28,18 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     static final UserCommands commands = new UserCommands(new Command[]{
         new ShowSelfIDCommand(),
-        new AddEmployeeCommand(),
-        new AcceptLoanCommand(),
+        
         new CheckSalaryCommand(),
         new RemoveEmployeeCommand(),
         new RequestLeaveCommand(),
         new RequestLoanCommand(),
         new ShowSelfAttendanceSummaryCommand(),
         new ShowSelfIDCommand(),
-        new ShowSelfNameCommand()
+        new ShowSelfNameCommand(),
+
+        // unique commands
+        new AddEmployeeCommand(),
+        new AcceptLoanCommand(),
 
     });
 
