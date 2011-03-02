@@ -111,6 +111,7 @@ public class HRMain {
                 break;
             } else {
                 String selectedAction = commandNamesArr[action];
+                // here we arrange information for the relevant command
                 String[] attributes = invoker.getAttributesForCommand(selectedAction);
                 HashMap<String, String> responseList = new HashMap();
                 for (String attrib : attributes) {
