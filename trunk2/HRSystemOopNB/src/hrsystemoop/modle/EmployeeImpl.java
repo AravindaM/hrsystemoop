@@ -125,10 +125,14 @@ public class EmployeeImpl implements Employee {
         return loanProcessor;
     }
 
+    @Override
     public Employee clone() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            return (Employee) super.clone();
+        } catch (CloneNotSupportedException ex) {
+            return null;
+        }
     }
-
 
  
 
