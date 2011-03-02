@@ -7,6 +7,7 @@ package hrsystemoop.modle;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.ShowSelfIDCommand;
 import hrsystemoop.actions.UserCommands;
+import hrsystemoop.actions.updates.UpdateSelfNameCommand;
 import hrsystemoop.attendancedata.MonthAttendance;
 import hrsystemoop.loanscheme.LoanProcessor;
 import java.io.UnsupportedEncodingException;
@@ -26,7 +27,9 @@ public class EmployeeImpl implements Employee {
 	private String passwordHash;
 
 	private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
-			new ShowSelfIDCommand()
+			new ShowSelfIDCommand(),
+                        new UpdateSelfNameCommand()
+                        
 		});
 
 	private LoanProcessor loanProcessor;
