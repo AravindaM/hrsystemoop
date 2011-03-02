@@ -36,7 +36,7 @@ public class LoanProcessor implements Cloneable {
  * loan borrowed date, due date and the loan duration.Here check weather the maximum no of loans
   * that can be borrowed by a employee is exceeded before creating a loan Object.
  */
-    public boolean addLoan(String loanId,double loanAmount,Date borrowedDate,Date dueDate, int loanDuration){
+    public boolean addLoan(String loanId,double loanAmount,String borrowedDate,String dueDate, int loanDuration){
 
     if(noOfLoansBorrowed<3){
     LoanImpl newLoan = new LoanImpl(loanId, loanAmount, borrowedDate, dueDate, loanDuration);
@@ -54,7 +54,7 @@ public class LoanProcessor implements Cloneable {
     * Edit a particular loan details of a employee. Since employee can have maximum three loans
     * LoanId will be used to find the correct loan from the Loans Array list.
     */
-    public void EditLoanDetails(String loanId,double loanAmount,Date borrowedDate,Date dueDate,int loanDuration){
+    public void EditLoanDetails(String loanId,double loanAmount,String borrowedDate,String dueDate,int loanDuration){
         for(int i=0;i<loans.size();i++){
             LoanImpl tempLoan=null;
             if(tempLoan.getLoanId().equals(loanId)){
@@ -71,7 +71,7 @@ public class LoanProcessor implements Cloneable {
     }
 
     /**
-     * View the 
+     * Used to View the loan details of particular employee
      *
      */
    public ArrayList<String> viewLoanDetails(){

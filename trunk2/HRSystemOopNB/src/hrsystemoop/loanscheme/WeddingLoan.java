@@ -15,7 +15,7 @@ import java.util.Date;
 public class WeddingLoan extends LoanImpl{
     private double acceptedAmount;
 
-     public WeddingLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate,int loanDuration) {
+     public WeddingLoan(String loanId, double loanAmount, String borrowedDate, String dueDate,int loanDuration) {
         super(loanId, loanAmount, borrowedDate, dueDate,loanDuration);
     }
 

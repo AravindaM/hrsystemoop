@@ -19,7 +19,7 @@ public class HousingLoan extends LoanImpl{
     double acceptedAmount;
     Level level;
 
-    public HousingLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate, int loanDuration) {
+    public HousingLoan(String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
         super(loanId, loanAmount, borrowedDate, dueDate,loanDuration);
     }
 

@@ -7,7 +7,6 @@ package hrsystemoop.loanscheme;
 
 import hrsystemoop.modle.Employee;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -15,7 +14,7 @@ import java.util.Date;
  */
 public interface LoanProcessorInt {
 
-    void EditLoanDetails(String loanId,double loanAmount,Date borrowedDate,Date dueDate);
+    void EditLoanDetails(String loanId,double loanAmount,String borrowedDate,String dueDate);
 
     ArrayList<String> getLoanDetails();
 

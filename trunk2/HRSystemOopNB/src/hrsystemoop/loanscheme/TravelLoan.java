@@ -6,7 +6,6 @@
 package hrsystemoop.loanscheme;
 
 import hrsystemoop.modle.Employee;
-import java.util.Date;
 import java.util.logging.Level;
 import javax.xml.datatype.Duration;
 
@@ -25,7 +24,7 @@ public class TravelLoan extends LoanImpl {
 
     
 
-public TravelLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate,int loanDuration) {
+public TravelLoan(String loanId, double loanAmount, String  borrowedDate, String dueDate,int loanDuration) {
         super(loanId, loanAmount, borrowedDate, dueDate,loanDuration);
 
     }

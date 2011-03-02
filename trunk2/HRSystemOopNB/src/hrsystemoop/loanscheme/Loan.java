@@ -17,15 +17,15 @@ public interface Loan {
 
     void setLoanId(String loanId);
 
-    Date getBorrowedDate();
+    String getBorrowedDate();
 
-    void setBorrowedDate(Date borrowedDate);
-
-
-    Date getDuedDate();
+    void setBorrowedDate(String borrowedDate);
 
 
-    void setDueDate(Date duedDate);
+    String getDuedDate();
+
+
+    void setDueDate(String duedDate);
 
 
     double getLoanAmount();

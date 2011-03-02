@@ -4,8 +4,6 @@
  */
 package hrsystemoop.loanscheme;
 
-import java.util.Date;
-
 /**
  *
  * @author araLDAM
@@ -13,15 +11,15 @@ import java.util.Date;
 public class LoanImpl implements LoanInt {
 
     private String loanId;
-    private Date borrowedDate;
-    private Date dueDate;
+    private String borrowedDate;
+    private String dueDate;
     private double loanAmount;
     private int noOfLoansBorrowed;
     private int noOfMonthsPaid;
     private double installementValue;
     private double loanDuration;
 
-    public LoanImpl(String loanId, double loanAmount, Date borrowedDate, Date dueDate, int loanDuration) {
+    public LoanImpl(String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
         this.loanId = loanId;
         this.loanAmount = loanAmount;
         this.borrowedDate = borrowedDate;
@@ -47,28 +45,28 @@ public class LoanImpl implements LoanInt {
     /**
      * @return the borrowedDate
      */
-    public Date getBorrowedDate() {
+    public String getBorrowedDate() {
         return borrowedDate;
     }
 
     /**
      * @param borrowedDate the borrowedDate to set
      */
-    public void setBorrowedDate(Date borrowedDate) {
+    public void setBorrowedDate(String borrowedDate) {
         this.borrowedDate = borrowedDate;
     }
 
     /**
      * @return the duedDate
      */
-    public Date getDuedDate() {
+    public String getDuedDate() {
         return dueDate;
     }
 
     /**
      * @param duedDate the duedDate to set
      */
-    public void setDueDate(Date duedDate) {
+    public void setDueDate(String duedDate) {
         this.dueDate = duedDate;
     }
 
