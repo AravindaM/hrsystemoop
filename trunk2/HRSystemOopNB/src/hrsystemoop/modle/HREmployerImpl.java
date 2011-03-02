@@ -7,6 +7,7 @@ package hrsystemoop.modle;
 
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.UserCommands;
+import java.util.Date;
 
 /**
  *
@@ -14,8 +15,8 @@ import hrsystemoop.actions.UserCommands;
  */
 public abstract class HREmployerImpl extends EmployeeImpl implements HREmployer {
 
-    public HREmployerImpl(String name, Level level, String userName, String userPassword) {
-        super(name, level, userName, userPassword);
+    public HREmployerImpl(String name, Level level, String userName, String userPassword, Date birthDate) {
+        super(name, level, userName, userPassword, birthDate);
     }
 
 

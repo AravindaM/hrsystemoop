@@ -44,4 +44,6 @@ public interface Employee extends Cloneable {
     LoanProcessor getLoanProcessor();
 
     Employee clone();
+
+    Date getBirthDate();
 }

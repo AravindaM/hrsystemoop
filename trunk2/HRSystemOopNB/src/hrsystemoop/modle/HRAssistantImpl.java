@@ -6,6 +6,7 @@
 package hrsystemoop.modle;
 
 import hrsystemoop.actions.*;
+import java.util.Date;
 
 
 /**
@@ -19,8 +20,8 @@ public class HRAssistantImpl extends HREmployerImpl implements HRAssistant {
 
     });
 
-    public HRAssistantImpl(String name, Level level, String userName, String userPassword) {
-        super(name, level, userName, userPassword);
+    public HRAssistantImpl(String name, Level level, String userName, String userPassword, Date birthDate) {
+        super(name, level, userName, userPassword, birthDate);
     }
 
     public  UserCommands getCommands() {

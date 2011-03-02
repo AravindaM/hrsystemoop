@@ -20,6 +20,7 @@ import hrsystemoop.actions.show.ShowSelfUserNameCommand;
 import hrsystemoop.actions.updates.UpdateSelfBirthdayCommand;
 import hrsystemoop.actions.updates.UpdateSelfNameCommand;
 import hrsystemoop.actions.updates.UpdateSelfUserNameCommand;
+import java.util.Date;
 
 /**
  *
@@ -51,8 +52,8 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     });
 
-    public HRManagerImpl(String name, Level level, String userName, String userPassword) {
-        super(name, level, userName, userPassword);
+    public HRManagerImpl(String name, Level level, String userName, String userPassword, Date birthDate) {
+        super(name, level, userName, userPassword,birthDate);
     }
 
     @Override

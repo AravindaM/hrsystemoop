@@ -22,6 +22,7 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 
 /**
  * @author Prasath
@@ -33,6 +34,8 @@ public class EmployeeImpl implements Employee {
 	private Level level;
 	private String userName;
 	private String passwordHash;
+
+        private Date birthDate;
 
 	private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
 		
@@ -55,7 +58,8 @@ public class EmployeeImpl implements Employee {
 	private LoanProcessor loanProcessor;
 	private MonthAttendanceImpl monthAttendance;
 
-    public EmployeeImpl(String name, Level level, String userName, String userPassword) {
+    public EmployeeImpl(String name, Level level, String userName, String userPassword, Date birthDate) {
+        this.birthDate = birthDate;
         this.name = name;
         this.level = level;
         this.userName = userName;
@@ -155,6 +159,10 @@ public class EmployeeImpl implements Employee {
         } catch (CloneNotSupportedException ex) {
             return null;
         }
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
     }
 
 }
