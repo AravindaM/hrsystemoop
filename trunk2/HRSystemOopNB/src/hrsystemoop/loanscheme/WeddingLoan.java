@@ -7,8 +7,9 @@ package hrsystemoop.loanscheme;
 
 /**
  *
- * @author prasath
+ * @author araLDAM
  */
-public interface WeddingLoan extends Loan {
-
+public class WeddingLoan extends Loan{
+String loantype = "Wedding";
 }
+

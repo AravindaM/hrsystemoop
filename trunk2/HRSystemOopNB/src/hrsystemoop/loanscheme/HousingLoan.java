@@ -5,10 +5,18 @@
 
 package hrsystemoop.loanscheme;
 
+import java.util.Date;
+
 /**
  *
- * @author prasath
+ * @author araLDAM
  */
-public interface HousingLoan {
+public class HousingLoan extends Loan{
 
+    public HousingLoan(){
+
+    String loantype = "Housing";
+    }
+
+    private Double houseEstimateValue;
 }

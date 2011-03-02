@@ -5,10 +5,22 @@
 
 package hrsystemoop.loanscheme;
 
+import java.util.Date;
+import javax.xml.datatype.Duration;
+
 /**
  *
- * @author prasath
+ * @author araLDAM
  */
-public interface TravelLoan extends Loan {
+public class TravelLoan extends Loan {
 
+    public TravelLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
+        super(loanId, loanAmount, borrowedDate, dueDate);
+    }
+
+
+
+private String travelLocation;
+private Duration travelDuration;
+String loantype = "Travel";
 }
