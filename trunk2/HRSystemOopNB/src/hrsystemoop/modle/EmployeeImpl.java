@@ -5,7 +5,7 @@
 package hrsystemoop.modle;
 
 import hrsystemoop.actions.Command;
-import hrsystemoop.actions.RequestLeaveCommand;
+import hrsystemoop.actions.RequestMedicalLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
@@ -41,7 +41,7 @@ public class EmployeeImpl implements Employee {
                 new UpdateSelfUserNameCommand(),
                 new UpdateSelfNameCommand(),
 
-                new RequestLeaveCommand(),
+                new RequestMedicalLeaveCommand(),
                 new RequestLoanCommand(),
 
                 //show commands

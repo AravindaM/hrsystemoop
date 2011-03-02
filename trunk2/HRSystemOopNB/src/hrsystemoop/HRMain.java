@@ -125,9 +125,7 @@ public class HRMain {
                     String results = context.getResults();
                     if (results != null) {
                         System.out.println(results);
-                    } else {
-                        System.out.println("null");
-                    }
+                    } 
                 }
             }
 
