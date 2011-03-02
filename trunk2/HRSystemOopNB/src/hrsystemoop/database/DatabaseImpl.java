@@ -26,7 +26,7 @@ public class DatabaseImpl extends Database {
         if (employee == null) {
             throw new EmployeeDoesNotExist(id);
         }
-        return employee;
+        return employee.clone();
     }
 
     @Override
@@ -39,8 +39,8 @@ public class DatabaseImpl extends Database {
             }
         }
         maxId++;
-        data.put(maxId,emp.clone());
         emp.setID(maxId);
+        data.put(maxId,emp.clone());
         return maxId;
     }
 
@@ -66,10 +66,10 @@ public class DatabaseImpl extends Database {
             throw new EmployeeDoesNotExist(id);
         }
         if (emp.getId() == id) {
-            data.put(emp.getId(), emp);
+            data.put(emp.getId(), emp.clone());
         } else {
             data.remove(id);
-            data.put(emp.getId(), emp);
+            data.put(emp.getId(), emp.clone());
         }
     }
 
@@ -78,7 +78,7 @@ public class DatabaseImpl extends Database {
         Collection<Employee> all = data.values();
         for (Employee employee : all) {
             if (employee.getUserName().equals(userName)) {
-                return employee;
+                return employee.clone();
             }
         }
         throw new EmployeeDoesNotExist(userName);

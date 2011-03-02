@@ -24,7 +24,8 @@ public class DatabaseTest {
     }
 
     private static Employee createMockEmployee(int i) {
-        return new EmployeeImpl("someone" + i, Level.LEVELTWO, "uname" + i);
+        //return new EmployeeImpl("someone" + i, Level.LEVELTWO, "uname" + i);
+        return new EmployeeImpl("someone" + i, Level.LEVELTWO, "uname" + i, "pass" + (i * 37));
     }
 
     @BeforeClass
@@ -109,7 +110,7 @@ public class DatabaseTest {
         instance.updateEmployee(id, emp);
         Employee resalt = instance.getEmployee(id);
         assertNotNull(resalt);
-        assertEquals(emp, resalt);
+        assertEquals(emp.getName(), resalt.getName());
 
         int diffId = 4488;
         System.out.println("	with diffrent id, id=" + diffId);
