@@ -4,6 +4,7 @@
  */
 package hrsystemoop;
 
+import hrsystemoop.actions.CommandContext;
 import hrsystemoop.actions.Invoker;
 import hrsystemoop.database.exeption.DatabaseExeption;
 import java.util.*;
@@ -116,7 +117,13 @@ public class HRMain {
                 System.out.print(attrib + ": ");
                 responseList.put(attrib, scanner.next());
             }
-            invoker.perform(selectedAction, responseList);
+            CommandContext context= invoker.perform(selectedAction, responseList);
+
+            if (context.getReturnStatus()==false){
+                System.out.print("There was an error executing that command");
+            } else {
+                System.out.println(context.getResults());
+            }
         }
         
         }

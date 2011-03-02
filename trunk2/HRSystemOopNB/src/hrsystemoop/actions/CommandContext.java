@@ -36,8 +36,12 @@ public class CommandContext {
         this.returnStatus = returnStatus;
     }
 
-    public void printResults(){
-        
+  public boolean getReturnStatus() {
+        return returnStatus;
+    }
+
+    public String  getResults(){
+        return results.toString();
     }
 
     public void setResults(String[] results) {
