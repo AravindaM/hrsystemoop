@@ -39,7 +39,7 @@ public class DatabaseImpl extends Database {
             }
         }
         maxId++;
-        data.put(maxId, emp);
+        data.put(maxId,emp.clone());
         emp.setID(maxId);
         return maxId;
     }
