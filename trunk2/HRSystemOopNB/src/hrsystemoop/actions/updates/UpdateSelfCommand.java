@@ -34,15 +34,5 @@ public abstract class UpdateSelfCommand implements Command {
 
     public abstract void update(String attribValue, Employee currentUser);
 
-    public static class UpdateNameCommand extends UpdateSelfCommand {
 
-        public UpdateNameCommand() {
-            super("name");
-        }
-
-        @Override
-        public void update(String attribValue, Employee currentUser) {
-            currentUser.setName(attribValue);
-        }
-    }
 }
