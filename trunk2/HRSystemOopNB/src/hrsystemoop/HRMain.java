@@ -34,7 +34,7 @@ public class HRMain {
 // <editor-fold defaultstate="collapsed" desc="Temp Employee , remove later">
         Database tempInst = Database.getInstance();
         try {
-            tempInst.addEmployee(new HRManagerImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw",12));
+            tempInst.addEmployee(new HRManagerImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw",35));
         } catch (DatabaseExeption ex) {
             ex.printStackTrace();
         }
@@ -102,6 +102,7 @@ public class HRMain {
                 i++;
             }
             System.out.println(i + " - Logout");
+            System.out.print("Enter your choice: ");
             int action = scanner.nextInt();
             if (action == commandNamesArr.length) {
                 break;

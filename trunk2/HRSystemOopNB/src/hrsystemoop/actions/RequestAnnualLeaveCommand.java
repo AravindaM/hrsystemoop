@@ -55,6 +55,6 @@ public class RequestAnnualLeaveCommand implements Command {
     }
 
     public String getName() {
-        return "Request Leave";
+        return "Request Annual Leave";
     }
 }

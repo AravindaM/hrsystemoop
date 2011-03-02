@@ -55,6 +55,6 @@ public class RequestMedicalLeaveCommand implements Command {
     }
 
     public String getName() {
-        return "Request Leave";
+        return "Request Medical Leave";
     }
 }

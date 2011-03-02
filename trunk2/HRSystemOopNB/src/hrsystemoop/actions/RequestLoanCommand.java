@@ -58,7 +58,7 @@ public RequestLoanCommand(){
     }
 
     public String getName() {
-        return "Add New Employee";
+        return "Request Loan";
     }
 
 }

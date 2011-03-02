@@ -20,7 +20,7 @@ public class AcceptLoanCommand implements Command{
 
 public AcceptLoanCommand(){
     database = database.getInstance();
-    attributesList = new String[] {"Username","Designation","Name"};
+    attributesList = new String[] {};
 }
 
 /**
@@ -39,12 +39,12 @@ public AcceptLoanCommand(){
     }
 
     public String getName() {
-        return "Add New Employee";
+        return "Accept Loan";
     }
 
     public void execute(CommandContext context) {
-        Employee newEmployee = new EmployeeImpl(context.getArgList().get("Name")
-                , Level.LEVELTWO, null, null);
+      //  Employee newEmployee = new EmployeeImpl(context.getArgList().get("Name")
+       //         , Level.LEVELTWO, null, null);
 
     }
 

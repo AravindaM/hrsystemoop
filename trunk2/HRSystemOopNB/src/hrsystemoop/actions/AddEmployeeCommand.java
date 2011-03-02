@@ -20,7 +20,7 @@ public class AddEmployeeCommand implements Command {
 
     public AddEmployeeCommand() {
         database = database.getInstance();
-        attributesList = new String[]{"Username","Password", "Designation(0-HRManager,1-HRAssistant,2-OtherEmployee)", "Level(0-5)", "Name"};
+        attributesList = new String[]{"Username","Password", "Designation(0-HRManager,1-HRAssistant,2-OtherEmployee)", "Level(0-5)", "Name", "Age"};
     }
 
     /**
@@ -44,15 +44,15 @@ public class AddEmployeeCommand implements Command {
         switch (empType) {
             case 0:
                 newEmployee = new HRManagerImpl(inputList.get("Name"),
-                        newLevel, inputList.get("Username"), inputList.get("Password"));
+                        newLevel, inputList.get("Username"), inputList.get("Password"), Integer.valueOf((String)inputList.get("Age")));
                 break;
             case 1:
                 newEmployee = new HRAssistantImpl(inputList.get("Name"),
-                        newLevel, inputList.get("Username"), inputList.get("Password"));
+                        newLevel, inputList.get("Username"), inputList.get("Password"), Integer.valueOf((String)inputList.get("Age")));
                 break;
             case 2:
                 newEmployee = new EmployeeImpl(inputList.get("Name"),
-                        newLevel, inputList.get("Username"), inputList.get("Password"));
+                        newLevel, inputList.get("Username"), inputList.get("Password"), Integer.valueOf((String)inputList.get("Age")));
                 break;
             default:
                 context.setReturnStatus(false);

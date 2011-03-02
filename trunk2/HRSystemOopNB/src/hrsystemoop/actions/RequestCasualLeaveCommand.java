@@ -69,6 +69,6 @@ public class RequestCasualLeaveCommand implements Command {
     }
 
     public String getName() {
-        return "Request Leave";
+        return "Request Casual Leave";
     }
 }
