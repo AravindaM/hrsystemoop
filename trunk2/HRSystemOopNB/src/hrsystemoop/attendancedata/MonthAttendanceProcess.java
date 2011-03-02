@@ -6,7 +6,7 @@ package hrsystemoop.attendancedata;
 
 /**
  *
- * @author TOSHIBA
+ * @author Isha Premadasa
  */
 interface MonthAttendanceProcess {
 
@@ -23,4 +23,13 @@ interface MonthAttendanceProcess {
     public int getAdditionalLeaves();
 
     public void resetAdditonalLeaves(int additionalLeaves);
+
+    public int getAvailableAnnaulLeaves();
+
+    public int getAvailableCasualLeaves();
+
+    public int getAvailableMedicalLeaves();
+
+
+
 }

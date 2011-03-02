@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author TOSHIBA
+ * @author Isha Premadasa
  */
 public abstract class Leave {
 
@@ -74,6 +74,5 @@ public abstract class Leave {
     }
 
     
-
 
 }

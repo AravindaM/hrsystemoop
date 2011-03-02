@@ -7,19 +7,19 @@ package hrsystemoop.attendancedata;
 
 /**
  *
- * @author TOSHIBA
+ * @author Isha Premadasa
  */
 public class MedicalLeave extends Leave{
 
 
-    static  final int maxleave = 14;
+    static  final int maxleaves = 14;
     private int duration;
 
     public MedicalLeave() {
     }
 
-    public void setDuration(){
-
+    public void setDuration(int duration){
+        this.duration = duration;
     }
 
     public int getDuration(){

@@ -7,7 +7,7 @@ package hrsystemoop.attendancedata;
 
 /**
  *
- * @author TOSHIBA
+ * @author Isha Premadasa 
  */
 public interface ShortLeave {
 

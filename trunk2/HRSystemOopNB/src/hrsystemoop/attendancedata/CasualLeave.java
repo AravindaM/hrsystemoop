@@ -7,11 +7,11 @@ package hrsystemoop.attendancedata;
 
 /**
  *
- * @author TOSHIBA
+ * @author Isha Premadasa
  */
 public class CasualLeave  extends Leave {
 
-    static  final int maxdays = 14;
+    static  final int maxleaves = 14;
     private String[] types = {"fullday", "halfday"};
     private String leaveType;
 
@@ -29,6 +29,13 @@ public class CasualLeave  extends Leave {
 
         return leaveType;
     }
+
+    public String[] getTypes(){
+
+        return types;
+    }
+
+
 
 
 

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author TOSHIBA
+ * @author Isha Premadasa , idpremadasa@gmail.com
  */
 public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
 
@@ -19,6 +19,11 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
     private int medicalLeaves;
     private int extraleaves;
     private int totalOTHours;
+
+    private int availablecasualleave;
+    private int availableannualleave;
+    private int availablemedicalleave;
+
 
     private ArrayList<AnnualLeave> employeeAnnualLeaves =new ArrayList<AnnualLeave>();
     private ArrayList<CasualLeave> employeeCasualLeaves =new ArrayList<CasualLeave>();
@@ -136,12 +141,12 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
         return medicalLeaves;
     }
 
-    public int getAdditionalLeaves() {
-        int max = MedicalLeave.maxleave;
-        extraleaves = medi_length - max;
-
-        return extraleaves;
-    }
+//    public int getAdditionalLeaves() {
+//        int max = MedicalLeave.maxleave;
+//        extraleaves = medi_length - max;
+//
+//        return extraleaves;
+//    }
 
     public int getTotalShortLeaveTime() {
 
@@ -150,7 +155,7 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
         return halfday_hours;
     }
 
-    public void resetAdditonalLeaves(int additionalLeaves) {
+    public void resetAdditonalLeaves() {
 
         annualLeaves = 0;
         casualLeaves = 0;
@@ -162,8 +167,36 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
     public int getTotalShortLeaves() {
         return halfdays;
     }
-    
+
+    public int getAvailableAnnaulLeaves() {
+        availableannualleave = AnnualLeave.maxleaves-annualLeaves;
+              if(availableannualleave >= 0){
+                return availableannualleave;
+        }
+        else
+            return 0;
+    }
+
+    public int getAvailableCasualLeaves() {
+        availablecasualleave = CasualLeave.maxleaves-casualLeaves;
+              if(availablecasualleave >= 0){
+                return availablecasualleave;
+        }
+        else
+            return 0;     }
+
+    public int getAvailableMedicalLeaves() {
+
+        availablemedicalleave = MedicalLeave.maxleaves-medicalLeaves;
+              if(availablemedicalleave >= 0){
+                return availablemedicalleave;
+        }
+        else
+            return 0;         }
+
 
     
+
+
 
 }
