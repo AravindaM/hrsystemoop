@@ -8,9 +8,9 @@ package hrsystemoop.modle;
 import hrsystemoop.actions.AcceptLoanCommand;
 import hrsystemoop.actions.AddEmployeeCommand;
 import hrsystemoop.actions.Command;
+import hrsystemoop.actions.RemoveEmployeeCommand;
 import hrsystemoop.actions.RequestLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
-import hrsystemoop.actions.UpdateEmployeeCommand;
 
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
@@ -30,7 +30,6 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     static final UserCommands commands = new UserCommands(new Command[]{
         // updates commands
-        new UpdateEmployeeCommand(),
         new UpdateSelfBirthdayCommand(),
         new UpdateSelfUserNameCommand(),
         new UpdateSelfNameCommand(),
@@ -47,7 +46,9 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
         // unique commands
         new AddEmployeeCommand(),
-        new AcceptLoanCommand()
+        new AcceptLoanCommand(),
+        new RemoveEmployeeCommand(),
+        
 
     });
 

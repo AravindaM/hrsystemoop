@@ -7,7 +7,6 @@ package hrsystemoop.modle;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.RequestLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
-import hrsystemoop.actions.UpdateEmployeeCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
 import hrsystemoop.actions.show.ShowSelfIDCommand;
@@ -38,7 +37,6 @@ public class EmployeeImpl implements Employee {
 	private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
 		
                 // updates commands
-                new UpdateEmployeeCommand(),
                 new UpdateSelfBirthdayCommand(),
                 new UpdateSelfUserNameCommand(),
                 new UpdateSelfNameCommand(),
