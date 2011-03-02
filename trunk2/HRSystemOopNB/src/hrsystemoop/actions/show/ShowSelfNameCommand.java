@@ -7,6 +7,7 @@ import hrsystemoop.modle.Employee;
 /**
  *
  * @author R.C.M.Perera
+ * @author Amila Manoj
  */
 public class ShowSelfNameCommand extends ShowSelfCommand {
 
@@ -16,6 +17,6 @@ public class ShowSelfNameCommand extends ShowSelfCommand {
 
     @Override
     public void insertResults(CommandContext context, Employee currentuser) {
-        context.setResults("your name number is " + currentuser.getName());
+        context.setResults("your name is " + currentuser.getName());
     }
 }

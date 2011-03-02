@@ -56,7 +56,7 @@ public RemoveEmployeeCommand(){
 
 
     public String getName() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return "Remove Employee";
     }
 
 }

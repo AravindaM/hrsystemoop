@@ -121,12 +121,12 @@ public class HRMain {
                 if (context.getReturnStatus() == false) {
                     System.out.print("[ERROR]: There was an error executing that command");
                 } else {
-                    if (context.getReturnStatus() == true) {
                         System.out.println("[INFO]: Acton sucessully completed");
-                    }
                     String results = context.getResults();
                     if (results != null) {
-                        System.out.println();
+                        System.out.println(results);
+                    } else {
+                        System.out.println("null");
                     }
                 }
             }
