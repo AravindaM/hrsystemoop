@@ -47,7 +47,7 @@ public class MedicalLeave extends Leave{
 
 
     /**
-     * This method calculates the duration of a medical leave period
+     * @Param end_date calculates the duration of a medical leave period
      */
     private void calc_duration(Date end_date) {
 
