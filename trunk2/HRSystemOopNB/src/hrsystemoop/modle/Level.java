@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package hrsystemoop.modle;
 
 /**
@@ -11,12 +10,12 @@ package hrsystemoop.modle;
  */
 public enum Level {
     // this enum class will decide us to calculate the base salary depending on the level
-    LEVELFIVE(100000,1000,5000,28),
-    LEVELFOUR(80000,800,4000,28),
-    LEVELTHREE(50000,500,2500,21),
-    LEVELTWO(30000,300,1500,14),
-    LEVELONE(20000,200,1000,14);
 
+    LEVELFIVE(100000, 1000, 5000, 28),
+    LEVELFOUR(80000, 800, 4000, 28),
+    LEVELTHREE(50000, 500, 2500, 21),
+    LEVELTWO(30000, 300, 1500, 14),
+    LEVELONE(20000, 200, 1000, 14);
     private final int baseSalary;
     private final int overtimeRate;
     private final int leavePenalty;
@@ -36,9 +35,9 @@ public enum Level {
     private int getOvertimeRate() {
         return overtimeRate;
     }
-    
+
     public int getSalary(int overtime) {
-        return getBaseSalary() + overtime*getOvertimeRate();
+        return getBaseSalary() + overtime * getOvertimeRate();
     }
 
     public int getLeavePenalty() {
@@ -49,5 +48,11 @@ public enum Level {
         return maxNoOfLeaves;
     }
 
+    public Level parseInt(int l) {
+        if (l > 5 || l < 1) {
+            throw new IllegalArgumentException();
+        }
+        return values()[l];
+    }
     // Employer e = new Employer(Level.LEVELONE);
 }
