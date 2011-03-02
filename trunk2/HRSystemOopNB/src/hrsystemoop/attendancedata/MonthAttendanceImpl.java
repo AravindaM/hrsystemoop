@@ -50,7 +50,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param annualleave, a single annual leave day of an employee
      */
-    public  void addToAnnualLeaves(AnnualLeave annualleave){
+    public  void addToAnnualLeaves(AnnualLeave annualleave) throws NullPointerException{
 
         employeeAnnualLeaves.add(annualleave);
     }
@@ -59,7 +59,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param medical leave, a single medical leave day of an employee
      */
-    public  void addToMedicalLeaves(MedicalLeave medicalleave){
+    public  void addToMedicalLeaves(MedicalLeave medicalleave)throws NullPointerException{
 
         employeeMedicalLeaves.add(medicalleave);
     }
@@ -68,7 +68,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param medical leave, a single medical leave day of an employee
      */
-    public  void addToCasualLeaves(CasualLeave casualleave){
+    public  void addToCasualLeaves(CasualLeave casualleave) throws NullPointerException{
 
         employeeCasualLeaves.add(casualleave);
     }
@@ -77,7 +77,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param overtime, a single overtime day of an employee
      */
-    public  void addToovertime(OverTime overtime){
+    public  void addToovertime(OverTime overtime)throws NullPointerException{
 
         employeeOvertime.add(overtime);
     }
