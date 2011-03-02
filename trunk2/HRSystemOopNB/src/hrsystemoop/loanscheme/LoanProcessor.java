@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package hrsystemoop.loanscheme;
 
 import java.util.ArrayList;
@@ -13,8 +12,9 @@ import java.util.Date;
  * @author araLDAM
  */
 public class LoanProcessor {
+
     private String userId;
-    ArrayList<String>  loanDetails;
+    ArrayList<String> loanDetails;
     private LoanImpl aLoan;
     int noOfLoansBorrowed;
     int noOfMonthsPaid;
@@ -23,76 +23,71 @@ public class LoanProcessor {
     LoanProcessor loanProc;
     private double totalLoanAmount;
 
-
     public LoanProcessor() {
-        
-        maxNoOfLoans=3;
+
+        maxNoOfLoans = 3;
     }
 
-    public void EditLoanDetails(String loanId,double loanAmount,Date borrowedDate,Date dueDate){
+    public void EditLoanDetails(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
 
         aLoan.setLoanId(loanId);
         aLoan.setLoanAmount(loanAmount);
         aLoan.setBorrowedDate(borrowedDate);
         aLoan.setDueDate(dueDate);
     }
-    
 
-    public ArrayList<String> getLoanDetails(){
-    loanDetails.add(getaLoan().getLoanId());
-    loanDetails.add(getaLoan().getLoanAmount()+"");
-    loanDetails.add(getaLoan().getBorrowedDate()+"");
-    loanDetails.add(getaLoan().getDuedDate()+"");
-    return  loanDetails;
+    public ArrayList<String> getLoanDetails() {
+        loanDetails.add(getaLoan().getLoanId());
+        loanDetails.add(getaLoan().getLoanAmount() + "");
+        loanDetails.add(getaLoan().getBorrowedDate() + "");
+        loanDetails.add(getaLoan().getDuedDate() + "");
+        return loanDetails;
     }
 
-
-    public void removeLoanDetails(){
+    public void removeLoanDetails() {
         aLoan.setLoanId(null);
         aLoan.setLoanAmount(0.00);
         aLoan.setBorrowedDate(null);
         aLoan.setDueDate(null);
 
     }
-    public int getNoofLoansBorrowed(){
-    return noOfLoansBorrowed;
+
+    public int getNoofLoansBorrowed() {
+        return noOfLoansBorrowed;
     }
 
+    public double getMonthlySum(LoanImpl loanA, LoanImpl loanB, LoanImpl loanC) {
+        double monthlyLoanSum = 0;
 
-    public double getMonthlySum(LoanImpl loanA,LoanImpl loanB,LoanImpl loanC){
-    double monthlyLoanSum=0;
-   
-    monthlyLoanSum =loanProc.getMonthlySumPerLoan(loanA)+
-                 loanProc.getMonthlySumPerLoan(loanB)+
-                 loanProc.getMonthlySumPerLoan(loanC);
+        monthlyLoanSum = loanProc.getMonthlySumPerLoan(loanA)
+                + loanProc.getMonthlySumPerLoan(loanB)
+                + loanProc.getMonthlySumPerLoan(loanC);
 
-    return monthlyLoanSum;
+        return monthlyLoanSum;
     }
 
-    public double getMonthlySumPerLoan(LoanImpl loan){
-    double monthlySumPerLoan=0;
-    if(loan!=null){
-    monthlySumPerLoan = loanProc.getTotalLoanAmountPerLoan(loan)/(loan.getLoanDuration()-loan.getNoOfMonthsPaid());
+    public double getMonthlySumPerLoan(LoanImpl loan) {
+        double monthlySumPerLoan = 0;
+        if (loan != null) {
+            monthlySumPerLoan = loanProc.getTotalLoanAmountPerLoan(loan) / (loan.getLoanDuration() - loan.getNoOfMonthsPaid());
         }
-    return monthlySumPerLoan;
+        return monthlySumPerLoan;
     }
 
+    public double getTotalLoanAmount(LoanImpl loanA, LoanImpl loanB, LoanImpl loanC) {
+        double loanAmount = 0;
 
-    public double getTotalLoanAmount(LoanImpl loanA,LoanImpl loanB,LoanImpl loanC){
-      double loanAmount = 0;
-
-    totalLoanAmount =loanProc.getTotalLoanAmountPerLoan(loanA)+
-                     loanProc.getTotalLoanAmountPerLoan(loanB)+
-                     loanProc.getTotalLoanAmountPerLoan(loanC);
-    return totalLoanAmount;
+        totalLoanAmount = loanProc.getTotalLoanAmountPerLoan(loanA)
+                + loanProc.getTotalLoanAmountPerLoan(loanB)
+                + loanProc.getTotalLoanAmountPerLoan(loanC);
+        return totalLoanAmount;
     }
 
+    public double getTotalLoanAmountPerLoan(LoanImpl loan) {
+        double loanAmount;
 
-    public double getTotalLoanAmountPerLoan(LoanImpl loan){
-    double loanAmount;
-
-    loanAmount=- loan.getValueOfAInstallement()*loan.getNoOfMonthsPaid();
-    return loanAmount;
+        loanAmount = -loan.getValueOfAInstallement() * loan.getNoOfMonthsPaid();
+        return loanAmount;
     }
 
     /**
@@ -108,5 +103,9 @@ public class LoanProcessor {
     public void setaLoan(LoanImpl aLoan) {
         this.aLoan = aLoan;
     }
-}
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}

@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package hrsystemoop.attendancedata;
 
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Isha Premadasa , idpremadasa@gmail.com
  */
-public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs{
+public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs {
 
 // varaible declaring
     private int totalLeaves;
@@ -19,38 +18,31 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     private int casualLeaves;
     private int medicalLeaves;
     private int totalOTHours;
-
     private int availablecasualleave;
     private int availableannualleave;
     private int availablemedicalleave;
-
 // declaring of details of leaves and OT times for each emplyee for a month
-    private ArrayList<AnnualLeave> employeeAnnualLeaves =new ArrayList<AnnualLeave>();
-    private ArrayList<CasualLeave> employeeCasualLeaves =new ArrayList<CasualLeave>();
-    private ArrayList<MedicalLeave> employeeMedicalLeaves =new ArrayList<MedicalLeave>();
-    private ArrayList<OverTime>  employeeOvertime = new ArrayList<OverTime>();
-
+    private ArrayList<AnnualLeave> employeeAnnualLeaves = new ArrayList<AnnualLeave>();
+    private ArrayList<CasualLeave> employeeCasualLeaves = new ArrayList<CasualLeave>();
+    private ArrayList<MedicalLeave> employeeMedicalLeaves = new ArrayList<MedicalLeave>();
+    private ArrayList<OverTime> employeeOvertime = new ArrayList<OverTime>();
     private int annl_count;
-    private int medi_count ;
-    private int casl_count ;
+    private int medi_count;
+    private int casl_count;
     private int OT_count;
-
     private int fulldays;       // total of casual leaves of full day
     private int halfdays;       //total amount of 4 hour half day leaves
     private int halfday_hours;   // totalhours of halfday leaves
 
-    
-
-    public MonthAttendanceImpl(){
+    public MonthAttendanceImpl() {
     }
 
 // adding data into record arrays
-
     /**
      *
      * @param annualleave, a single annual leave day of an employee
      */
-    public  void addToAnnualLeaves(AnnualLeave annualleave) throws NullPointerException{
+    public void addToAnnualLeaves(AnnualLeave annualleave) throws NullPointerException {
 
         employeeAnnualLeaves.add(annualleave);
         annl_count++;
@@ -60,7 +52,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param medical leave, a single medical leave day of an employee
      */
-    public  void addToMedicalLeaves(MedicalLeave medicalleave)throws NullPointerException{
+    public void addToMedicalLeaves(MedicalLeave medicalleave) throws NullPointerException {
 
         employeeMedicalLeaves.add(medicalleave);
         medi_count++;
@@ -70,7 +62,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param medical leave, a single medical leave day of an employee
      */
-    public  void addToCasualLeaves(CasualLeave casualleave) throws NullPointerException{
+    public void addToCasualLeaves(CasualLeave casualleave) throws NullPointerException {
 
         employeeCasualLeaves.add(casualleave);
         casl_count++;
@@ -80,20 +72,20 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param overtime, a single overtime day of an employee
      */
-    public  void addToovertime(OverTime overtime)throws NullPointerException{
+    public void addToovertime(OverTime overtime) throws NullPointerException {
 
         employeeOvertime.add(overtime);
         OT_count++;
     }
 
 // Getters methods for each types of leaves
-     /**
+    /**
      *
      * @return totalLeaves number of leaves of an employee for a time period of single month
      */
-     public int getTotalLeaves() {
+    public int getTotalLeaves() {
 
-        totalLeaves = getTotalAnaualLeaves() + getTotalCasualLeaves()+ getTotalMedicalLeaves();
+        totalLeaves = getTotalAnaualLeaves() + getTotalCasualLeaves() + getTotalMedicalLeaves();
         return totalLeaves;
     }
 
@@ -103,7 +95,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      */
     public int getTotalAnaualLeaves() {
 
-        annualLeaves= annl_count;
+        annualLeaves = annl_count;
         return annualLeaves;
 
     }
@@ -114,17 +106,16 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      */
     public int getTotalCasualLeaves() {
 
-        for (int y=0; y< casl_count; y++){
-            if(employeeCasualLeaves.get(y).getLeaveType().equalsIgnoreCase("fullday")){
+        for (int y = 0; y < casl_count; y++) {
+            if (employeeCasualLeaves.get(y).getLeaveType().equalsIgnoreCase("fullday")) {
                 fulldays++;
-            }
-            else if (employeeCasualLeaves.get(y).getLeaveType().equalsIgnoreCase("halfday")){
+            } else if (employeeCasualLeaves.get(y).getLeaveType().equalsIgnoreCase("halfday")) {
                 halfdays++;
             }
         }
 
 
-        casualLeaves= fulldays + (halfdays/2);
+        casualLeaves = fulldays + (halfdays / 2);
         return casualLeaves;
 
     }
@@ -134,7 +125,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      * @return medicalLeaves number of medicalLeaves of an employee for a time period of single month
      */
     public int getTotalMedicalLeaves() {
-        medicalLeaves= medi_count;
+        medicalLeaves = medi_count;
         return medicalLeaves;
     }
 
@@ -155,7 +146,6 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
 
         return employeeMedicalLeaves;
     }
-
 
     // @ return overtime leave details
     public ArrayList<OverTime> getOTDetails() {
@@ -184,18 +174,22 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
         return halfdays;
     }
 
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
 // resetting total leaves
     public void resetAdditonalLeaves(int additionalleaves) {
 
-        totalLeaves =  additionalleaves;
+        totalLeaves = additionalleaves;
 
     }
 
 // @ return MonthAtendance instance
+    public MonthAttendanceImpl getReport() {
 
-    public MonthAttendanceImpl getReport (){
-
-        return  this;
+        return this;
     }
 
     /**
@@ -204,7 +198,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      */
     public int getTotalOTHours() {
 
-        for (int x= 0; x < OT_count; x++){
+        for (int x = 0; x < OT_count; x++) {
 
             int time = employeeOvertime.get(x).getDuration();
             totalOTHours = totalOTHours + time;
@@ -214,18 +208,17 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     }
 
 // Getters for available amount of leaves
-
     /**
      *
      * @return availableannualleave, if false '0'
      */
     public int getAvailableAnnaulLeaves() {
-        availableannualleave = AnnualLeave.maxleaves-annualLeaves;
-              if(availableannualleave >= 0){
-                return availableannualleave;
-        }
-        else
+        availableannualleave = AnnualLeave.maxleaves - annualLeaves;
+        if (availableannualleave >= 0) {
+            return availableannualleave;
+        } else {
             return 0;
+        }
     }
 
     /**
@@ -233,12 +226,13 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      * @return availablecasualleave, if false '0'
      */
     public int getAvailableCasualLeaves() {
-        availablecasualleave = CasualLeave.maxleaves-casualLeaves;
-              if(availablecasualleave >= 0){
-                return availablecasualleave;
+        availablecasualleave = CasualLeave.maxleaves - casualLeaves;
+        if (availablecasualleave >= 0) {
+            return availablecasualleave;
+        } else {
+            return 0;
         }
-        else
-            return 0;     }
+    }
 
     /**
      *
@@ -246,22 +240,15 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      */
     public int getAvailableMedicalLeaves() {
 
-        availablemedicalleave = MedicalLeave.maxleaves-medicalLeaves;
-              if(availablemedicalleave >= 0){
-                return availablemedicalleave;
+        availablemedicalleave = MedicalLeave.maxleaves - medicalLeaves;
+        if (availablemedicalleave >= 0) {
+            return availablemedicalleave;
+        } else {
+            return 0;
         }
-        else
-            return 0;         }
+    }
 
     public ArrayList getLeavesDetails() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-
-    
-
-
-    
-
-
-
 }

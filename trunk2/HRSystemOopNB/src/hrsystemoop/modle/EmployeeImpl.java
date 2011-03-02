@@ -157,7 +157,10 @@ public class EmployeeImpl implements Employee {
     @Override
     public Employee clone() {
         try {
-            return (Employee) super.clone();
+            EmployeeImpl clone = (EmployeeImpl) super.clone();
+            clone.loanProcessor = (LoanProcessor) loanProcessor.clone();
+            clone.monthAttendance = (MonthAttendanceImpl) monthAttendance.clone();
+            return clone ;
         } catch (CloneNotSupportedException ex) {
             return null;
         }
@@ -166,5 +169,6 @@ public class EmployeeImpl implements Employee {
     public int getAge() {
         return age;
     }
+
 
 }
