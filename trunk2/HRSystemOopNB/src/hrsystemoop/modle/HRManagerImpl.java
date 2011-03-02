@@ -18,7 +18,6 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     static final UserCommands commands = new UserCommands(new Command[]{
         new ShowSelfIDCommand(),
-                new AddEmployeeCommand()
         //acceptleave command, add remove update employee employeee
 
     });
@@ -32,15 +31,6 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
         return commands;
     }
 
-  
-
-    public String getTeam() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void setTeam() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
 
 

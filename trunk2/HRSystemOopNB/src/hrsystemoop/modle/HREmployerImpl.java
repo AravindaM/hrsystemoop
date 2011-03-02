@@ -12,14 +12,11 @@ import hrsystemoop.actions.UserCommands;
  *
  * @author prasath
  */
-public abstract class HREmployerImpl extends EmployeeImpl {
+public abstract class HREmployerImpl extends EmployeeImpl implements HREmployer {
 
     public HREmployerImpl(String name, Level level, String userName, String userPassword) {
         super(name, level, userName, userPassword);
     }
-
-
-
 
 
 }

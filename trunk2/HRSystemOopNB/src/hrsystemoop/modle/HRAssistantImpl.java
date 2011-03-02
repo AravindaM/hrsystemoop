@@ -12,11 +12,16 @@ import hrsystemoop.actions.*;
  *
  * @author prasath
  */
-public class HRAssistantImpl {
+public class HRAssistantImpl extends HREmployerImpl implements HRAssistant {
+
     static final UserCommands commands = new UserCommands(new Command[]{
-        new AddEmployeeCommand()
+        // commands
 
     });
+
+    public HRAssistantImpl(String name, Level level, String userName, String userPassword) {
+        super(name, level, userName, userPassword);
+    }
 
     public  UserCommands getCommands() {
         return commands;

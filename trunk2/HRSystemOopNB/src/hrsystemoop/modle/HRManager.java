@@ -11,7 +11,4 @@ package hrsystemoop.modle;
  */
 public interface HRManager extends HREmployer {
 
-    public String getTeam();
-    public void setTeam();
-
 }
