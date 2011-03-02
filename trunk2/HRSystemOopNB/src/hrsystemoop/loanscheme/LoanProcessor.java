@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author araLDAM
  */
-public class LoanProcessor {
+public class LoanProcessor implements Cloneable {
 
     private String userId;
     ArrayList<String> loanDetails;

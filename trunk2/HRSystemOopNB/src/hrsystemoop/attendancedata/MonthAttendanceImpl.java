@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Isha Premadasa , idpremadasa@gmail.com
  */
-public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs {
+public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs, Cloneable {
 
 // varaible declaring
     private int totalLeaves;
