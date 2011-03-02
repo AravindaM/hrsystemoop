@@ -12,7 +12,7 @@ import hrsystemoop.loanscheme.LoanProcessor;
  *
  * @author R.C.M. Perera
  */
-public interface Employee {
+public interface Employee extends Cloneable {
 
     int getId();
 
@@ -41,4 +41,6 @@ public interface Employee {
     MonthAttendance getMonthAttendance();
 
     LoanProcessor getLoanProcessor();
+
+    Employee clone();
 }
