@@ -52,7 +52,6 @@ public abstract class Database {
 
     /**
      * adds a new Employee to the database.
-     * but does not save(commit) it to actual database
      * <br/> new Employee's id will set to the Employee through <code>Employee.setID()</code>
      * @param emp Employee to be added
      * @return newly assigned id of the Employee
