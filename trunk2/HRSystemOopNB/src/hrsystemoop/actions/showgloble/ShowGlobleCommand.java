@@ -4,14 +4,11 @@
  */
 package hrsystemoop.actions.showgloble;
 
-import hrsystemoop.actions.show.*;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.CommandContext;
 import hrsystemoop.database.Database;
 import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.modle.Employee;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
