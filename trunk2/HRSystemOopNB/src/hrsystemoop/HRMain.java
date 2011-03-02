@@ -10,9 +10,6 @@ import hrsystemoop.database.exeption.DatabaseExeption;
 import java.util.*;
 
 import hrsystemoop.database.*;
-import hrsystemoop.modle.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -25,7 +22,6 @@ public class HRMain {
 
     public HRMain() {
         this.scanner = new Scanner(System.in);
-
     }
 
     /**
