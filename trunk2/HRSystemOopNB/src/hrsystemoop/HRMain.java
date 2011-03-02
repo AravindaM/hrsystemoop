@@ -20,7 +20,7 @@ public class HRMain {
 
     private Scanner scanner;
     private Invoker invoker = new Invoker();
-
+    private int command;
     public HRMain() {
         this.scanner = new Scanner(System.in);
     }
@@ -34,7 +34,7 @@ public class HRMain {
 // <editor-fold defaultstate="collapsed" desc="Temp Employee , remove later">
         Database tempInst = Database.getInstance();
         try {
-            tempInst.addEmployee(new HRManagerImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw",35));
+            tempInst.addEmployee(new HRManagerImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw", 35));
         } catch (DatabaseExeption ex) {
             ex.printStackTrace();
         }
@@ -50,10 +50,18 @@ public class HRMain {
             System.out.println();
             System.out.println("Welcome to TechNinja Human Resourse Management System");
             System.out.println("=====================================================");
+            System.out.println("Please select a command below");
             System.out.println("1 - Login");
             System.out.println("2 -Exit");
             System.out.print("Enter your choice: ");
-            int command = scanner.nextInt();
+
+            try {
+                command = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.print("[ERROR]: Invalid Command. Try again");
+                scanner.next();
+                continue;
+            }
             switch (command) {
                 case 1:
                     showLogin();
@@ -62,7 +70,7 @@ public class HRMain {
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid Command. Try again");
+                    System.out.print("[ERROR]: Invalid Command. Try again");
                     break;
             }
         }
@@ -80,14 +88,18 @@ public class HRMain {
             if (invoker.validatePassword(password)) {
                 showLoggedUI();
             } else {
-                System.out.println("The password you provided is incorrect");
+                System.out.println("[ERROR]: The password you provided is incorrect");
             }
         } else {
-            System.out.println("There is no such user named " + username);
+            System.out.println("[ERROR]: There is no such user named " + username);
         }
 
     }
 
+    /**
+     * Displays the screen of possible actions after logging in
+     * will revert to logic screen after logging out
+     */
     public void showLoggedUI() {
         System.out.println("Welcome ");
         Set<String> commandNames = invoker.getAvailabeCommands();
@@ -123,11 +135,11 @@ public class HRMain {
                 if (context.getReturnStatus() == false) {
                     System.out.print("[ERROR]: There was an error executing that command");
                 } else {
-                        System.out.println("[INFO]: Acton sucessully completed");
+                    System.out.println("[INFO]: Acton sucessully completed");
                     String results = context.getResults();
                     if (results != null) {
                         System.out.println(results);
-                    } 
+                    }
                 }
             }
 

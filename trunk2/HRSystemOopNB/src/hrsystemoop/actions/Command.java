@@ -1,12 +1,11 @@
 
 package hrsystemoop.actions;
-import hrsystemoop.modle.Employee;
-import java.util.*;
 /**
  *
  * @author Amila Manoj
+ * Command interface that is used to execute a large number of commands
  */
-/* The Command interface */
+
 public interface Command {
     
      /**
@@ -25,7 +24,7 @@ public interface Command {
     public String[] getAtrributesList();
 
     /**
-     * Returns the name of the command to identifiy seperate commands
+     * Returns the name of the command to display on screen
      * and UI display
      * @return Name of the command
      */
