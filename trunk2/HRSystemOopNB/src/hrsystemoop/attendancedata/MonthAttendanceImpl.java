@@ -136,15 +136,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     }
 
 
-//    public int getAdditionalLeaves() {
-//        int max = MedicalLeave.maxleave;
-//        extraleaves = medi_length - max;
-//
-//        return extraleaves;
-//    }
-
-
- // calculating sort leave periods
+// calculating sort leave periods
 
     /**
      *
