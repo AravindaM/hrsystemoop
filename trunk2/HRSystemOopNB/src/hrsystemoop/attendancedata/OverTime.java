@@ -6,7 +6,6 @@
 package hrsystemoop.attendancedata;
 
 import java.util.Date;
-import javax.xml.crypto.Data;
 
 /**
  *
@@ -15,13 +14,16 @@ import javax.xml.crypto.Data;
 public class OverTime {
 
     private Date overtimedate;
-    private int duration;
+    private int OT_duration;
 
 
-    public OverTime(){
-
+    public OverTime(Date overtimedate, int duration){
+        this.overtimedate = overtimedate;
+        this.OT_duration= duration;
     }
 
+
+// Setters and Getters for date and duration
     public void  setDate(int year, int month, int date){
 
         overtimedate = new Date(year, month, date);
@@ -33,11 +35,11 @@ public class OverTime {
 
     public void setDuration (int hours){
 
-        duration = hours;
+        OT_duration = hours;
     }
 
     public int getDuration (){
 
-        return duration;
+        return OT_duration;
     }
 }

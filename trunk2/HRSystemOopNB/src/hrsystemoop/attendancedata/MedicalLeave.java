@@ -21,9 +21,11 @@ public class MedicalLeave extends Leave{
     public MedicalLeave(Date date, String reason, Date end_date) {
         super(date, reason);
         this.end_date =end_date;
-        calc_duration();
+        calc_duration(end_date);
 
     }
+
+// Setters and Getters for end_date and duration
 
     public void setDuration(int duration){
         this.duration = duration;
@@ -43,7 +45,11 @@ public class MedicalLeave extends Leave{
         return end_date;
     }
 
-    private void calc_duration() {
+
+    /**
+     * This method calculates the duration of a medical leave period
+     */
+    private void calc_duration(Date end_date) {
 
         duration = end_date.getDate()- super.getLeaveDate().getDate();
     }

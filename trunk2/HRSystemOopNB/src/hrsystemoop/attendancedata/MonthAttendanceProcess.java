@@ -10,6 +10,10 @@ package hrsystemoop.attendancedata;
  */
 interface MonthAttendanceProcess {
 
+ /**
+  * 
+  * abstract methods to calculate the monthly report's details
+  */
     public int getTotalLeaves();
 
     public int getTotalOTHours();

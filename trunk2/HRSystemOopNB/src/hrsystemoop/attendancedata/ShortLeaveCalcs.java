@@ -9,7 +9,7 @@ package hrsystemoop.attendancedata;
  *
  * @author Isha Premadasa 
  */
-public interface ShortLeave {
+public interface ShortLeaveCalcs {
 
     static final int time_hours=  4;
 

@@ -15,14 +15,7 @@ public abstract class Leave {
 
     private Date leavedate;
     private String reason;
-    private int starttime;
-    private int endtime;
-
-    //    private int totalLeaves;
-
-
-
-    
+ 
     
     public Leave( Date leavedate, String reason){
         this.leavedate = leavedate;
@@ -33,7 +26,6 @@ public abstract class Leave {
     public void setLeaveDate(int year, int month, int dateyear ){
         
         leavedate= new Date(year, month, dateyear);
-     
     }
 
     public Date getLeaveDate(){
@@ -51,27 +43,7 @@ public abstract class Leave {
         return reason;
     }
 
-    public void setStartTime(int start_time ){
-
-        starttime = start_time;
-
-    }
-
-    public int getStartTime(){
-
-         return starttime;
-    }
-
-    public void setEndTime(int end_time ){
-
-        endtime = end_time;
-
-    }
-
-    public  int getEndTime(){
-
-         return endtime;
-    }
+    
 
     
 

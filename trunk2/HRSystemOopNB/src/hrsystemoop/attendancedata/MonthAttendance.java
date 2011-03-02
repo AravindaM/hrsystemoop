@@ -11,14 +11,13 @@ import java.util.ArrayList;
  *
  * @author Isha Premadasa , idpremadasa@gmail.com
  */
-public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
+public class MonthAttendance implements MonthAttendanceProcess, ShortLeaveCalcs{
 
 // varaible declaring
     private int totalLeaves;
     private int annualLeaves;
     private int casualLeaves;
     private int medicalLeaves;
-    private int extraleaves;
     private int totalOTHours;
 
     private int availablecasualleave;
@@ -85,13 +84,20 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
     }
 
 // Getters methods for each types of leaves
-    
+     /**
+     *
+     * @return totalLeaves number of leaves of an employee for a time period of single month
+     */
      public int getTotalLeaves() {
 
         totalLeaves = getTotalAnaualLeaves() + getTotalCasualLeaves()+ getTotalMedicalLeaves();
         return totalLeaves;
     }
 
+    /**
+     *
+     * @return annualLeaves number of annualLeaves of an employee for a time period of single month
+     */
     public int getTotalAnaualLeaves() {
 
         annualLeaves= annl_length;
@@ -99,6 +105,10 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
 
     }
 
+    /**
+     *
+     * @return casualLeaves number of casualLeaves of an employee for a time period of single month
+     */
     public int getTotalCasualLeaves() {
 
         for (int y=0; y< casl_length; y++){
@@ -116,20 +126,15 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
 
     }
 
-
+    /**
+     *
+     * @return medicalLeaves number of medicalLeaves of an employee for a time period of single month
+     */
     public int getTotalMedicalLeaves() {
-        medicalLeaves= employeeMedicalLeaves.size();
+        medicalLeaves= medi_length;
         return medicalLeaves;
     }
 
-
-    
-    public MonthAttendance getReport (){
-    
-        return  this;
-    }
-
-    
 
 //    public int getAdditionalLeaves() {
 //        int max = MedicalLeave.maxleave;
@@ -138,6 +143,13 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
 //        return extraleaves;
 //    }
 
+
+ // calculating sort leave periods
+
+    /**
+     *
+     * @return halfday_hours, total hours of half-days of an employee for a time period of single month
+     */
     public int getTotalShortLeaveTime() {
 
         halfday_hours = halfdays * time_hours;
@@ -145,14 +157,27 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
         return halfday_hours;
     }
 
-    public void resetAdditonalLeaves(int leaves) {
+    /**
+     *
+     * @return halfdays, total halfdays an employee for a time period of single month
+     */
+    public int getTotalShortLeaves() {
 
-        totalLeaves =  leaves;
-        
+        return halfdays;
     }
 
-    public int getTotalShortLeaves() {
-        return halfdays;
+// resetting total leaves
+    public void resetAdditonalLeaves(int additionalleaves) {
+
+        totalLeaves =  additionalleaves;
+
+    }
+
+// @ return MonthAtendance instance
+
+    public MonthAttendance getReport (){
+
+        return  this;
     }
 
     /**
@@ -169,6 +194,13 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
 
         return totalOTHours;
     }
+
+// Getters for available amount of leaves
+
+    /**
+     *
+     * @return availableannualleave, if false '0'
+     */
     public int getAvailableAnnaulLeaves() {
         availableannualleave = AnnualLeave.maxleaves-annualLeaves;
               if(availableannualleave >= 0){
@@ -178,6 +210,10 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
             return 0;
     }
 
+    /**
+     *
+     * @return availablecasualleave, if false '0'
+     */
     public int getAvailableCasualLeaves() {
         availablecasualleave = CasualLeave.maxleaves-casualLeaves;
               if(availablecasualleave >= 0){
@@ -186,6 +222,10 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
         else
             return 0;     }
 
+    /**
+     *
+     * @return availablecasualleave, if false '0'
+     */
     public int getAvailableMedicalLeaves() {
 
         availablemedicalleave = MedicalLeave.maxleaves-medicalLeaves;
