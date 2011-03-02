@@ -21,6 +21,18 @@ import java.util.logging.Logger;
  */
 public class EmployeeImpl implements Employee {
 
+<<<<<<< .mine
+	private int id;
+	private String name;
+	private Level level;
+	private String userName;
+	private String passwordHash;
+	private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
+			new ShowSelfIDCommand()
+		});
+	private LoanProcessor loanProcessor;
+	private MonthAttendance monthAttendance;
+=======
     private int Id;
     private String name;
     private Level level;
@@ -31,6 +43,7 @@ public class EmployeeImpl implements Employee {
             });
     private LoanProcessor loanProcessor;
     private MonthAttendance monthAttendance;
+>>>>>>> .r106
 
     public EmployeeImpl(String name, Level level, String userName, String userPassword) {
         this.name = name;
@@ -49,9 +62,15 @@ public class EmployeeImpl implements Employee {
         this.level = level;
     }
 
+<<<<<<< .mine
+	public int getId() {
+		return id;
+	}
+=======
     public int getId() {
         return Id;
     }
+>>>>>>> .r106
 
     public String getName() {
         return name;
@@ -61,9 +80,15 @@ public class EmployeeImpl implements Employee {
         this.name = name;
     }
 
+<<<<<<< .mine
+	public void setID(int Id) {
+		this.id = Id;
+	}
+=======
     public void setID(int Id) {
         this.Id = Id;
     }
+>>>>>>> .r106
 
     public void setUserName(String uname) {
         this.userName = userName;
@@ -110,12 +135,22 @@ public class EmployeeImpl implements Employee {
         }
     }
 
+<<<<<<< .mine
+	/*
+	 * final salary = (basesalary+overtimerate*overtime)-(loansum+extraleave*leavepenalty)
+	 */
+	public int getSalary(int overTime)
+                monthAttendance.resetAdditonalLeaves(level.getMaxNoOfLeaves());
+		return (level.getSalary(overTime))-((monthAttendance.getTotalLeaves()-level.getMaxNoOfLeaves())*(level.getLeavePenalty()));
+	}
+=======
     /*
      * final salary = (basesalary+overtimerate*overtime)-(loansum+extraleave*leavepenalty)
      */
     public int getSalary(int overTime) {
         return (level.getSalary(overTime)) - ((monthAttendance.getTotalLeaves() - level.getMaxNoOfLeaves()) * (level.getLeavePenalty()));
     }
+>>>>>>> .r106
 
     public MonthAttendance getMonthAttendance() {
         return monthAttendance;
