@@ -67,7 +67,6 @@ public class LoanProcessor {
                  loanProc.getMonthlySumPerLoan(loanB)+
                  loanProc.getMonthlySumPerLoan(loanC);
 
-
     return monthlyLoanSum;
     }
 
@@ -76,16 +75,16 @@ public class LoanProcessor {
     if(loan!=null){
     monthlySumPerLoan = loanProc.getTotalLoanAmountPerLoan(loan)/(loan.getLoanDuration()-loan.getNoOfMonthsPaid());
         }
-    else
-        monthlySumPerLoan=0;
     return monthlySumPerLoan;
     }
 
 
-    public double getTotalLoanAmount(LoanImpl loan){
+    public double getTotalLoanAmount(LoanImpl loanA,LoanImpl loanB,LoanImpl loanC){
       double loanAmount = 0;
 
-    totalLoanAmount =+loanProc.getTotalLoanAmountPerLoan(loan);
+    totalLoanAmount =loanProc.getTotalLoanAmountPerLoan(loanA)+
+                     loanProc.getTotalLoanAmountPerLoan(loanB)+
+                     loanProc.getTotalLoanAmountPerLoan(loanC);
     return totalLoanAmount;
     }
 
@@ -93,7 +92,7 @@ public class LoanProcessor {
     public double getTotalLoanAmountPerLoan(LoanImpl loan){
     double loanAmount;
 
-    loanAmount=- loan.getValueOfAInstallement()*noOfMonthsPaid;
+    loanAmount=- loan.getValueOfAInstallement()*loan.getNoOfMonthsPaid();
     return loanAmount;
     }
 
