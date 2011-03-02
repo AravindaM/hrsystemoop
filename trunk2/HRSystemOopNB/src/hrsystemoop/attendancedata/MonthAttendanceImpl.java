@@ -30,10 +30,10 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     private ArrayList<MedicalLeave> employeeMedicalLeaves =new ArrayList<MedicalLeave>();
     private ArrayList<OverTime>  employeeOvertime = new ArrayList<OverTime>();
 
-    private int annl_length = employeeAnnualLeaves.size();
-    private int casl_length = employeeCasualLeaves.size();
-    private int medi_length = employeeMedicalLeaves.size();
-    private int OT_length = employeeOvertime.size();
+    private int annl_count;
+    private int medi_count ;
+    private int casl_count ;
+    private int OT_count;
 
     private int fulldays;       // total of casual leaves of full day
     private int halfdays;       //total amount of 4 hour half day leaves
@@ -53,6 +53,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     public  void addToAnnualLeaves(AnnualLeave annualleave) throws NullPointerException{
 
         employeeAnnualLeaves.add(annualleave);
+        annl_count++;
     }
 
     /**
@@ -62,6 +63,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     public  void addToMedicalLeaves(MedicalLeave medicalleave)throws NullPointerException{
 
         employeeMedicalLeaves.add(medicalleave);
+        medi_count++;
     }
 
     /**
@@ -71,6 +73,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     public  void addToCasualLeaves(CasualLeave casualleave) throws NullPointerException{
 
         employeeCasualLeaves.add(casualleave);
+        casl_count++;
     }
 
     /**
@@ -80,6 +83,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     public  void addToovertime(OverTime overtime)throws NullPointerException{
 
         employeeOvertime.add(overtime);
+        OT_count++;
     }
 
 // Getters methods for each types of leaves
@@ -99,7 +103,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      */
     public int getTotalAnaualLeaves() {
 
-        annualLeaves= annl_length;
+        annualLeaves= annl_count;
         return annualLeaves;
 
     }
@@ -110,7 +114,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      */
     public int getTotalCasualLeaves() {
 
-        for (int y=0; y< casl_length; y++){
+        for (int y=0; y< casl_count; y++){
             if(employeeCasualLeaves.get(y).getLeaveType().equalsIgnoreCase("fullday")){
                 fulldays++;
             }
@@ -130,7 +134,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      * @return medicalLeaves number of medicalLeaves of an employee for a time period of single month
      */
     public int getTotalMedicalLeaves() {
-        medicalLeaves= medi_length;
+        medicalLeaves= medi_count;
         return medicalLeaves;
     }
 
@@ -200,7 +204,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      */
     public int getTotalOTHours() {
 
-        for (int x= 0; x < OT_length; x++){
+        for (int x= 0; x < OT_count; x++){
 
             int time = employeeOvertime.get(x).getDuration();
             totalOTHours = totalOTHours + time;
