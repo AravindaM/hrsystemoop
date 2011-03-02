@@ -6,6 +6,7 @@ package hrsystemoop.actions.show;
 
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.CommandContext;
+import hrsystemoop.modle.Employee;
 
 /**
  *
@@ -20,7 +21,8 @@ public abstract class ShowSelfCommand implements Command {
     }
 
     public void execute(CommandContext context) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        insertResults(context, context.getCurrentuser());
+        context.setReturnStatus(true);
     }
 
     public String[] getAtrributesList() {
@@ -30,4 +32,6 @@ public abstract class ShowSelfCommand implements Command {
     public String getName() {
         return "Show my " + attribName;
     }
+
+    public abstract void insertResults(CommandContext context, Employee currentuser);
 }

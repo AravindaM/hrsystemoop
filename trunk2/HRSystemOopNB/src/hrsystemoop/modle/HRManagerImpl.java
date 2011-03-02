@@ -5,7 +5,6 @@
 
 package hrsystemoop.modle;
 
-import hrsystemoop.actions.AddEmployeeCommand;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.ShowSelfIDCommand;
 import hrsystemoop.actions.UserCommands;
