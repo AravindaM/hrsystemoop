@@ -17,7 +17,7 @@ public class CasualLeave  extends Leave {
     private String[] types = {"fullday", "halfday"};
     private String leaveType;
 
-    public CasualLeave(Date date, String reason,String leaveType ) {
+    public CasualLeave(String date, String reason,String leaveType ) {
 
      super(date, reason);
      this.leaveType = leaveType;

@@ -16,9 +16,9 @@ public class MedicalLeave extends Leave{
 
     static  final int maxleaves = 14;
     private int duration;
-    Date end_date;
+    String end_date;
 
-    public MedicalLeave(Date date, String reason, Date end_date) {
+    public MedicalLeave(String date, String reason, String end_date) {
         super(date, reason);
         this.end_date =end_date;
         calc_duration(end_date);
@@ -36,11 +36,11 @@ public class MedicalLeave extends Leave{
         return duration;
     }
 
-    public void setEndDate(Date end_date){
+    public void setEndDate(String end_date){
         this.end_date = end_date;
     }
 
-    public Date getEndDate(){
+    public String getEndDate(){
 
         return end_date;
     }
@@ -49,8 +49,8 @@ public class MedicalLeave extends Leave{
     /**
      * @Param end_date calculates the duration of a medical leave period
      */
-    private void calc_duration(Date end_date) {
+    private void calc_duration(String end_date) {
 
-        duration = end_date.getDate()- super.getLeaveDate().getDate();
+       // duration = end_date.getDate()- super.getLeaveDate().getDate();
     }
 }

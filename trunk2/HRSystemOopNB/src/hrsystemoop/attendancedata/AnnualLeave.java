@@ -16,7 +16,7 @@ public class AnnualLeave extends Leave{
     static final int maxleaves = 7;
 
     
-    public AnnualLeave(Date date, String reason ) {
+    public AnnualLeave(String date, String reason ) {
         super(date, reason);
     }
 

@@ -13,22 +13,22 @@ import java.util.Date;
  */
 public abstract class Leave {
 
-    private Date leavedate;
+    private String leavedate;
     private String reason;
  
     
-    public Leave( Date leavedate, String reason){
+    public Leave( String leavedate, String reason){
         this.leavedate = leavedate;
         this.reason = reason;
         
     }
 
-    public void setLeaveDate(int year, int month, int dateyear ){
+    public void setLeaveDate(int year, int month, int date ){
         
-        leavedate= new Date(year, month, dateyear);
+        leavedate= year+""+month+""+date;
     }
 
-    public Date getLeaveDate(){
+    public String getLeaveDate(){
 
          return leavedate;
     }
