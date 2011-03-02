@@ -1,26 +1,27 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hrsystemoop;
 
 import hrsystemoop.actions.CommandContext;
 import hrsystemoop.actions.Invoker;
 import hrsystemoop.database.exeption.DatabaseExeption;
+import java.io.IOException;
 import java.util.*;
 
 import hrsystemoop.database.*;
 import hrsystemoop.modle.HRManagerImpl;
+import java.util.logging.Level;
 
 /**
  *
  * @author Amila Manoj
+ * Command line user interface (client)
  */
 public class HRMain {
 
     private Scanner scanner;
     private Invoker invoker = new Invoker();
     private int command;
+
     public HRMain() {
         this.scanner = new Scanner(System.in);
     }
@@ -135,10 +136,16 @@ public class HRMain {
                 if (context.getReturnStatus() == false) {
                     System.out.print("[ERROR]: There was an error executing that command");
                 } else {
-                    System.out.println("[INFO]: Acton sucessully completed");
+
+
                     String results = context.getResults();
                     if (results != null) {
                         System.out.println(results);
+                    }
+                    System.out.println("[INFO]: Acton sucessully completed. Press any key to continue...");
+                    try {
+                        System.in.read();
+                    } catch (IOException ex) {
                     }
                 }
             }
