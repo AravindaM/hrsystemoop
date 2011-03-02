@@ -45,7 +45,7 @@ public interface Employee extends Cloneable {
 
     UserCommands getUserCommands();
 
-    int getSalary(int overTime);
+    int getSalary();
 
     MonthAttendanceImpl getMonthAttendance();
 
