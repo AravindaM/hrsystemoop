@@ -55,6 +55,7 @@ public class HRMain {
             System.out.println("=====================================================");
             System.out.println("1 - Login");
             System.out.println("2 -Exit");
+            System.out.print("Enter your choice: ");
             int command = scanner.nextInt();
             switch (command) {
                 case 1:
@@ -91,16 +92,32 @@ public class HRMain {
     }
 
     public void showLoggedUI() {
+        while (true){
         System.out.println("Welcome ");
         System.out.println("====================================");
         Set<String> commands = invoker.getAvailabeCommands();
         System.out.println("Please select what you want to do:");
         int i = 0;
-        for (String command : commands) {
-            System.out.println("0 - " + command);
+        String[] commandArr = (String[])commands.toArray();
+        for (String command : commandArr) {
+            System.out.println(i+ " - " + command);
             i++;
         }
+        System.out.println(i+ "Logout");
         int action = scanner.nextInt();
-        invoker.perform(action);
+        if (action==commandArr.length){
+            break;
+        } else {
+            String selectedAction = commandArr[action];
+            String[] attributes = invoker.getAttributesForCommand(selectedAction);
+            HashMap<String,String> responseList = new HashMap();
+            for (String attrib: attributes){
+                System.out.print(attrib + ": ");
+                responseList.put(attrib, scanner.next());
+            }
+            invoker.perform(selectedAction, responseList);
+        }
+        
+        }
     }
 }
