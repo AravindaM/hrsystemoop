@@ -9,13 +9,14 @@ package hrsystemoop.modle;
  * @author prasath
  */
 public enum Level {
-    // this enum class will decide us to calculate the base salary depending on the level
 
-    LEVELFIVE(100000, 1000, 5000, 28),
-    LEVELFOUR(80000, 800, 4000, 28),
-    LEVELTHREE(50000, 500, 2500, 21),
+    // this enum class will decide us to calculate the base salary depending on the level
+    LEVELONE(20000, 200, 1000, 14),
     LEVELTWO(30000, 300, 1500, 14),
-    LEVELONE(20000, 200, 1000, 14);
+    LEVELTHREE(50000, 500, 2500, 21),
+    LEVELFOUR(80000, 800, 4000, 28),
+    LEVELFIVE(100000, 1000, 5000, 28),;
+
     private final int baseSalary;
     private final int overtimeRate;
     private final int leavePenalty;
