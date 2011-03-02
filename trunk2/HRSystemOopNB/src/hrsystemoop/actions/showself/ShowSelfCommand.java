@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package hrsystemoop.actions.show;
+package hrsystemoop.actions.showself;
 
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.CommandContext;

@@ -6,12 +6,12 @@
 package hrsystemoop.modle;
 
 import hrsystemoop.actions.*;
-import hrsystemoop.actions.show.ShowSelfAttendanceFullDetailsCommand;
-import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
-import hrsystemoop.actions.show.ShowSelfIDCommand;
-import hrsystemoop.actions.show.ShowSelfNameCommand;
-import hrsystemoop.actions.show.ShowSelfSalaryCommand;
-import hrsystemoop.actions.show.ShowSelfUserNameCommand;
+import hrsystemoop.actions.showself.ShowSelfAttendanceFullDetailsCommand;
+import hrsystemoop.actions.showself.ShowSelfAttendanceSummaryCommand;
+import hrsystemoop.actions.showself.ShowSelfIDCommand;
+import hrsystemoop.actions.showself.ShowSelfNameCommand;
+import hrsystemoop.actions.showself.ShowSelfSalaryCommand;
+import hrsystemoop.actions.showself.ShowSelfUserNameCommand;
 import hrsystemoop.actions.showgloble.ShowGlobleNameCommand;
 import hrsystemoop.actions.updates.UpdateSelfBirthdayCommand;
 import hrsystemoop.actions.updates.UpdateSelfNameCommand;

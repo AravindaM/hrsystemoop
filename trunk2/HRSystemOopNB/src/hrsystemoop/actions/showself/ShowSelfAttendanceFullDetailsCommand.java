@@ -1,4 +1,4 @@
-package hrsystemoop.actions.show;
+package hrsystemoop.actions.showself;
 
 import hrsystemoop.actions.CommandContext;
 import hrsystemoop.attendancedata.AnnualLeave;
