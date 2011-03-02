@@ -9,13 +9,16 @@ import hrsystemoop.actions.Command;
 import hrsystemoop.actions.CommandContext;
 import hrsystemoop.actions.RequestLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
+import hrsystemoop.actions.UpdateEmployeeCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
 import hrsystemoop.actions.show.ShowSelfCommand;
 import hrsystemoop.actions.show.ShowSelfIDCommand;
 import hrsystemoop.actions.show.ShowSelfNameCommand;
 import hrsystemoop.actions.show.ShowSelfUserNameCommand;
+import hrsystemoop.actions.updates.UpdateSelfBirthdayCommand;
 import hrsystemoop.actions.updates.UpdateSelfNameCommand;
+import hrsystemoop.actions.updates.UpdateSelfUserNameCommand;
 import hrsystemoop.attendancedata.MonthAttendanceImpl;
 import hrsystemoop.loanscheme.LoanProcessor;
 import java.io.UnsupportedEncodingException;
@@ -36,17 +39,23 @@ public class EmployeeImpl implements Employee {
 	private String passwordHash;
 
 	private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
-			new ShowSelfIDCommand(),
-                        new UpdateSelfNameCommand(), 
-                        new RequestLeaveCommand(),
-                        new RequestLoanCommand(),
-                        new CheckSalaryCommand(),
-                        new ShowSelfNameCommand(),
-                        new ShowSelfIDCommand(),
-                        new ShowSelfUserNameCommand(),
-                        new ShowSelfAttendanceSummaryCommand(),
-                     
-		});
+		
+                // updates commands
+                new UpdateEmployeeCommand(),
+                new UpdateSelfBirthdayCommand(),
+                new UpdateSelfUserNameCommand(),
+                new UpdateSelfNameCommand(),
+
+                new RequestLeaveCommand(),
+                new RequestLoanCommand(),
+                new CheckSalaryCommand(),
+
+                //show commands
+                new ShowSelfIDCommand(),
+                new ShowSelfNameCommand(),
+                new ShowSelfUserNameCommand(),
+                new ShowSelfAttendanceSummaryCommand(),    
+            });
 
 	private LoanProcessor loanProcessor;
 	private MonthAttendanceImpl monthAttendance;
@@ -151,22 +160,6 @@ public class EmployeeImpl implements Employee {
         } catch (CloneNotSupportedException ex) {
             return null;
         }
-    }
-
-    public int getAge() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public int getBirthDate() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void setBirthDate(Date birthDate) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void setAge(int age) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

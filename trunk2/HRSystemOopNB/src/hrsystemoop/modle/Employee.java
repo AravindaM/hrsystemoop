@@ -17,14 +17,6 @@ public interface Employee extends Cloneable {
 
     int getId();
 
-    int getAge();
-
-    int getBirthDate();
-
-    void setBirthDate(Date birthDate);
-
-    void setAge(int age);
-
     void setID(int id);
 
     String getName();
