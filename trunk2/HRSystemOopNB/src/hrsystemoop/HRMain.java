@@ -123,7 +123,7 @@ public class HRMain {
                 break;
             } else {
                 String selectedAction = commandNamesArr[action];
-                // here we arrange information for the relevant command
+                // here we arrange information for the relevant command and added it to the response list string array
                 String[] attributes = invoker.getAttributesForCommand(selectedAction);
                 HashMap<String, String> responseList = new HashMap();
                 for (String attrib : attributes) {
