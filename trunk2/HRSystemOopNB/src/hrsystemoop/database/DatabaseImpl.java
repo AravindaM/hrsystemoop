@@ -31,7 +31,7 @@ public class DatabaseImpl extends Database {
 
     @Override
     public synchronized int addEmployee(Employee emp) throws DatabaseConflict {
-        String userName = emp.getName();
+        String userName = emp.getUserName();
         Collection<Employee> all = data.values();
         for (Employee employee : all) {
             if (employee.getUserName().equals(userName)) {
@@ -54,7 +54,14 @@ public class DatabaseImpl extends Database {
     }
 
     @Override
-    public synchronized void updateEmployee(int id, Employee emp) throws EmployeeDoesNotExist {
+    public synchronized void updateEmployee(int id, Employee emp) throws EmployeeDoesNotExist, DatabaseConflict {
+        String userName = emp.getUserName();
+        Collection<Employee> all = data.values();
+        for (Employee employee : all) {
+            if (employee.getUserName().equals(userName) && employee.getId() != id) {
+                throw new DatabaseConflict("username = " + userName);
+            }
+        }
         if (!data.containsKey(id)) {
             throw new EmployeeDoesNotExist(id);
         }

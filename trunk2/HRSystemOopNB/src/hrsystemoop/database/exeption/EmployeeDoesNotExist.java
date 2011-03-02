@@ -4,8 +4,6 @@
  */
 package hrsystemoop.database.exeption;
 
-import hrsystemoop.modle.Employee;
-
 /**
  *
  * @author R.C.M. Perera
