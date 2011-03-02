@@ -15,10 +15,5 @@ import hrsystemoop.actions.UserCommands;
  */
 public interface HREmployer extends Employee {
 
-    static final UserCommands commands = new UserCommands(new Command[]{
-        new ShowSelfIDCommand()
-        //acceptleave command
-
-    });
     
 }

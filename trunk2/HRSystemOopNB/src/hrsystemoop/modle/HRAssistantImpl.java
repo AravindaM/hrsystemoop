@@ -15,8 +15,7 @@ import hrsystemoop.actions.UserCommands;
  */
 public class HRAssistantImpl {
     static final UserCommands commands = new UserCommands(new Command[]{
-        new ShowSelfIDCommand()
-        //acceptleave command
+        // Set of commands unique for employee
 
     });
 }
