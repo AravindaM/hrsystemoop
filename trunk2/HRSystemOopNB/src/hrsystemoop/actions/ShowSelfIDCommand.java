@@ -4,8 +4,6 @@
  */
 package hrsystemoop.actions;
 
-import hrsystemoop.modle.Employee;
-import java.util.Map;
 
 /**
  *
@@ -15,7 +13,7 @@ public class ShowSelfIDCommand implements Command {
 
     public CommandContext execute(CommandContext context) {
         int id=context.getCurrentuser().getId();
-        context.setResults(new String[] {String.valueOf(id)});
+        context.setResults("Your id is: " + id);
         context.setReturnStatus(true);
         return context;
     }

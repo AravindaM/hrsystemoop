@@ -15,7 +15,7 @@ import java.util.*;
 public class CommandContext {
     Employee currentuser;
     Map<String,String> argList;
-    String[] results;
+    String results;
     boolean returnStatus;
 
     public CommandContext(Employee currentuser, Map<String, String> argList) {
@@ -40,11 +40,11 @@ public class CommandContext {
         return returnStatus;
     }
 
-    public String  getResults(){
+    public String getResults(){
         return results.toString();
     }
 
-    public void setResults(String[] results) {
+    public void setResults(String results) {
         this.results = results;
     }
 }
