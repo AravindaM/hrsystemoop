@@ -12,6 +12,7 @@ import hrsystemoop.actions.UserCommands;
 import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
 import hrsystemoop.actions.show.ShowSelfIDCommand;
 import hrsystemoop.actions.show.ShowSelfNameCommand;
+import hrsystemoop.actions.show.ShowSelfSalaryCommand;
 import hrsystemoop.actions.show.ShowSelfUserNameCommand;
 import hrsystemoop.actions.updates.UpdateSelfBirthdayCommand;
 import hrsystemoop.actions.updates.UpdateSelfNameCommand;
@@ -46,10 +47,11 @@ public class EmployeeImpl implements Employee {
                 new RequestLoanCommand(),
 
                 //show commands
+                new ShowSelfSalaryCommand(),
                 new ShowSelfIDCommand(),
                 new ShowSelfNameCommand(),
                 new ShowSelfUserNameCommand(),
-                new ShowSelfAttendanceSummaryCommand(),    
+                new ShowSelfAttendanceSummaryCommand()   
             });
 
 	private LoanProcessor loanProcessor;
