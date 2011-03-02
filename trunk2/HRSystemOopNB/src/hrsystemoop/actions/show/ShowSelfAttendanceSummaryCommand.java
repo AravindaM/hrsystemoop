@@ -17,10 +17,13 @@ public class ShowSelfAttendanceSummaryCommand extends ShowSelfCommand{
     @Override
     public void insertResults(CommandContext context, Employee currentuser) {
         MonthAttendanceImpl attendance = currentuser.getMonthAttendance();
+        
         StringBuilder s = new StringBuilder();
         s.append("Available AnnaulLeaves : ");
         s.append(attendance.getAvailableAnnaulLeaves());
         s.append("\n");
+
+        context.setResults(s.toString());
     }
 
 }
