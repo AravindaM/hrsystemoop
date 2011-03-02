@@ -85,7 +85,13 @@ public class HRMain {
         System.out.print("Username: ");
         String username = scanner.next();
         System.out.print("Password: ");
-        String password = scanner.next();
+        Console console = System.console();
+        String password;
+        if (console != null) {
+            password = new String(console.readPassword());
+        } else {
+            password = scanner.next();
+        }
         if (invoker.validateUser(username)) {
             if (invoker.validatePassword(password)) {
                 showLoggedUI();
@@ -110,7 +116,7 @@ public class HRMain {
             System.out.println("====================================");
             System.out.println("Please select what you want to do:");
             int i = 0;
-            
+
             // Prints all the available actions
             String[] commandNamesArr = commandNames.toArray(new String[0]);
             for (String commandName : commandNamesArr) {
