@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author TOSHIBA
  */
-public class MonthAttendance implements MonthAttendanceProcess{
+public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
 
     private int totalLeaves;
     private int annualLeaves;
@@ -33,6 +33,7 @@ public class MonthAttendance implements MonthAttendanceProcess{
 
     private int fulldays;       // total of casual leaves of full day
     private int halfdays;       //total amount of 4 hour half day leaves
+    private int halfday_hours;   // totalhours of halfday leaves
 
     
 
@@ -139,10 +140,27 @@ public class MonthAttendance implements MonthAttendanceProcess{
         int max = MedicalLeave.maxleave;
         extraleaves = medi_length - max;
 
-        return extraleaves;    }
+        return extraleaves;
+    }
+
+    public int getTotalShortLeaveTime() {
+
+        halfday_hours = halfdays * time_hours;
+
+        return halfday_hours;
+    }
 
     public void resetAdditonalLeaves(int additionalLeaves) {
-        throw new UnsupportedOperationException("Not supported yet.");
+
+        annualLeaves = 0;
+        casualLeaves = 0;
+        medicalLeaves = 0;
+
+
+    }
+
+    public int getTotalShortLeaves() {
+        return halfdays;
     }
     
 

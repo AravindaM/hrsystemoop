@@ -9,7 +9,7 @@ package hrsystemoop.attendancedata;
  *
  * @author TOSHIBA
  */
-public class CasualLeave  extends Leave implements ShortLeave{
+public class CasualLeave  extends Leave {
 
     static  final int maxdays = 14;
     private String[] types = {"fullday", "halfday"};
@@ -32,13 +32,9 @@ public class CasualLeave  extends Leave implements ShortLeave{
 
 
 
-    public int getTotalShortLeaveTime() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    
 
-    public int getTotalShortLeaves() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+   
 
 
 
