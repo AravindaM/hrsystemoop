@@ -15,8 +15,8 @@ import java.util.Date;
  */
 public abstract class HREmployerImpl extends EmployeeImpl implements HREmployer {
 
-    public HREmployerImpl(String name, Level level, String userName, String userPassword, Date birthDate) {
-        super(name, level, userName, userPassword, birthDate);
+    public HREmployerImpl(String name, Level level, String userName, String userPassword, int age) {
+        super(name, level, userName, userPassword, age);
     }
 
 

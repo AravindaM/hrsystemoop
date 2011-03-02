@@ -45,5 +45,5 @@ public interface Employee extends Cloneable {
 
     Employee clone();
 
-    Date getBirthDate();
+    int getAge();
 }

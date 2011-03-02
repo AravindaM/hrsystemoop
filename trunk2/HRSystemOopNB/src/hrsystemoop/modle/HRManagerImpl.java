@@ -52,8 +52,8 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     });
 
-    public HRManagerImpl(String name, Level level, String userName, String userPassword, Date birthDate) {
-        super(name, level, userName, userPassword,birthDate);
+    public HRManagerImpl(String name, Level level, String userName, String userPassword, int age) {
+        super(name, level, userName, userPassword,age);
     }
 
     @Override

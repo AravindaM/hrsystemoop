@@ -20,8 +20,8 @@ public class HRAssistantImpl extends HREmployerImpl implements HRAssistant {
 
     });
 
-    public HRAssistantImpl(String name, Level level, String userName, String userPassword, Date birthDate) {
-        super(name, level, userName, userPassword, birthDate);
+    public HRAssistantImpl(String name, Level level, String userName, String userPassword, int age) {
+        super(name, level, userName, userPassword, age);
     }
 
     public  UserCommands getCommands() {

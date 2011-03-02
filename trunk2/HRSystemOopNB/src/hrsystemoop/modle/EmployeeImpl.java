@@ -35,7 +35,7 @@ public class EmployeeImpl implements Employee {
 	private String userName;
 	private String passwordHash;
 
-        private Date birthDate;
+        private int age;
 
 	private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
 		
@@ -58,8 +58,8 @@ public class EmployeeImpl implements Employee {
 	private LoanProcessor loanProcessor;
 	private MonthAttendanceImpl monthAttendance;
 
-    public EmployeeImpl(String name, Level level, String userName, String userPassword, Date birthDate) {
-        this.birthDate = birthDate;
+    public EmployeeImpl(String name, Level level, String userName, String userPassword, int age) {
+        this.age = age;
         this.name = name;
         this.level = level;
         this.userName = userName;
@@ -161,8 +161,8 @@ public class EmployeeImpl implements Employee {
         }
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public int getAge() {
+        return age;
     }
 
 }
