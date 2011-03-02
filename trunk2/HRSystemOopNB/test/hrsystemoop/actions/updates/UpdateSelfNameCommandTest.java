@@ -4,12 +4,9 @@
  */
 package hrsystemoop.actions.updates;
 
-import hrsystemoop.database.Database;
-import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.modle.Employee;
 import hrsystemoop.modle.EmployeeImpl;
 import hrsystemoop.modle.Level;
-import java.util.logging.Logger;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -38,8 +35,8 @@ public class UpdateSelfNameCommandTest {
      * Test of update method, of class UpdateSelfNameCommand.
      */
     @Test
-    public void testUpdate() throws Exception {
-        System.out.println("update");
+    public void testUpdateName() throws Exception {
+        System.out.println("update Name");
         String attribValue = "dfdsf";
         int id = 1;
         Employee currentUser = createMockEmployee(1);
