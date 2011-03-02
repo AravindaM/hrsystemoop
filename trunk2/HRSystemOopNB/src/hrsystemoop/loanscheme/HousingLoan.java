@@ -27,26 +27,26 @@ public class HousingLoan extends LoanImpl{
 
     if (employ.getLevel().equals(hrsystemoop.modle.Level.LEVELONE))
     {
-    acceptedAmount = houseEstimateValue*.3;
-    }
-    else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTWO))
-    {
-    acceptedAmount = houseEstimateValue*.35;
-    }
-
-    else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTHREE))
-    {
     acceptedAmount = houseEstimateValue*.4;
     }
-
-    else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFOUR))
+    else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTWO))
     {
     acceptedAmount = houseEstimateValue*.45;
     }
 
-    else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFIVE))
+    else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTHREE))
     {
     acceptedAmount = houseEstimateValue*.5;
+    }
+
+    else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFOUR))
+    {
+    acceptedAmount = houseEstimateValue*.55;
+    }
+
+    else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFIVE))
+    {
+    acceptedAmount = houseEstimateValue*.6;
     }
     return acceptedAmount;
     }

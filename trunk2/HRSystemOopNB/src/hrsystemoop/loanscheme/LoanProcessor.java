@@ -5,7 +5,6 @@
 
 package hrsystemoop.loanscheme;
 
-import hrsystemoop.modle.Employee;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -32,10 +31,10 @@ public class LoanProcessor {
 
     public void EditLoanDetails(String loanId,double loanAmount,Date borrowedDate,Date dueDate){
 
-        getaLoan().setLoanId(loanId);
-        getaLoan().setLoanAmount(loanAmount);
-        getaLoan().setBorrowedDate(borrowedDate);
-        getaLoan().setDueDate(dueDate);
+        aLoan.setLoanId(loanId);
+        aLoan.setLoanAmount(loanAmount);
+        aLoan.setBorrowedDate(borrowedDate);
+        aLoan.setDueDate(dueDate);
     }
     
 
@@ -49,10 +48,10 @@ public class LoanProcessor {
 
 
     public void removeLoanDetails(){
-        getaLoan().setLoanId(null);
-        getaLoan().setLoanAmount(0.00);
-        getaLoan().setBorrowedDate(null);
-        getaLoan().setDueDate(null);
+        aLoan.setLoanId(null);
+        aLoan.setLoanAmount(0.00);
+        aLoan.setBorrowedDate(null);
+        aLoan.setDueDate(null);
 
     }
     public int getNoofLoansBorrowed(){
