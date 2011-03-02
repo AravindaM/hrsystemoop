@@ -131,6 +131,8 @@ public class HRMain {
                     System.out.print(attrib + ": ");
                     responseList.put(attrib, scanner.next());
                 }
+
+                // now that we collected all the attribute we are nwo ready to preform that action
                 CommandContext context = invoker.perform(selectedAction, responseList);
 
                 if (context.getReturnStatus() == false) {
