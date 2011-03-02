@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author Isha Premadasa , idpremadasa@gmail.com
  */
-public class MonthAttendance implements MonthAttendanceProcess, ShortLeaveCalcs{
+public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs{
 
 // varaible declaring
     private int totalLeaves;
@@ -42,7 +42,7 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeaveCalcs{
 
     
 
-    public MonthAttendance(){
+    public MonthAttendanceImpl(){
     }
 
 // adding data into record arrays
@@ -175,7 +175,7 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeaveCalcs{
 
 // @ return MonthAtendance instance
 
-    public MonthAttendance getReport (){
+    public MonthAttendanceImpl getReport (){
 
         return  this;
     }

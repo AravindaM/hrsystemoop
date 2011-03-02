@@ -8,7 +8,7 @@ package hrsystemoop.attendancedata;
  *
  * @author Isha Premadasa
  */
-interface MonthAttendanceProcess {
+interface MonthAttendanceIntr {
 
  /**
   * 
