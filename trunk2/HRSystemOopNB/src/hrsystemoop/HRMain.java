@@ -33,7 +33,7 @@ public class HRMain {
 // <editor-fold defaultstate="collapsed" desc="Temp Employee , remove later">
         Database tempInst = Database.getInstance();
         try {
-            tempInst.addEmployee(new HRManagerImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw"));
+            tempInst.addEmployee(new HRManagerImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw",12));
         } catch (DatabaseExeption ex) {
             ex.printStackTrace();
         }
