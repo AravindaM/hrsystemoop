@@ -60,29 +60,35 @@ public class LoanProcessor {
     }
 
 
-//    public double getMonthlySum(LoanProcessor loanProc){
-//    double monthlyLoan=0;
-//    for(int i=0;i<3;i++){
-//    monthlyLoan =+ loanProc.getMonthlySumPerLoan(loan);
-//
-//    }
-//
-//    return monthlyLoanSum;
-//    }
+    public double getMonthlySum(LoanImpl loanA,LoanImpl loanB,LoanImpl loanC){
+    double monthlyLoanSum=0;
+   
+    monthlyLoanSum =loanProc.getMonthlySumPerLoan(loanA)+
+                 loanProc.getMonthlySumPerLoan(loanB)+
+                 loanProc.getMonthlySumPerLoan(loanC);
+
+
+    return monthlyLoanSum;
+    }
 
     public double getMonthlySumPerLoan(LoanImpl loan){
     double monthlySumPerLoan=0;
+    if(loan!=null){
     monthlySumPerLoan = loanProc.getTotalLoanAmountPerLoan(loan)/(loan.getLoanDuration()-loan.getNoOfMonthsPaid());
-
+        }
+    else
+        monthlySumPerLoan=0;
     return monthlySumPerLoan;
     }
 
-//    public double getTotalLoanAmount(){
-//      double loanAmount = 0;
-//
-//    totalLoanAmount =+loanProc.getTotalLoanAmountPerLoan(LoanImpl loan);
-//    return totalLoanAmount;
-//    }
+
+    public double getTotalLoanAmount(LoanImpl loan){
+      double loanAmount = 0;
+
+    totalLoanAmount =+loanProc.getTotalLoanAmountPerLoan(loan);
+    return totalLoanAmount;
+    }
+
 
     public double getTotalLoanAmountPerLoan(LoanImpl loan){
     double loanAmount;
