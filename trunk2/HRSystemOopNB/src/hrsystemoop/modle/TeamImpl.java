@@ -5,12 +5,22 @@
 
 package hrsystemoop.modle;
 
+import java.util.Vector;
+
 /**
  *
  * @author prasath
  */
 public class TeamImpl {
 
-    EmployeeImpl teamMembers[];
+    Vector<HRAssistantImpl> teamMembers;
+
+    public TeamImpl() {
+        teamMembers = new Vector<HRAssistantImpl>();
+    }
+
+    public void addTeamMember(HRAssistantImpl assistant) {
+        teamMembers.add(assistant);
+    }
 
 }
