@@ -135,7 +135,25 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
         return medicalLeaves;
     }
 
+    public ArrayList<AnnualLeave> getAnnaualLeavesDetails() {
 
+        return employeeAnnualLeaves;
+    }
+
+    public ArrayList<CasualLeave> getCasualLeavesDetails() {
+
+        return employeeCasualLeaves;
+    }
+
+    public ArrayList<MedicalLeave> getMedicalLeavesDetails() {
+
+        return employeeMedicalLeaves;
+    }
+
+    public ArrayList<OverTime> getOTDetails() {
+
+        return employeeOvertime;
+    }
 // calculating sort leave periods
 
     /**
@@ -226,6 +244,10 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
         }
         else
             return 0;         }
+
+    public ArrayList getLeavesDetails() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
     
 

@@ -4,6 +4,8 @@
  */
 package hrsystemoop.attendancedata;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Isha Premadasa
@@ -32,6 +34,6 @@ interface MonthAttendanceIntr {
 
     public int getAvailableMedicalLeaves();
 
-
+    public ArrayList getLeavesDetails();
 
 }
