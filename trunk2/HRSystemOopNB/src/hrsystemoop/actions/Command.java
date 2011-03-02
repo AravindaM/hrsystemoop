@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package hrsystemoop.actions;
 import hrsystemoop.modle.Employee;
@@ -27,5 +23,10 @@ public interface Command {
      */
     public String[] getAtrributesList();
 
+    /**
+     * Returns the name of the command to identifiy seperate commands
+     * and UI display
+     * @return Name of the command
+     */
     public String getName();
 }

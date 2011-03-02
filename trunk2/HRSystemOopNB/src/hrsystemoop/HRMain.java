@@ -37,7 +37,7 @@ public class HRMain {
 // <editor-fold defaultstate="collapsed" desc="Temp Employee , remove later">
         Database tempInst = Database.getInstance();
         try {
-            tempInst.addEmployee(new EmployeeImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman"));
+            tempInst.addEmployee(new EmployeeImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw"));
         } catch (DatabaseExeption ex) {
             ex.printStackTrace();
         }
@@ -95,20 +95,21 @@ public class HRMain {
         while (true){
         System.out.println("Welcome ");
         System.out.println("====================================");
-        Set<String> commands = invoker.getAvailabeCommands();
+        Set<String> commandNames = invoker.getAvailabeCommands();
         System.out.println("Please select what you want to do:");
         int i = 0;
-        String[] commandArr = (String[])commands.toArray();
-        for (String command : commandArr) {
+        String[] commandNamesArr = commandNames.toArray(new String[0]);
+        
+        for (String command : commandNamesArr) {
             System.out.println(i+ " - " + command);
             i++;
         }
-        System.out.println(i+ "Logout");
+        System.out.println(i+ " - Logout");
         int action = scanner.nextInt();
-        if (action==commandArr.length){
+        if (action==commandNamesArr.length){
             break;
         } else {
-            String selectedAction = commandArr[action];
+            String selectedAction = commandNamesArr[action];
             String[] attributes = invoker.getAttributesForCommand(selectedAction);
             HashMap<String,String> responseList = new HashMap();
             for (String attrib: attributes){
