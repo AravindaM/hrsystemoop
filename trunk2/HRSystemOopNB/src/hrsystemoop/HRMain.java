@@ -1,15 +1,13 @@
-
 package hrsystemoop;
 
 import hrsystemoop.actions.CommandContext;
 import hrsystemoop.actions.Invoker;
 import hrsystemoop.database.exeption.DatabaseExeption;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 import hrsystemoop.database.*;
 import hrsystemoop.modle.HRManagerImpl;
-import java.util.logging.Level;
 
 /**
  *
@@ -31,24 +29,25 @@ public class HRMain {
      */
     public static void main(String[] args) {
 
-
-// <editor-fold defaultstate="collapsed" desc="Temp Employee , remove later">
+        // <editor-fold defaultstate="collapsed" desc="Temp Employee , remove later">
         Database tempInst = Database.getInstance();
         try {
             tempInst.addEmployee(new HRManagerImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw", 35));
         } catch (DatabaseExeption ex) {
             ex.printStackTrace();
         }
-// </editor-fold>
-
+        // </editor-fold>
 
         HRMain main = new HRMain();
         main.run();
     }
 
+    /**
+     * starts the UI
+     */
     public void run() {
         while (true) {
-            System.out.println();
+            System.out.println("=====================================================");
             System.out.println("Welcome to TechNinja Human Resourse Management System");
             System.out.println("=====================================================");
             System.out.println("Please select a command below");
@@ -77,12 +76,13 @@ public class HRMain {
         }
     }
 
+    /**
+     * displays the login UI and process inputs
+     */
     public void showLogin() {
         System.out.println("Enter your username and passord below");
         System.out.print("Username: ");
         String username = scanner.next();
-        //String username = scanner.nextLine();
-
         System.out.print("Password: ");
         String password = scanner.next();
         if (invoker.validateUser(username)) {
@@ -100,6 +100,7 @@ public class HRMain {
     /**
      * Displays the screen of possible actions after logging in
      * will revert to logic screen after logging out
+     * depends on the type of user who's logged in
      */
     public void showLoggedUI() {
         System.out.println("Welcome ");
@@ -108,12 +109,11 @@ public class HRMain {
             System.out.println("====================================");
             System.out.println("Please select what you want to do:");
             int i = 0;
-
-            // this is used to print all the available actions
+            
+            // Prints all the available actions
             String[] commandNamesArr = commandNames.toArray(new String[0]);
-
-            for (String command : commandNamesArr) {
-                System.out.println(i + " - " + command);
+            for (String commandName : commandNamesArr) {
+                System.out.println(i + " - " + commandName);
                 i++;
             }
             System.out.println(i + " - Logout");
@@ -151,7 +151,6 @@ public class HRMain {
                     }
                 }
             }
-
         }
     }
 }
