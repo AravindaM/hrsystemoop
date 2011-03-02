@@ -28,21 +28,8 @@ public AddEmployeeCommand(String name, Level level){
     attributesList = new String[] {"Username","Designation","Name"};
 }
 
-/**
- * Adds the new employee to the system
- * @param inputList List of attributes of employee
- * @return Success or Failure
- */
-    public boolean execute(Map<String,String> inputList) {
-        Level newLevel= Level.valueOf(inputList.get("Designation"));
-        Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));
-        try {
-            database.addEmployee(newEmployee);
-            return true;
-        } catch (DatabaseExeption ex) {
-            return false;
-        }
-    }
+
+
 
     /**
      * Returns the list of attributes that are needed to add a new employee
@@ -52,15 +39,20 @@ public AddEmployeeCommand(String name, Level level){
         return attributesList;
     }
 
+    /**
+ * Adds the new employee to the system and updates the context with result status
+ * @param context context containing required info
+ * @return none
+ */
     public void execute(CommandContext context) {
                 Map<String,String> inputList = context.getArgList();
         Level newLevel= Level.valueOf(inputList.get("Designation"));
-        Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));
+        EmployeeImpl newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("Username"), inputList.get("Password"));
         try {
             database.addEmployee(newEmployee);
-            //return true;
+            context.setReturnStatus(true);
         } catch (DatabaseExeption ex) {
-            //return false;
+            context.setReturnStatus(false);
         }
     }
 
