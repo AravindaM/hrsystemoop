@@ -9,28 +9,26 @@ import hrsystemoop.actions.AcceptLoanCommand;
 import hrsystemoop.actions.AddEmployeeCommand;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.RemoveEmployeeCommand;
-import hrsystemoop.actions.RequestMedicalLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
+import hrsystemoop.actions.RequestMedicalLeaveCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.actions.showgloble.ShowGlobleAttendanceSummaryCommand;
+import hrsystemoop.actions.showgloble.ShowGlobleNameCommand;
 import hrsystemoop.actions.showself.ShowSelfAttendanceFullDetailsCommand;
 import hrsystemoop.actions.showself.ShowSelfAttendanceSummaryCommand;
 import hrsystemoop.actions.showself.ShowSelfIDCommand;
 import hrsystemoop.actions.showself.ShowSelfNameCommand;
 import hrsystemoop.actions.showself.ShowSelfSalaryCommand;
 import hrsystemoop.actions.showself.ShowSelfUserNameCommand;
-import hrsystemoop.actions.showgloble.ShowGlobleNameCommand;
 import hrsystemoop.actions.updates.UpdateSelfBirthdayCommand;
 import hrsystemoop.actions.updates.UpdateSelfNameCommand;
 import hrsystemoop.actions.updates.UpdateSelfUserNameCommand;
-import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
  * @author prasath
  */
-public class HRManagerImpl extends HREmployerImpl implements HRManager {
+public class HRDirectorImpl extends HREmployerImpl implements HRDirector {
 
     static final UserCommands commands = new UserCommands(new Command[]{
         // updates commands
@@ -61,15 +59,8 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     });
 
-    public HRManagerImpl(String name, Level level, String userName, String userPassword, int age) {
+    public HRDirectorImpl(String name, Level level, String userName, String userPassword, int age) {
         super(name, level, userName, userPassword,age);
     }
-
-    @Override
-    public UserCommands getUserCommands() {
-        return commands;
-    }
-
-    private TeamImpl team;
 
 }

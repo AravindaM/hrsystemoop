@@ -9,8 +9,6 @@ package hrsystemoop.modle;
  *
  * @author prasath
  */
-public interface Team {
-
-    
+public interface HRDirector extends HREmployer {
 
 }
