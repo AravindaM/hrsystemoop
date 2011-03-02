@@ -4,15 +4,12 @@
  */
 package hrsystemoop.modle;
 
-import hrsystemoop.actions.CheckSalaryCommand;
 import hrsystemoop.actions.Command;
-import hrsystemoop.actions.CommandContext;
 import hrsystemoop.actions.RequestLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
 import hrsystemoop.actions.UpdateEmployeeCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
-import hrsystemoop.actions.show.ShowSelfCommand;
 import hrsystemoop.actions.show.ShowSelfIDCommand;
 import hrsystemoop.actions.show.ShowSelfNameCommand;
 import hrsystemoop.actions.show.ShowSelfUserNameCommand;
@@ -25,7 +22,6 @@ import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
 
 /**
  * @author Prasath
@@ -48,7 +44,6 @@ public class EmployeeImpl implements Employee {
 
                 new RequestLeaveCommand(),
                 new RequestLoanCommand(),
-                new CheckSalaryCommand(),
 
                 //show commands
                 new ShowSelfIDCommand(),
