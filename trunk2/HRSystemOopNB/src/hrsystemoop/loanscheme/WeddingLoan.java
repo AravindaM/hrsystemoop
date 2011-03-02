@@ -16,7 +16,7 @@ public class WeddingLoan extends LoanImpl{
      public WeddingLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
         super(loanId, loanAmount, borrowedDate, dueDate);
 
-        String loantype = "Wedding";
+        
     }
 
 }
