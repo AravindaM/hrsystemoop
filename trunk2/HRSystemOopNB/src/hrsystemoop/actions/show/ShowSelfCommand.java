@@ -10,7 +10,7 @@ import hrsystemoop.modle.Employee;
 
 /**
  *
- * @author toshiba
+ * @author R.C.M. Perera
  */
 public abstract class ShowSelfCommand implements Command {
 
