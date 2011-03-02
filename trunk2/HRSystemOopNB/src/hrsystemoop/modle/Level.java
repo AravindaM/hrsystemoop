@@ -49,7 +49,7 @@ public enum Level {
         return maxNoOfLeaves;
     }
 
-    public Level parseInt(int l) {
+    public static Level parseInt(int l) {
         if (l > 5 || l < 1) {
             throw new IllegalArgumentException();
         }
