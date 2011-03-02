@@ -27,7 +27,9 @@ public abstract class UpdateSelfCommand implements Command {
         try {
             Database.getInstance().updateEmployee(context.getCurrentuser().getId(), context.getCurrentuser());
             context.setResults(attribute);
+            context.setReturnStatus(true);
         } catch (DatabaseExeption ex) {
+             context.setReturnStatus(false);
             System.out.println("can't change " + attribute + " : " + ex.getMessage());
         }
     }
@@ -37,7 +39,7 @@ public abstract class UpdateSelfCommand implements Command {
     }
 
     public String getName() {
-        return attribute;
+        return "Chnage my "+attribute;
     }
 
     public abstract void update(String attribValue, Employee currentUser);
