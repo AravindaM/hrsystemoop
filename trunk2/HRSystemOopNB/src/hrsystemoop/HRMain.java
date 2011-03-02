@@ -10,6 +10,7 @@ import hrsystemoop.database.exeption.DatabaseExeption;
 import java.util.*;
 
 import hrsystemoop.database.*;
+import hrsystemoop.modle.HRManagerImpl;
 
 /**
  *
