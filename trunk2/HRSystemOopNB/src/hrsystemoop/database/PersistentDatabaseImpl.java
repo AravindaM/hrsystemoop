@@ -4,6 +4,8 @@
  */
 package hrsystemoop.database;
 
+import hrsystemoop.database.exeption.DatabaseConflict;
+import hrsystemoop.database.exeption.EmployeeDoesNotExist;
 import hrsystemoop.modle.Employee;
 import java.io.File;
 import java.io.FileInputStream;
@@ -63,5 +65,25 @@ public class PersistentDatabaseImpl extends DatabaseImpl {
         if (data == null) {
             data = new HashMap<Integer, Employee>();
         }
+    }
+
+    @Override
+    public synchronized int addEmployee(Employee emp) throws DatabaseConflict {
+        int r = super.addEmployee(emp);
+        commit();
+        return r;
+    }
+
+    @Override
+    public synchronized Employee deleteEmployee(int id) throws EmployeeDoesNotExist {
+        Employee e = super.deleteEmployee(id);
+        commit();
+        return e;
+    }
+
+    @Override
+    public synchronized void updateEmployee(int id, Employee emp) throws EmployeeDoesNotExist, DatabaseConflict {
+        super.updateEmployee(id, emp);
+        commit();
     }
 }

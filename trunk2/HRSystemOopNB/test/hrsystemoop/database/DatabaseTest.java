@@ -24,8 +24,7 @@ public class DatabaseTest {
     }
 
     private static Employee createMockEmployee(int i) {
-       
-        return new EmployeeImpl("someone" + i, Level.LEVELTWO, "uname" + i, "pass" + (i * 37));
+        return new EmployeeImpl("someone" + i, Level.LEVELONE, "uname" + i, "pass" + (i * 37), i * 7);
     }
 
     @BeforeClass

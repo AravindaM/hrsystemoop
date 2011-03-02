@@ -48,8 +48,6 @@ public abstract class Database {
      */
     public abstract void updateEmployee(int id, Employee emp) throws DatabaseExeption;
 
-
-
     /**
      * adds a new Employee to the database.
      * <br/> new Employee's id will set to the Employee through <code>Employee.setID()</code>
