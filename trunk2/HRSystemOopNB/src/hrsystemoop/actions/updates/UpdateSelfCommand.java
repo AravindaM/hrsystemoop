@@ -35,7 +35,7 @@ public abstract class UpdateSelfCommand implements Command {
     }
 
     public String[] getAtrributesList() {
-        return new String[]{"change " + attribute};
+        return new String[]{attribute};
     }
 
     public String getName() {
