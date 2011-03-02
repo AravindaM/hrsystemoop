@@ -34,7 +34,7 @@ public class LoanProcessor {
  *@param
  * Creates a new loan Object using the parameters LoanId, loan amount,
  * loan borrowed date, due date and the loan duration.Here check weather the maximum no of loans
-  * that can be borrowed by a employee is exceeded before
+  * that can be borrowed by a employee is exceeded before creating a loan Object.
  */
     public boolean addLoan(String loanId,double loanAmount,Date borrowedDate,Date dueDate, int loanDuration){
 
@@ -48,7 +48,12 @@ public class LoanProcessor {
       return false;
         }
     
-
+   /**
+    *
+    * @param
+    * Edit a particular loan details of a employee. Since employee can have maximum three loans
+    * LoanId will be used to find the correct loan from the Loans Array list.
+    */
     public void EditLoanDetails(String loanId,double loanAmount,Date borrowedDate,Date dueDate,int loanDuration){
         for(int i=0;i<loans.size();i++){
             LoanImpl tempLoan=null;
@@ -65,16 +70,19 @@ public class LoanProcessor {
         }
     }
 
-
+    /**
+     * View the 
+     *
+     */
    public ArrayList<String> viewLoanDetails(){
    for(int i=0;i<loans.size();i++){
        LoanImpl loanTemp=null;
        loanTemp=loans.get(i);
 
     loanDetails.add(loanTemp.getLoanId());
-    loanDetails.add(Intger.loanTemp.getLoanAmount());
-    loanDetails.add(loanTemp.getBorrowedDate());
-    loanDetails.add(loanTemp.getDuedDate());
+    loanDetails.add(String.valueOf(loanTemp.getLoanAmount()));
+    loanDetails.add(loanTemp.getBorrowedDate().toString());
+    loanDetails.add(loanTemp.getDuedDate().toString());
        }
     return  loanDetails;
    }
