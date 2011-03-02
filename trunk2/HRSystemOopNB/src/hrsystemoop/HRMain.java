@@ -105,6 +105,7 @@ public class HRMain {
             System.out.print("Enter your choice: ");
             int action = scanner.nextInt();
             if (action == commandNamesArr.length) {
+                //logout command
                 break;
             } else {
                 String selectedAction = commandNamesArr[action];
