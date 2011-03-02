@@ -7,15 +7,14 @@ import hrsystemoop.modle.Employee;
  *
  * @author R.C.M.Perera
  */
-public class UpdateSelfNameCommand extends UpdateSelfCommand {
+public class UpdateSelfUserNameCommand extends UpdateSelfCommand {
 
-    public UpdateSelfNameCommand() {
-        super("name");
+    public UpdateSelfUserNameCommand() {
+        super("user name");
     }
 
     @Override
     public void update(String attribValue, Employee currentUser) {
-        currentUser.setName(attribValue);
+        currentUser.setUserName(attribValue);
     }
-
 }
