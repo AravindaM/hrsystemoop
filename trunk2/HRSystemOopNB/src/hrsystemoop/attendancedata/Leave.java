@@ -5,8 +5,6 @@
 
 package hrsystemoop.attendancedata;
 
-import java.util.Date;
-
 /**
  *
  * @author Isha Premadasa
@@ -23,6 +21,10 @@ public abstract class Leave {
         
     }
 
+    /**
+    *
+    * @param year, month, date setting up the leave date
+    */
     public void setLeaveDate(int year, int month, int date ){
         
         leavedate= year+""+month+""+date;
@@ -33,6 +35,10 @@ public abstract class Leave {
          return leavedate;
     }
 
+    /**
+    *
+    * @param leave_reason  setting up the reason for leave
+    */
     public void setReason(String leave_reason){
 
         reason = leave_reason;
