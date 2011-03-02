@@ -14,8 +14,8 @@ import java.util.Map;
  */
 public class DatabaseImpl extends Database {
 
-    private Map<Integer, Employee> data = new HashMap<Integer, Employee>();
-    private int maxId;
+    protected Map<Integer, Employee> data = new HashMap<Integer, Employee>();
+    protected int maxId;
 
     protected DatabaseImpl() {
     }
@@ -40,7 +40,7 @@ public class DatabaseImpl extends Database {
         }
         maxId++;
         emp.setID(maxId);
-        data.put(maxId,emp.clone());
+        data.put(maxId, emp.clone());
         return maxId;
     }
 
