@@ -23,9 +23,16 @@ public class MonthAttendance implements MonthAttendanceProcess{
     private ArrayList<AnnualLeave> employeeAnnualLeaves =new ArrayList<AnnualLeave>();
     private ArrayList<CasualLeave> employeeCasualLeaves =new ArrayList<CasualLeave>();
     private ArrayList<MedicalLeave> employeeMedicalLeaves =new ArrayList<MedicalLeave>();
-
     private ArrayList<OverTime>  employeeOvertime = new ArrayList<OverTime>();
+
+    private int annl_length = employeeAnnualLeaves.size();
+    private int casl_length = employeeCasualLeaves.size();
+    private int medi_length = employeeMedicalLeaves.size();
+    private int OT_length = employeeOvertime.size();
+
+
     private int fulldays;       // total of casual leaves of full day
+    private int halfdays;       //total amount of 4 hour half day leaves
 
     
 
@@ -71,23 +78,17 @@ public class MonthAttendance implements MonthAttendanceProcess{
      */
     public int getTotalOTHours() {
 
-        for (int x= 0; x < employeeOvertime.size(); x++){
+        for (int x= 0; x < OT_length; x++){
 
             int time = employeeOvertime.get(x).getDuration();
-            totalOTHours = totalOTHours+time;
+            totalOTHours = totalOTHours + time;
         }  
         
         return totalOTHours;
     }
 
 
-    public int getExtraLeaves() {
-        int max = MedicalLeave.maxleave;
-        extraleaves = employeeMedicalLeaves.size() - max;
-
-        return extraleaves;
-    }
-
+   
     
 
     public int getTotalLeaves() {
@@ -106,22 +107,24 @@ public class MonthAttendance implements MonthAttendanceProcess{
 
     public int getTotalAnaualLeaves() {
 
-        annualLeaves= employeeAnnualLeaves.size();
+        annualLeaves= annl_length;
         return annualLeaves;
 
     }
 
     public int getTotalCasualLeaves() {
 
-        for (int y=0; y< employeeCasualLeaves.size(); y++){
+        for (int y=0; y< casl_length; y++){
             if(employeeCasualLeaves.get(y).getLeaveType().equals("fullday")){
                 fulldays++;
             }
             else if (employeeCasualLeaves.get(y).getLeaveType().equals("halfday")){
-                
+                halfdays++;
             }
         }
-        casualLeaves= employeeCasualLeaves.size();
+
+
+        casualLeaves= fulldays + (halfdays/2);
         return casualLeaves;
 
     }
@@ -130,6 +133,16 @@ public class MonthAttendance implements MonthAttendanceProcess{
     public int getTotalMedicalLeaves() {
         medicalLeaves= employeeMedicalLeaves.size();
         return medicalLeaves;
+    }
+
+    public int getAdditionalLeaves() {
+        int max = MedicalLeave.maxleave;
+        extraleaves = medi_length - max;
+
+        return extraleaves;    }
+
+    public void resetAdditonalLeaves(int additionalLeaves) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
 
