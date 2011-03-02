@@ -11,6 +11,7 @@ import hrsystemoop.database.Database;
 import hrsystemoop.database.exeption.DatabaseExeption;
 import hrsystemoop.modle.*;
 import hrsystemoop.database.*;
+import hrsystemoop.attendancedata.*;
 import java.util.*;
 
 
@@ -25,7 +26,7 @@ public class RequestLeaveCommand implements Command{
 
 public RequestLeaveCommand(){
     database = database.getInstance();
-    attributesList = new String[] {"Username","Designation","Name"};
+    attributesList = new String[] {"Date","Reason", "Leave Type", "End Date"};
 }
 
 /**
@@ -34,8 +35,10 @@ public RequestLeaveCommand(){
  * @return Success or Failure
  */
     public void execute(CommandContext context) {
-        Level newLevel= Level.valueOf(inputList.get("Designation"));
-        Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));
+        Map inputList= context.getArgList();
+        Level newLevel= Level.valueOf(context.getArgList().get("Date"));
+        AnnualLeave an_leave = new AnnualLeave((String)inputList.get("Date"), (String)inputList.get("Reason"));
+        
         try {
             database.addEmployee(newEmployee);
             //return true;

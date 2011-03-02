@@ -135,21 +135,25 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
         return medicalLeaves;
     }
 
+    // @ return annaul leave details
     public ArrayList<AnnualLeave> getAnnaualLeavesDetails() {
 
         return employeeAnnualLeaves;
     }
 
+    // @ return casual leave details
     public ArrayList<CasualLeave> getCasualLeavesDetails() {
 
         return employeeCasualLeaves;
     }
 
+    // @ return medical leave details
     public ArrayList<MedicalLeave> getMedicalLeavesDetails() {
 
         return employeeMedicalLeaves;
     }
 
+    // @ return overtime leave details
     public ArrayList<OverTime> getOTDetails() {
 
         return employeeOvertime;
