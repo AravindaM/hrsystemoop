@@ -45,12 +45,12 @@ public class LoanProcessor {
 
     }
 
-    public double getTotalLoanAmount(Employee employee){
-      double totalLoanAmount = 0;
-      
-
-    return totalLoanAmount;
-    }
+//    public double getTotalLoanAmount(Employee employee){
+//      double totalLoanAmount = 0;
+//
+//
+//    return totalLoanAmount;
+//    }
 
 }
 
