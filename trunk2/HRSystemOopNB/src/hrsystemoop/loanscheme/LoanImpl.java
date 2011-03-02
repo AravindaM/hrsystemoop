@@ -16,6 +16,8 @@ public class LoanImpl implements LoanInt {
     private Date borrowedDate;
     private Date dueDate;
     private double loanAmount;
+    private int noOfLoansBorrowed;
+    private int noOfMonthsPaid;
 
     public LoanImpl(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
         this.loanId = loanId;
@@ -23,6 +25,7 @@ public class LoanImpl implements LoanInt {
         this.borrowedDate = borrowedDate;
         this.dueDate = dueDate;
 
+        noOfLoansBorrowed=+1;
     }
 
     /**
@@ -79,6 +82,20 @@ public class LoanImpl implements LoanInt {
      */
     public void setLoanAmount(double loanAmount) {
         this.loanAmount = loanAmount;
+    }
+
+    /**
+     * @return the noOfMonthsPaid
+     */
+    public int getNoOfMonthsPaid() {
+        return noOfMonthsPaid;
+    }
+
+    /**
+     * @param noOfMonthsPaid the noOfMonthsPaid to set
+     */
+    public void setNoOfMonthsPaid(int noOfMonthsPaid) {
+        this.noOfMonthsPaid = noOfMonthsPaid;
     }
     /**
      * @return the noOfLoansBorrowed

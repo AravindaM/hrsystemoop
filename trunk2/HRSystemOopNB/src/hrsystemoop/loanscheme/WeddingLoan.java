@@ -13,6 +13,7 @@ import java.util.Date;
  * @author araLDAM
  */
 public class WeddingLoan extends LoanImpl{
+    private double acceptedAmount;
 
      public WeddingLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
         super(loanId, loanAmount, borrowedDate, dueDate);
@@ -21,26 +22,16 @@ public class WeddingLoan extends LoanImpl{
     public Double calWeddingLoanValue(Employee employ){
 
     if (employ.getLevel().equals(hrsystemoop.modle.Level.LEVELONE))
-    {acceptedAmount = houseEstimateValue*.3;}
+    {acceptedAmount = 50000;}
     else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTWO))
-    {
-    acceptedAmount = houseEstimateValue*.35;
-    }
-
+    {acceptedAmount = 60000;}
     else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTHREE))
-    {
-    acceptedAmount = houseEstimateValue*.4;
-    }
-
+    {acceptedAmount = 75000;}
     else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFOUR))
-    {
-    acceptedAmount = houseEstimateValue*.45;
-    }
-
+    {acceptedAmount = 100000;}
     else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFIVE))
-    {
-    acceptedAmount = houseEstimateValue*.5;
-    }
+    {acceptedAmount = 200000;}
+
     return acceptedAmount;
     }
     

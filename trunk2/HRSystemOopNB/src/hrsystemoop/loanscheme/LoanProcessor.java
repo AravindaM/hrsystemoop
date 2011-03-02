@@ -17,6 +17,7 @@ public class LoanProcessor {
     private String userId;
     ArrayList<String>  loanDetails;
     LoanImpl aLoan;
+    int noOfLoansBorrowed;
 
 
     public void EditLoanDetails(String loanId,double loanAmount,Date borrowedDate,Date dueDate){
@@ -44,13 +45,15 @@ public class LoanProcessor {
     aLoan.setDueDate(null);
 
     }
+    public int getNoofLoansBorrowed(Employee employ){
+    return noOfLoansBorrowed;
+    }
 
-//    public double getTotalLoanAmount(Employee employee){
-//      double totalLoanAmount = 0;
-//
-//
-//    return totalLoanAmount;
-//    }
+    public double getTotalLoanAmount(Employee employee){
+      double totalLoanAmount = 0;
+      totalLoanAmount =+aLoan.getLoanAmount();
+    return totalLoanAmount;
+    }
 
 }
 
