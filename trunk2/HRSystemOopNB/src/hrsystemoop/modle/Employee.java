@@ -6,7 +6,7 @@ package hrsystemoop.modle;
 
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.attendancedata.MonthAttendance;
-import hrsystemoop.loanscheme.LoanProcessorImpl;
+import hrsystemoop.loanscheme.LoanProcessor;
 
 /**
  *
@@ -40,5 +40,5 @@ public interface Employee {
 
     MonthAttendance getMonthAttendance();
 
-    LoanProcessorImpl getLoanProcessor();
+    LoanProcessor getLoanProcessor();
 }

@@ -8,7 +8,7 @@ import hrsystemoop.actions.Command;
 import hrsystemoop.actions.ShowSelfIDCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.attendancedata.MonthAttendance;
-import hrsystemoop.loanscheme.LoanProcessorImpl;
+import hrsystemoop.loanscheme.LoanProcessor;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -27,14 +27,14 @@ public class EmployeeImpl implements Employee {
 	private static final UserCommands commands = new UserCommands(new Command[]{ //TEMPORERY
 			new ShowSelfIDCommand()
 		});
-	private LoanProcessorImpl loanProcessor;
+	private LoanProcessor loanProcessor;
 	private MonthAttendance monthAttendance;
 
 	public EmployeeImpl(String name, Level level, String userName) {
 		this.name = name;
 		this.level = level;
 		this.userName = userName;
-		loanProcessor = new LoanProcessorImpl();
+		loanProcessor = new LoanProcessor();
 		monthAttendance = new MonthAttendance();
 	}
 
@@ -118,7 +118,7 @@ public class EmployeeImpl implements Employee {
 		return monthAttendance;
 	}
 
-	public LoanProcessorImpl getLoanProcessor() {
+	public LoanProcessor getLoanProcessor() {
 		return loanProcessor;
 	}
 }
