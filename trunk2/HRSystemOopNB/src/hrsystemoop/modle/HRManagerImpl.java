@@ -52,7 +52,7 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
         new AcceptLoanCommand(),
         new RemoveEmployeeCommand(),
 
-        //
+        //globles
         new ShowGlobleNameCommand()
 
     });

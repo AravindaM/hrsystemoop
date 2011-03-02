@@ -45,6 +45,10 @@ public class HRAssistantImpl extends HREmployerImpl implements HRAssistant {
         new AcceptLoanCommand(),
         new RemoveEmployeeCommand(),
 
+
+        //globles
+        new ShowGlobleNameCommand()
+
     });
 
     public HRAssistantImpl(String name, Level level, String userName, String userPassword, int age) {
