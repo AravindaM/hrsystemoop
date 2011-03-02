@@ -92,10 +92,10 @@ public class HRMain {
     }
 
     public void showLoggedUI() {
-        while (true){
         System.out.println("Welcome ");
         System.out.println("====================================");
         Set<String> commandNames = invoker.getAvailabeCommands();
+        while (true){
         System.out.println("Please select what you want to do:");
         int i = 0;
         String[] commandNamesArr = commandNames.toArray(new String[0]);
