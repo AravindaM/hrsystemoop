@@ -5,7 +5,7 @@
 package hrsystemoop.modle;
 
 import hrsystemoop.actions.UserCommands;
-import hrsystemoop.attendancedata.MonthAttendance;
+import hrsystemoop.attendancedata.MonthAttendanceImpl;
 import hrsystemoop.loanscheme.LoanProcessor;
 
 /**
@@ -38,7 +38,7 @@ public interface Employee extends Cloneable {
 
     int getSalary(int overTime);
 
-    MonthAttendance getMonthAttendance();
+    MonthAttendanceImpl getMonthAttendance();
 
     LoanProcessor getLoanProcessor();
 

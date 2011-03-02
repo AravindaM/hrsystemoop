@@ -8,7 +8,7 @@ import hrsystemoop.actions.Command;
 import hrsystemoop.actions.ShowSelfIDCommand;
 import hrsystemoop.actions.UserCommands;
 import hrsystemoop.actions.updates.UpdateSelfNameCommand;
-import hrsystemoop.attendancedata.MonthAttendance;
+import hrsystemoop.attendancedata.MonthAttendanceImpl;
 import hrsystemoop.loanscheme.LoanProcessor;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
@@ -33,7 +33,7 @@ public class EmployeeImpl implements Employee {
 		});
 
 	private LoanProcessor loanProcessor;
-	private MonthAttendance monthAttendance;
+	private MonthAttendanceImpl monthAttendance;
 
     public EmployeeImpl(String name, Level level, String userName, String userPassword) {
         this.name = name;
@@ -41,7 +41,7 @@ public class EmployeeImpl implements Employee {
         this.userName = userName;
         this.passwordHash = getHash(userPassword);
         loanProcessor = new LoanProcessor();
-        monthAttendance = new MonthAttendance();
+        monthAttendance = new MonthAttendanceImpl();
     }
 
     public Level getLevel() {
@@ -120,7 +120,7 @@ public class EmployeeImpl implements Employee {
         return (level.getSalary(overTime))-((monthAttendance.getTotalLeaves()-level.getMaxNoOfLeaves())*(level.getLeavePenalty()));
     }
 
-    public MonthAttendance getMonthAttendance() {
+    public MonthAttendanceImpl getMonthAttendance() {
         return monthAttendance;
     }
 
