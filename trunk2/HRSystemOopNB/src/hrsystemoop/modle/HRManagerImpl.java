@@ -5,6 +5,7 @@
 
 package hrsystemoop.modle;
 
+import hrsystemoop.actions.AddEmployeeCommand;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.ShowSelfIDCommand;
 import hrsystemoop.actions.UserCommands;
@@ -16,7 +17,8 @@ import hrsystemoop.actions.UserCommands;
 public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     static final UserCommands commands = new UserCommands(new Command[]{
-        new ShowSelfIDCommand()
+        new ShowSelfIDCommand(),
+                new AddEmployeeCommand()
         //acceptleave command, add remove update employee employeee
 
     });
@@ -30,8 +32,7 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
         return commands;
     }
 
-    public HRManagerImpl() {
-    }
+  
 
     public String getTeam() {
         throw new UnsupportedOperationException("Not supported yet.");

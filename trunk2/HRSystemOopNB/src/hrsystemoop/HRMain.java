@@ -10,8 +10,7 @@ import hrsystemoop.database.exeption.DatabaseExeption;
 import java.util.*;
 
 import hrsystemoop.database.*;
-import hrsystemoop.modle.Employee;
-import hrsystemoop.modle.EmployeeImpl;
+import hrsystemoop.modle.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -38,7 +37,7 @@ public class HRMain {
 // <editor-fold defaultstate="collapsed" desc="Temp Employee , remove later">
         Database tempInst = Database.getInstance();
         try {
-            tempInst.addEmployee(new EmployeeImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw"));
+            tempInst.addEmployee(new HRManagerImpl("saman gunarathna", hrsystemoop.modle.Level.LEVELTWO, "saman", "pw"));
         } catch (DatabaseExeption ex) {
             ex.printStackTrace();
         }
