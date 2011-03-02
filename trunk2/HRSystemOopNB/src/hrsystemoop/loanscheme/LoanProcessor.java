@@ -24,9 +24,9 @@ public class LoanProcessor {
     LoanProcessor loanProc;
     private double totalLoanAmount;
 
-    public LoanProcessor(int noOfLoansBorrowed, int noOfMonthsPaid) {
-        this.noOfLoansBorrowed = noOfLoansBorrowed;
-        this.noOfMonthsPaid = noOfMonthsPaid;
+
+    public LoanProcessor() {
+        
         maxNoOfLoans=3;
     }
 
@@ -60,17 +60,15 @@ public class LoanProcessor {
     }
 
 
-    public double getMonthlySum(Employee employ){
-    double monthlyLoan=0;
-    for(int i=0;i<3;i++){
-    monthlyLoan = employ.LoanProcessor.
-
-    }
-
-    monthlyLoan =
-
-    return monthlyLoan;
-    }
+//    public double getMonthlySum(LoanProcessor loanProc){
+//    double monthlyLoan=0;
+//    for(int i=0;i<3;i++){
+//    monthlyLoan =+ loanProc.getMonthlySumPerLoan(loan);
+//
+//    }
+//
+//    return monthlyLoanSum;
+//    }
 
     public double getMonthlySumPerLoan(LoanImpl loan){
     double monthlySumPerLoan=0;
@@ -82,7 +80,7 @@ public class LoanProcessor {
 //    public double getTotalLoanAmount(){
 //      double loanAmount = 0;
 //
-//    totalLoanAmount =+loanProc.getTotalLoanAmountPerLoan();
+//    totalLoanAmount =+loanProc.getTotalLoanAmountPerLoan(LoanImpl loan);
 //    return totalLoanAmount;
 //    }
 
