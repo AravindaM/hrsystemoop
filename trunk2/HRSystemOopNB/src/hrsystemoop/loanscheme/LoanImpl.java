@@ -98,6 +98,10 @@ public class LoanImpl implements LoanInt {
         this.noOfMonthsPaid = noOfMonthsPaid;
     }
 
+    /**
+     *
+     * @returns the value of a installment for a particular loan
+     */
     public double getValueOfAInstallement(){
     installementValue = loanAmount/getLoanDuration();
 

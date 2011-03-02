@@ -5,7 +5,6 @@
 package hrsystemoop.loanscheme;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *
@@ -29,109 +28,137 @@ public class LoanProcessor implements Cloneable {
         maxNoOfLoans = 3;
     }
 
+    /**
+     *@param
+     * Creates a new loan Object using the parameters LoanId, loan amount,
+     * loan borrowed date, due date and the loan duration.Here check weather the maximum no of loans
+     * that can be borrowed by a employee is exceeded before creating a loan Object.
+     */
+    public boolean addLoan(String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
 
- /**
- *@param
- * Creates a new loan Object using the parameters LoanId, loan amount,
- * loan borrowed date, due date and the loan duration.Here check weather the maximum no of loans
-  * that can be borrowed by a employee is exceeded before creating a loan Object.
- */
-    public boolean addLoan(String loanId,double loanAmount,String borrowedDate,String dueDate, int loanDuration){
-
-    if(noOfLoansBorrowed<3){
-    LoanImpl newLoan = new LoanImpl(loanId, loanAmount, borrowedDate, dueDate, loanDuration);
-    loans.add(newLoan);
-    noOfLoansBorrowed++;
-    return true;
+        if (noOfLoansBorrowed < 3) {
+            LoanImpl newLoan = new LoanImpl(loanId, loanAmount, borrowedDate, dueDate, loanDuration);
+            loans.add(newLoan);
+            noOfLoansBorrowed++;
+            return true;
+        } else {
+            return false;
         }
-    else
-      return false;
-        }
-    
-   /**
-    *
-    * @param
-    * Edit a particular loan details of a employee. Since employee can have maximum three loans
-    * LoanId will be used to find the correct loan from the Loans Array list.
-    */
-    public void EditLoanDetails(String loanId,double loanAmount,String borrowedDate,String dueDate,int loanDuration){
-        for(int i=0;i<loans.size();i++){
-            LoanImpl tempLoan=null;
-            if(tempLoan.getLoanId().equals(loanId)){
-            tempLoan = loans.get(i);
+    }
 
-        tempLoan.setLoanId(loanId);
-        tempLoan.setLoanAmount(loanAmount);
-        tempLoan.setBorrowedDate(borrowedDate);
-        tempLoan.setDueDate(dueDate);
+    /**
+     *
+     * @param
+     * Edit a particular loan details of a employee. Since employee can have maximum three loans
+     * LoanId will be used to find the correct loan from the Loans Array list.
+     */
+    public void EditLoanDetails(String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
+        for (int i = 0; i < loans.size(); i++) {
+            LoanImpl tempLoan = null;
+            if (tempLoan.getLoanId().equals(loanId)) {
+                tempLoan = loans.get(i);
 
-        loans.add(i,tempLoan);
+                tempLoan.setLoanId(loanId);
+                tempLoan.setLoanAmount(loanAmount);
+                tempLoan.setBorrowedDate(borrowedDate);
+                tempLoan.setDueDate(dueDate);
+
+                loans.add(i, tempLoan);
             }
         }
     }
 
     /**
-     * Used to View the loan details of particular employee
+     * Used to View the all loan details of particular employee.
+     * Loan Details are passed as as arrayList
      *
      */
-   public ArrayList<String> viewLoanDetails(){
-   for(int i=0;i<loans.size();i++){
-       LoanImpl loanTemp=null;
-       loanTemp=loans.get(i);
+    public ArrayList<String> viewLoanDetails() {
+        for (int i = 0; i < loans.size(); i++) {
+            LoanImpl loanTemp = null;
+            loanTemp = loans.get(i);
 
-    loanDetails.add(loanTemp.getLoanId());
-    loanDetails.add(String.valueOf(loanTemp.getLoanAmount()));
-    loanDetails.add(loanTemp.getBorrowedDate().toString());
-    loanDetails.add(loanTemp.getDuedDate().toString());
-       }
-    return  loanDetails;
-   }
+            loanDetails.add(loanTemp.getLoanId());
+            loanDetails.add(String.valueOf(loanTemp.getLoanAmount()));
+            loanDetails.add(loanTemp.getBorrowedDate().toString());
+            loanDetails.add(loanTemp.getDuedDate().toString());
+        }
+        return loanDetails;
+    }
 
+    /**
+     *
+     * @param loanID
+     * Used to remove a particular loan record. LoanId is used to search the
+     * loan recored and if found loan record will be removed from the Loans arrayList
+     */
+    public void removeLoanDetails(String loanID) {
+        for (int i = 0; i < loans.size(); i++) {
+            if (loans.get(i).getLoanId().equals(loanID)) {
+                loans.remove(i);
 
-
-    public void removeLoanDetails(String loanID){
-        for(int i=0;i<loans.size();i++){
-            if(loans.get(i).getLoanId().equals(loanID)){
-            loans.remove(i);
             }
         }
     }
 
-
-    public int getNoofLoansBorrowed(){
-    return noOfLoansBorrowed;
+    /**
+     *
+     * @returns the no of loans borrowed by a particular employee
+     */
+    public int getNoofLoansBorrowed() {
+        return noOfLoansBorrowed;
     }
 
-
-    public double getMonthlySum(ArrayList<LoanImpl> loans){
-    double monthlyLoanSum=0;
-    for(int i=0;i<3;i++){
-    monthlyLoanSum =+loanProc.getMonthlySumPerLoan(loans.get(i));
-           }
+    /**
+     *
+     * @param loans
+     * @returns the monthly sum of loans belongs  to a particular employee
+     */
+    public double getMonthlySum(ArrayList<LoanImpl> loans) {
+        double monthlyLoanSum = 0;
+        for (int i = 0; i < 3; i++) {
+            monthlyLoanSum = +loanProc.getMonthlyPayPerLoan(loans.get(i));
+        }
 
         return monthlyLoanSum;
     }
-
-    public double getMonthlySumPerLoan(LoanImpl loan) {
+    /**
+     *
+     * @param loans the monthly
+     * @returns the value which should be paid for a loan in a period of month
+     */
+    public double getMonthlyPayPerLoan(LoanImpl loan) {
         double monthlySumPerLoan = 0;
         if (loan != null) {
-            monthlySumPerLoan = loanProc.getTotalLoanAmountPerLoan(loan) / (loan.getLoanDuration() - loan.getNoOfMonthsPaid());
+            monthlySumPerLoan = loanProc.getLoanAmountPerLoan(loan) / (loan.getLoanDuration() - loan.getNoOfMonthsPaid());
         }
         return monthlySumPerLoan;
     }
 
-    public double getTotalLoanAmount(ArrayList<LoanImpl> loans){
-      double loanAmount = 0;
-      for(int i=0;i<3;i++){
-      totalLoanAmount =loanProc.getTotalLoanAmountPerLoan(loans.get(i));
+    /**
+     *
+     * @param loans
+     * @returns the total loan amount to be paid by a employee
+     */
+    public double getTotalLoanAmount(ArrayList<LoanImpl> loans) {
+        double loanAmount = 0;
+        for (int i = 0; i < 3; i++) {
+            totalLoanAmount = loanProc.getLoanAmountPerLoan(loans.get(i));
         }
-    return totalLoanAmount;
+        return totalLoanAmount;
 
     }
 
-    public double getTotalLoanAmountPerLoan(LoanImpl loan) {
+    /**
+     *
+     * @param loan
+     * @returns the loan amount to be paid for a particular loan,
+     * belongs to a employee
+     */
+    public double getLoanAmountPerLoan(LoanImpl loan) {
         double loanAmount;
-
+        loanAmount = loan.getLoanAmount();
+        
         loanAmount = -loan.getValueOfAInstallement() * loan.getNoOfMonthsPaid();
         return loanAmount;
     }
