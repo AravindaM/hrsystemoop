@@ -26,10 +26,10 @@ public abstract class UpdateSelfCommand implements Command {
         update(context.getArgList().get(attribute), context.getCurrentuser());
         try {
             Database.getInstance().updateEmployee(context.getCurrentuser().getId(), context.getCurrentuser());
-            context.setResults(attribute);
+            context.setResults(attribute + " changed");
             context.setReturnStatus(true);
         } catch (DatabaseExeption ex) {
-             context.setReturnStatus(false);
+            context.setReturnStatus(false);
             System.out.println("can't change " + attribute + " : " + ex.getMessage());
         }
     }
@@ -39,7 +39,7 @@ public abstract class UpdateSelfCommand implements Command {
     }
 
     public String getName() {
-        return "Chnage my "+attribute;
+        return "Chnage my " + attribute;
     }
 
     public abstract void update(String attribValue, Employee currentUser);

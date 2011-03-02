@@ -24,7 +24,7 @@ public class DatabaseTest {
     }
 
     private static Employee createMockEmployee(int i) {
-        //return new EmployeeImpl("someone" + i, Level.LEVELTWO, "uname" + i);
+       
         return new EmployeeImpl("someone" + i, Level.LEVELTWO, "uname" + i, "pass" + (i * 37));
     }
 
@@ -119,7 +119,7 @@ public class DatabaseTest {
         instance.updateEmployee(id, emp);
         resalt = instance.getEmployee(diffId);
         assertNotNull(resalt);
-        assertEquals(emp, resalt);
+        assertEquals(emp.getName(), resalt.getName());
 
         System.out.println("        with confiling user names");
         id = 2;
