@@ -99,7 +99,7 @@ public class HRMain {
         System.out.println("Please select what you want to do:");
         int i = 0;
         String[] commandNamesArr = commandNames.toArray(new String[0]);
-        
+
         for (String command : commandNamesArr) {
             System.out.println(i+ " - " + command);
             i++;
@@ -124,7 +124,7 @@ public class HRMain {
                 System.out.println(context.getResults());
             }
         }
-        
+
         }
     }
 }

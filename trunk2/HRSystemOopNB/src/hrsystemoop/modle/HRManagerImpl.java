@@ -5,6 +5,7 @@
 
 package hrsystemoop.modle;
 
+import hrsystemoop.actions.AddEmployeeCommand;
 import hrsystemoop.actions.Command;
 
 import hrsystemoop.actions.UserCommands;
@@ -18,6 +19,7 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     static final UserCommands commands = new UserCommands(new Command[]{
         new ShowSelfIDCommand(),
+        new AddEmployeeCommand()
         //acceptleave command, add remove update employee employeee
 
     });

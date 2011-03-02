@@ -53,7 +53,7 @@ public enum Level {
         if (l > 5 || l < 1) {
             throw new IllegalArgumentException();
         }
-        return values()[l];
+        return values()[l-1];
     }
     // Employer e = new Employer(Level.LEVELONE);
 }

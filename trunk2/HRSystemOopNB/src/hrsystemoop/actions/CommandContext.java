@@ -41,7 +41,7 @@ public class CommandContext {
     }
 
     public String getResults(){
-        return results.toString();
+        return results;
     }
 
     public void setResults(String results) {

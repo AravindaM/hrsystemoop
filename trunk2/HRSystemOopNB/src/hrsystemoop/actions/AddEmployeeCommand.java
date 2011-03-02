@@ -20,7 +20,7 @@ public class AddEmployeeCommand implements Command {
 
     public AddEmployeeCommand() {
         database = database.getInstance();
-        attributesList = new String[]{"Username", "Designation(0-HRManager,1-HRAssistant,2-OtherEmployee)", "Level(0-5)", "Name"};
+        attributesList = new String[]{"Username","Password", "Designation(0-HRManager,1-HRAssistant,2-OtherEmployee)", "Level(0-5)", "Name"};
     }
 
     /**
@@ -38,7 +38,7 @@ public class AddEmployeeCommand implements Command {
      */
     public void execute(CommandContext context) {
         Map<String, String> inputList = context.getArgList();
-        Level newLevel = Level.valueOf(inputList.get("Designation ("));
+        Level newLevel = Level.parseInt(Integer.valueOf(inputList.get("Level(0-5)")));
         int empType = Integer.parseInt(inputList.get("Designation(0-HRManager,1-HRAssistant,2-OtherEmployee)"));
         EmployeeImpl newEmployee = null;
         switch (empType) {
