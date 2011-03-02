@@ -111,10 +111,10 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
     public int getTotalCasualLeaves() {
 
         for (int y=0; y< casl_length; y++){
-            if(employeeCasualLeaves.get(y).getLeaveType().equals("fullday")){
+            if(employeeCasualLeaves.get(y).getLeaveType().equalsIgnoreCase("fullday")){
                 fulldays++;
             }
-            else if (employeeCasualLeaves.get(y).getLeaveType().equals("halfday")){
+            else if (employeeCasualLeaves.get(y).getLeaveType().equalsIgnoreCase("halfday")){
                 halfdays++;
             }
         }
