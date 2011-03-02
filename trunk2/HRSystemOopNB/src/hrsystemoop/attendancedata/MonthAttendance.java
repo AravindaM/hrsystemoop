@@ -13,6 +13,7 @@ import java.util.ArrayList;
  */
 public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
 
+// varaible declaring
     private int totalLeaves;
     private int annualLeaves;
     private int casualLeaves;
@@ -24,7 +25,7 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
     private int availableannualleave;
     private int availablemedicalleave;
 
-
+// declaring of details of leaves and OT times for each emplyee for a month
     private ArrayList<AnnualLeave> employeeAnnualLeaves =new ArrayList<AnnualLeave>();
     private ArrayList<CasualLeave> employeeCasualLeaves =new ArrayList<CasualLeave>();
     private ArrayList<MedicalLeave> employeeMedicalLeaves =new ArrayList<MedicalLeave>();
@@ -43,72 +44,52 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
     
 
     public MonthAttendance(){
-
     }
+
+// adding data into record arrays
 
     /**
      *
-     * @param leave a single leave day of an employee
+     * @param annualleave, a single annual leave day of an employee
      */
-
     private void addToAnnualLeaves(AnnualLeave annualleave){
 
         employeeAnnualLeaves.add(annualleave);
     }
 
+    /**
+     *
+     * @param medical leave, a single medical leave day of an employee
+     */
+    private void addToMedicalLeaves(MedicalLeave medicalleave){
 
+        employeeMedicalLeaves.add(medicalleave);
+    }
 
     /**
      *
-     * @param overtime a single overtime day of an employee
+     * @param medical leave, a single medical leave day of an employee
+     */
+    private void addToCasualLeaves(CasualLeave casualleave){
+
+        employeeCasualLeaves.add(casualleave);
+    }
+
+    /**
+     *
+     * @param overtime, a single overtime day of an employee
      */
     private  void addToovertime(OverTime overtime){
 
         employeeOvertime.add(overtime);
     }
 
-    /**
-     *
-     * @param leave a single leave day of an employee
-     */
-
-    private void addToMedicalLeaves(MedicalLeave medicalleave){
-
-        employeeMedicalLeaves.add(medicalleave);
-    }
-
-
-    /**
-     *
-     * @return totalOTHours number of overtime ours of an employee for a time period of single month
-     */
-    public int getTotalOTHours() {
-
-        for (int x= 0; x < OT_length; x++){
-
-            int time = employeeOvertime.get(x).getDuration();
-            totalOTHours = totalOTHours + time;
-        }  
-        
-        return totalOTHours;
-    }
-
-
-   
+// Getters methods for each types of leaves
     
-
-    public int getTotalLeaves() {
+     public int getTotalLeaves() {
 
         totalLeaves = getTotalAnaualLeaves() + getTotalCasualLeaves()+ getTotalMedicalLeaves();
         return totalLeaves;
-    }
-
-
-
-    
-    public MonthAttendance getReport (){
-    
-        return  this;
     }
 
     public int getTotalAnaualLeaves() {
@@ -141,6 +122,15 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
         return medicalLeaves;
     }
 
+
+    
+    public MonthAttendance getReport (){
+    
+        return  this;
+    }
+
+    
+
 //    public int getAdditionalLeaves() {
 //        int max = MedicalLeave.maxleave;
 //        extraleaves = medi_length - max;
@@ -155,19 +145,30 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
         return halfday_hours;
     }
 
-    public void resetAdditonalLeaves() {
+    public void resetAdditonalLeaves(int leaves) {
 
-        annualLeaves = 0;
-        casualLeaves = 0;
-        medicalLeaves = 0;
-
-
+        totalLeaves =  leaves;
+        
     }
 
     public int getTotalShortLeaves() {
         return halfdays;
     }
 
+    /**
+     *
+     * @return totalOTHours number of overtime ours of an employee for a time period of single month
+     */
+    public int getTotalOTHours() {
+
+        for (int x= 0; x < OT_length; x++){
+
+            int time = employeeOvertime.get(x).getDuration();
+            totalOTHours = totalOTHours + time;
+        }
+
+        return totalOTHours;
+    }
     public int getAvailableAnnaulLeaves() {
         availableannualleave = AnnualLeave.maxleaves-annualLeaves;
               if(availableannualleave >= 0){
@@ -193,6 +194,8 @@ public class MonthAttendance implements MonthAttendanceProcess, ShortLeave{
         }
         else
             return 0;         }
+
+    
 
 
     

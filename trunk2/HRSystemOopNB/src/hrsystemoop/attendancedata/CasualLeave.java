@@ -5,6 +5,8 @@
 
 package hrsystemoop.attendancedata;
 
+import java.util.Date;
+
 /**
  *
  * @author Isha Premadasa
@@ -15,7 +17,11 @@ public class CasualLeave  extends Leave {
     private String[] types = {"fullday", "halfday"};
     private String leaveType;
 
-    public CasualLeave() {
+    public CasualLeave(Date date, String reason,String leaveType ) {
+
+     super(date, reason);
+     this.leaveType = leaveType;
+
     }
 
 

@@ -24,9 +24,9 @@ public abstract class Leave {
 
     
     
-    public Leave(){
-        //        totalLeaves++;
-
+    public Leave( Date leavedate, String reason){
+        this.leavedate = leavedate;
+        this.reason = reason;
         
     }
 

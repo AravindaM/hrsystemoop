@@ -5,6 +5,8 @@
 
 package hrsystemoop.attendancedata;
 
+import java.util.Date;
+
 /**
  *
  * @author Isha Premadasa
@@ -12,10 +14,10 @@ package hrsystemoop.attendancedata;
 public class AnnualLeave extends Leave{
 
     static final int maxleaves = 7;
-    private final int none = -1;
+
     
-    public AnnualLeave() {
-        
+    public AnnualLeave(Date date, String reason ) {
+        super(date, reason);
     }
 
 

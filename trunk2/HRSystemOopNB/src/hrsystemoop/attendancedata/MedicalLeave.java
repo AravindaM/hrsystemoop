@@ -5,6 +5,8 @@
 
 package hrsystemoop.attendancedata;
 
+import java.util.Date;
+
 /**
  *
  * @author Isha Premadasa
@@ -14,8 +16,13 @@ public class MedicalLeave extends Leave{
 
     static  final int maxleaves = 14;
     private int duration;
+    Date end_date;
 
-    public MedicalLeave() {
+    public MedicalLeave(Date date, String reason, Date end_date) {
+        super(date, reason);
+        this.end_date =end_date;
+        calc_duration();
+
     }
 
     public void setDuration(int duration){
@@ -25,5 +32,19 @@ public class MedicalLeave extends Leave{
     public int getDuration(){
 
         return duration;
+    }
+
+    public void setEndDate(Date end_date){
+        this.end_date = end_date;
+    }
+
+    public Date getEndDate(){
+
+        return end_date;
+    }
+
+    private void calc_duration() {
+
+        duration = end_date.getDate()- super.getLeaveDate().getDate();
     }
 }
