@@ -68,7 +68,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param medical leave, a single medical leave day of an employee
      */
-    private void addToCasualLeaves(CasualLeave casualleave){
+    public  void addToCasualLeaves(CasualLeave casualleave){
 
         employeeCasualLeaves.add(casualleave);
     }
@@ -77,7 +77,7 @@ public class MonthAttendanceImpl implements MonthAttendanceIntr, ShortLeaveCalcs
      *
      * @param overtime, a single overtime day of an employee
      */
-    private  void addToovertime(OverTime overtime){
+    public  void addToovertime(OverTime overtime){
 
         employeeOvertime.add(overtime);
     }
