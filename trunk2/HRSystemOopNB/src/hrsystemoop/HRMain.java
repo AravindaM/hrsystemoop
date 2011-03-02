@@ -47,6 +47,7 @@ public class HRMain {
      */
     public void run() {
         while (true) {
+            System.out.println();
             System.out.println("=====================================================");
             System.out.println("Welcome to TechNinja Human Resourse Management System");
             System.out.println("=====================================================");
