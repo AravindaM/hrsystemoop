@@ -5,7 +5,6 @@
 
 package hrsystemoop.actions;
 
-import hrsystemoop.database.*;
 import hrsystemoop.modle.*;
 import java.util.*;
 /**
@@ -14,10 +13,10 @@ import java.util.*;
  * stores the attributes needed to execute commands and results after executing
  */
 public class CommandContext {
-    Employee currentuser;
-    Map<String,String> argList;
-    String results;
-    boolean returnStatus;
+    private Employee currentuser;
+    private Map<String,String> argList;
+    private String results;
+    private boolean returnStatus;
 
     public CommandContext(Employee currentuser, Map<String, String> argList) {
         this.currentuser = currentuser;
