@@ -52,7 +52,7 @@ public UpdateEmployeeCommand(String name, Level level){
         return attributesList;
     }
 
-    public boolean execute(Map<String, String> argList, Employee currentUser) {
+    public boolean execute(CommandContext context) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
