@@ -34,14 +34,14 @@ public RemoveEmployeeCommand(String name, Level level){
  * @param inputList List of attributes of employee
  * @return Success or Failure
  */
-    public CommandContext execute(CommandContext context) {
+    public void execute(CommandContext context) {
 
         int id =Integer.getInteger(inputList.get("Emplyee id"));
         try {
             database.deleteEmployee(id);
-            return true;
+            //return true;
         } catch (DatabaseExeption ex) {
-            return false;
+            //return false;
         }
     }
 

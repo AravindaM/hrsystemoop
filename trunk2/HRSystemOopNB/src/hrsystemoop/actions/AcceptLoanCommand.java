@@ -42,8 +42,10 @@ public AcceptLoanCommand(String name, Level level){
         return "Add New Employee";
     }
 
-    public CommandContext execute(CommandContext context) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void execute(CommandContext context) {
+        Employee newEmployee = new EmployeeImpl(context.getArgList().get("Name")
+                , Level.LEVELTWO, null, null);
+
     }
 
 }

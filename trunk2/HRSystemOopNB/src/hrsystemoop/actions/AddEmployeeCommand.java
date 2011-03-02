@@ -52,15 +52,15 @@ public AddEmployeeCommand(String name, Level level){
         return attributesList;
     }
 
-    public CommandContext execute(CommandContext context) {
+    public void execute(CommandContext context) {
                 Map<String,String> inputList = context.getArgList();
         Level newLevel= Level.valueOf(inputList.get("Designation"));
         Employee newEmployee = new EmployeeImpl(inputList.get("Name"), newLevel,inputList.get("username"));
         try {
             database.addEmployee(newEmployee);
-            return true;
+            //return true;
         } catch (DatabaseExeption ex) {
-            return false;
+            //return false;
         }
     }
 

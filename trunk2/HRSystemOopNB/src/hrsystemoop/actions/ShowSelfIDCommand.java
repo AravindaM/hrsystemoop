@@ -11,11 +11,10 @@ package hrsystemoop.actions;
  */
 public class ShowSelfIDCommand implements Command {
 
-    public CommandContext execute(CommandContext context) {
+    public void execute(CommandContext context) {
         int id=context.getCurrentuser().getId();
         context.setResults("Your id is: " + id);
         context.setReturnStatus(true);
-        return context;
     }
 
     public String[] getAtrributesList() {

@@ -38,7 +38,8 @@ public class Invoker {
     public CommandContext perform(String selectedCommandName, HashMap attributes){
         Command selectedCommand = loggedEmployee.getUserCommands().getCommand(selectedCommandName);
         CommandContext context = new CommandContext(loggedEmployee, attributes);
-        return selectedCommand.execute(context);
+        selectedCommand.execute(context);
+        return context;
     }
 
     public String[] getAttributesForCommand(String selectedCommand) {

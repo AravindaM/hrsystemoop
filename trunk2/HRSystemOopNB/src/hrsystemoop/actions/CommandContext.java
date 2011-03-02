@@ -10,7 +10,8 @@ import hrsystemoop.modle.*;
 import java.util.*;
 /**
  *
- * @author TOSHIBA
+ * @author Amila Manoj
+ * stores the attributes needed to execute commands and results after executing
  */
 public class CommandContext {
     Employee currentuser;
