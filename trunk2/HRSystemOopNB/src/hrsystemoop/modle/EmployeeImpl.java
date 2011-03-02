@@ -10,6 +10,7 @@ import hrsystemoop.actions.CommandContext;
 import hrsystemoop.actions.RequestLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
 import hrsystemoop.actions.UserCommands;
+import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
 import hrsystemoop.actions.show.ShowSelfCommand;
 import hrsystemoop.actions.show.ShowSelfIDCommand;
 import hrsystemoop.actions.show.ShowSelfNameCommand;
@@ -42,7 +43,8 @@ public class EmployeeImpl implements Employee {
                         new CheckSalaryCommand(),
                         new ShowSelfNameCommand(),
                         new ShowSelfIDCommand(),
-                        new ShowSelfUserNameCommand()
+                        new ShowSelfUserNameCommand(),
+                        new ShowSelfAttendanceSummaryCommand()
 		});
 
 	private LoanProcessor loanProcessor;
