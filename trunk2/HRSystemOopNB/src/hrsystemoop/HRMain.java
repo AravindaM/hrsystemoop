@@ -95,6 +95,8 @@ public class HRMain {
             System.out.println("====================================");
             System.out.println("Please select what you want to do:");
             int i = 0;
+
+            // this is used to print all the available actions
             String[] commandNamesArr = commandNames.toArray(new String[0]);
 
             for (String command : commandNamesArr) {
