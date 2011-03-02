@@ -5,10 +5,8 @@
 package hrsystemoop.actions.updates;
 
 import hrsystemoop.actions.Command;
-import hrsystemoop.database.Database;
-import hrsystemoop.database.exeption.DatabaseExeption;
+import hrsystemoop.actions.CommandContext;
 import hrsystemoop.modle.Employee;
-import java.util.Map;
 
 /**
  *
@@ -22,15 +20,8 @@ public abstract class UpdateSelfCommand implements Command {
         this.attribute = attribute;
     }
 
-    public boolean execute(Map<String, String> argList, Employee currentUser) {
-        update(argList.get(attribute), currentUser);
-        try {
-            Database.getInstance().updateEmployee(currentUser.getId(), currentUser);
-            return true;
-        } catch (DatabaseExeption ex) {
-            System.out.println("can't change " + attribute + " : " + ex.getMessage());
-            return false;
-        }
+    public CommandContext execute(CommandContext context) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public String[] getAtrributesList() {
