@@ -18,7 +18,7 @@ public class AcceptLoanCommand implements Command{
    private Database database;
    private String[] attributesList;
 
-public AcceptLoanCommand(String name, Level level){
+public AcceptLoanCommand(){
     database = database.getInstance();
     attributesList = new String[] {"Username","Designation","Name"};
 }

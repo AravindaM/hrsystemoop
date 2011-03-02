@@ -23,7 +23,7 @@ public class RequestLeaveCommand implements Command{
    private Database database;
    private String[] attributesList;
 
-public RequestLeaveCommand(String name, Level level){
+public RequestLeaveCommand(){
     database = database.getInstance();
     attributesList = new String[] {"Username","Designation","Name"};
 }

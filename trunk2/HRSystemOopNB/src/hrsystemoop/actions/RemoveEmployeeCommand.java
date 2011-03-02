@@ -22,7 +22,7 @@ public class RemoveEmployeeCommand implements Command{
 
    private Database database;
    private String[] attributesList;
-public RemoveEmployeeCommand(String name, Level level){
+public RemoveEmployeeCommand(){
     database = database.getInstance();
 
     attributesList = new String[] {"Emplyee id"};

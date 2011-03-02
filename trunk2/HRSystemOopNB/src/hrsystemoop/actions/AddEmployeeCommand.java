@@ -23,7 +23,7 @@ public class AddEmployeeCommand implements Command{
    private Database database;
    private String[] attributesList;
 
-public AddEmployeeCommand(String name, Level level){
+public AddEmployeeCommand(){
     database = database.getInstance();
     attributesList = new String[] {"Username","Designation","Name"};
 }

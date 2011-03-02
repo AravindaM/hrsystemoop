@@ -23,7 +23,7 @@ public class CheckSalaryCommand implements Command{
    private Database database;
    private String[] attributesList;
 
-public CheckSalaryCommand(String name, Level level){
+public CheckSalaryCommand(){
     database = database.getInstance();
     attributesList = new String[] {"Username","Designation","Name"};
 }

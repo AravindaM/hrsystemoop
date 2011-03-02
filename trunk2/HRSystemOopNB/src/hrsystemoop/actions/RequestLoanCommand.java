@@ -23,7 +23,7 @@ public class RequestLoanCommand implements Command{
    private Database database;
    private String[] attributesList;
 
-public RequestLoanCommand(String name, Level level){
+public RequestLoanCommand(){
     database = database.getInstance();
     attributesList = new String[] {"Username","Designation","Name"};
 }
