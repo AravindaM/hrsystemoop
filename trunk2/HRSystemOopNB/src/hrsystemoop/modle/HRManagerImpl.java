@@ -12,6 +12,7 @@ import hrsystemoop.actions.RemoveEmployeeCommand;
 import hrsystemoop.actions.RequestMedicalLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
 import hrsystemoop.actions.UserCommands;
+import hrsystemoop.actions.show.ShowSelfAttendanceFullDetailsCommand;
 import hrsystemoop.actions.show.ShowSelfAttendanceSummaryCommand;
 import hrsystemoop.actions.show.ShowSelfIDCommand;
 import hrsystemoop.actions.show.ShowSelfNameCommand;
@@ -38,6 +39,7 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
         new RequestLoanCommand(),
 
         //show commands
+        new ShowSelfAttendanceFullDetailsCommand(),
         new ShowSelfSalaryCommand(),
         new ShowSelfIDCommand(),
         new ShowSelfNameCommand(),
