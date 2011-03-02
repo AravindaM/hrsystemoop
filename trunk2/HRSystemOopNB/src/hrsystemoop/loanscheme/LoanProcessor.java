@@ -16,44 +16,95 @@ import java.util.Date;
 public class LoanProcessor {
     private String userId;
     ArrayList<String>  loanDetails;
-    LoanImpl aLoan;
+    private LoanImpl aLoan;
     int noOfLoansBorrowed;
+    int noOfMonthsPaid;
+    int loanDuration;
+    int maxNoOfLoans;
+    LoanProcessor loanProc;
+    private double totalLoanAmount;
 
+    public LoanProcessor(int noOfLoansBorrowed, int noOfMonthsPaid) {
+        this.noOfLoansBorrowed = noOfLoansBorrowed;
+        this.noOfMonthsPaid = noOfMonthsPaid;
+        maxNoOfLoans=3;
+    }
 
     public void EditLoanDetails(String loanId,double loanAmount,Date borrowedDate,Date dueDate){
 
-    aLoan.setLoanId(loanId);
-    aLoan.setLoanAmount(loanAmount);
-    aLoan.setBorrowedDate(borrowedDate);
-    aLoan.setDueDate(dueDate);
+        getaLoan().setLoanId(loanId);
+        getaLoan().setLoanAmount(loanAmount);
+        getaLoan().setBorrowedDate(borrowedDate);
+        getaLoan().setDueDate(dueDate);
     }
     
 
     public ArrayList<String> getLoanDetails(){
-    loanDetails.add(aLoan.getLoanId());
-    loanDetails.add(aLoan.getLoanAmount()+"");
-    loanDetails.add(aLoan.getBorrowedDate()+"");
-    loanDetails.add(aLoan.getDuedDate()+"");
+    loanDetails.add(getaLoan().getLoanId());
+    loanDetails.add(getaLoan().getLoanAmount()+"");
+    loanDetails.add(getaLoan().getBorrowedDate()+"");
+    loanDetails.add(getaLoan().getDuedDate()+"");
     return  loanDetails;
     }
 
 
     public void removeLoanDetails(){
-    aLoan.setLoanId(null);
-    aLoan.setLoanAmount(0.00);
-    aLoan.setBorrowedDate(null);
-    aLoan.setDueDate(null);
+        getaLoan().setLoanId(null);
+        getaLoan().setLoanAmount(0.00);
+        getaLoan().setBorrowedDate(null);
+        getaLoan().setDueDate(null);
 
     }
-    public int getNoofLoansBorrowed(Employee employ){
+    public int getNoofLoansBorrowed(){
     return noOfLoansBorrowed;
     }
 
-    public double getTotalLoanAmount(Employee employee){
-      double totalLoanAmount = 0;
-      totalLoanAmount =+aLoan.getLoanAmount();
-    return totalLoanAmount;
+
+    public double getMonthlySum(Employee employ){
+    double monthlyLoan=0;
+    for(int i=0;i<3;i++){
+    monthlyLoan = employ.LoanProcessor.
+
     }
 
+    monthlyLoan =
+
+    return monthlyLoan;
+    }
+
+    public double getMonthlySumPerLoan(LoanImpl loan){
+    double monthlySumPerLoan=0;
+    monthlySumPerLoan = loanProc.getTotalLoanAmountPerLoan(loan)/(loan.getLoanDuration()-loan.getNoOfMonthsPaid());
+
+    return monthlySumPerLoan;
+    }
+
+//    public double getTotalLoanAmount(){
+//      double loanAmount = 0;
+//
+//    totalLoanAmount =+loanProc.getTotalLoanAmountPerLoan();
+//    return totalLoanAmount;
+//    }
+
+    public double getTotalLoanAmountPerLoan(LoanImpl loan){
+    double loanAmount;
+
+    loanAmount=- loan.getValueOfAInstallement()*noOfMonthsPaid;
+    return loanAmount;
+    }
+
+    /**
+     * @return the aLoan
+     */
+    public LoanImpl getaLoan() {
+        return aLoan;
+    }
+
+    /**
+     * @param aLoan the aLoan to set
+     */
+    public void setaLoan(LoanImpl aLoan) {
+        this.aLoan = aLoan;
+    }
 }
 

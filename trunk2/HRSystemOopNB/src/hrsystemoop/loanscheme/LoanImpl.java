@@ -18,13 +18,15 @@ public class LoanImpl implements LoanInt {
     private double loanAmount;
     private int noOfLoansBorrowed;
     private int noOfMonthsPaid;
+    private double installementValue;
+    private double loanDuration;
 
-    public LoanImpl(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
+    public LoanImpl(String loanId, double loanAmount, Date borrowedDate, Date dueDate, int loanDuration) {
         this.loanId = loanId;
         this.loanAmount = loanAmount;
         this.borrowedDate = borrowedDate;
         this.dueDate = dueDate;
-
+        this.loanDuration = loanDuration;
         noOfLoansBorrowed=+1;
     }
 
@@ -97,17 +99,25 @@ public class LoanImpl implements LoanInt {
     public void setNoOfMonthsPaid(int noOfMonthsPaid) {
         this.noOfMonthsPaid = noOfMonthsPaid;
     }
+
+    public double getValueOfAInstallement(){
+    installementValue = loanAmount/getLoanDuration();
+
+    return installementValue;
+    }
+
     /**
-     * @return the noOfLoansBorrowed
+     * @return the loanDuration
      */
-//    public int getNoOfLoansBorrowed() {
-//        return noOfLoansBorrowed;
-//    }
-//
-//    /**
-//     * @param noOfLoansBorrowed the noOfLoansBorrowed to set
-//     */
-//    public void setNoOfLoansBorrowed(int noOfLoansBorrowed) {
-//        this.noOfLoansBorrowed = noOfLoansBorrowed;
-//    }
+    public double getLoanDuration() {
+        return loanDuration;
+    }
+
+    /**
+     * @param loanDuration the loanDuration to set
+     */
+    public void setLoanDuration(double loanDuration) {
+        this.loanDuration = loanDuration;
+    }
+
 }

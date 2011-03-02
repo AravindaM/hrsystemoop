@@ -19,8 +19,8 @@ public class HousingLoan extends LoanImpl{
     double acceptedAmount;
     Level level;
 
-    public HousingLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
-        super(loanId, loanAmount, borrowedDate, dueDate);
+    public HousingLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate, int loanDuration) {
+        super(loanId, loanAmount, borrowedDate, dueDate,loanDuration);
     }
 
     public Double calHouseLoanValue(Employee employ){

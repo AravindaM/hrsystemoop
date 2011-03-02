@@ -25,8 +25,8 @@ public class TravelLoan extends LoanImpl {
 
     
 
-public TravelLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
-        super(loanId, loanAmount, borrowedDate, dueDate); 
+public TravelLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate,int loanDuration) {
+        super(loanId, loanAmount, borrowedDate, dueDate,loanDuration);
 
     }
 public Double calHouseLoanValue(Employee employ){
