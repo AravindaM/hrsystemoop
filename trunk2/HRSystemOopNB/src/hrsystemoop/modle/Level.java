@@ -26,7 +26,7 @@ public enum Level {
         this.baseSalary = baseSalary;
         this.overtimeRate = overtimeRate;
         this.leavePenalty = leavePenalty;
-        this.maxNoOfLeaves =
+        this.maxNoOfLeaves = maxnoOfLeaves;
     }
 
     private int getBaseSalary() {
@@ -43,6 +43,10 @@ public enum Level {
 
     public int getLeavePenalty() {
         return leavePenalty;
+    }
+
+    public int getMaxNoOfLeaves() {
+        return maxNoOfLeaves;
     }
 
     // Employer e = new Employer(Level.LEVELONE);
