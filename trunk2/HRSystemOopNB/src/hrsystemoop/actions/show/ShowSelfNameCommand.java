@@ -1,3 +1,4 @@
+
 package hrsystemoop.actions.show;
 
 import hrsystemoop.actions.CommandContext;
@@ -7,14 +8,14 @@ import hrsystemoop.modle.Employee;
  *
  * @author R.C.M.Perera
  */
-public class ShowSelfIDCommand extends ShowSelfCommand {
+public class ShowSelfNameCommand extends ShowSelfCommand {
 
-    public ShowSelfIDCommand() {
-        super("id");
+    public ShowSelfNameCommand() {
+        super("name");
     }
 
     @Override
     public void insertResults(CommandContext context, Employee currentuser) {
-        context.setResults("your id number is " + currentuser.getId());
+        context.setResults("your name number is " + currentuser.getName());
     }
 }
