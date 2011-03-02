@@ -16,7 +16,7 @@ import java.util.Date;
 public class LoanProcessor {
     private String userId;
     ArrayList<String>  loanDetails;
-    Loan aLoan;
+    LoanImpl aLoan;
 
 
     public void EditLoanDetails(String loanId,double loanAmount,Date borrowedDate,Date dueDate){
