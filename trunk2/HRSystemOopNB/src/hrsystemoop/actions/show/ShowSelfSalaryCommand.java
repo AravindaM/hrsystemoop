@@ -15,6 +15,6 @@ public class ShowSelfSalaryCommand extends ShowSelfCommand {
 
     @Override
     public void insertResults(CommandContext context, Employee currentuser) {
-        context.setResults("your monthly salary this month is " + currentuser.getSalary());
+        context.setResults("your monthly salary for this month is " + currentuser.getSalary());
     }
 }
