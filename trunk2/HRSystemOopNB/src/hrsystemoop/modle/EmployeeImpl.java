@@ -112,7 +112,7 @@ public class EmployeeImpl implements Employee {
 	 * final salary = (basesalary+overtimerate*overtime)-(loansum+extraleave*leavepenalty)
 	 */
 	public int getSalary(int overTime) {
-		return level.getSalary(overTime);
+		return (level.getSalary(overTime))-((monthAttendance.getTotalLeaves()-level.getMaxNoOfLeaves())*(level.getLeavePenalty()));
 	}
 
 	public MonthAttendance getMonthAttendance() {
