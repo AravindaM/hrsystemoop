@@ -5,20 +5,13 @@
 
 package hrsystemoop.modle;
 
-import hrsystemoop.actions.Command;
-import hrsystemoop.actions.ShowSelfIDCommand;
-import hrsystemoop.actions.UserCommands;
-
 /**
  *
  * @author prasath
  */
 public interface HRManager extends HREmployer {
 
-    static final UserCommands commands = new UserCommands(new Command[]{
-        new ShowSelfIDCommand()
-        //acceptleave command, add remove update employee employeee
-
-    });
+    public String getTeam();
+    public void setTeam();
 
 }

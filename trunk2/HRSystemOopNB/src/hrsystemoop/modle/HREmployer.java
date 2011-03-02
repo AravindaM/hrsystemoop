@@ -14,6 +14,5 @@ import hrsystemoop.actions.UserCommands;
  * @author prasath
  */
 public interface HREmployer extends Employee {
-
     
 }
