@@ -14,13 +14,12 @@ import javax.xml.datatype.Duration;
  */
 public class TravelLoan extends Loan {
 
-    public TravelLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
-        super(loanId, loanAmount, borrowedDate, dueDate);
-    }
-
-
-
 private String travelLocation;
 private Duration travelDuration;
+
+public TravelLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
+        super(loanId, loanAmount, borrowedDate, dueDate); 
+
 String loantype = "Travel";
+    }
 }

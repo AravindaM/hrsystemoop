@@ -13,10 +13,11 @@ import java.util.Date;
  */
 public class HousingLoan extends Loan{
 
-    public HousingLoan(){
+    private Double houseEstimateValue;
 
-    String loantype = "Housing";
+    public HousingLoan(String loanId, double loanAmount, Date borrowedDate, Date dueDate) {
+        super(loanId, loanAmount, borrowedDate, dueDate);
     }
 
-    private Double houseEstimateValue;
+    
 }
