@@ -6,6 +6,7 @@ package hrsystemoop.database;
 
 import hrsystemoop.database.exeption.DatabaseConflict;
 import hrsystemoop.database.exeption.DatabaseExeption;
+import hrsystemoop.database.exeption.EmployeeDoesNotExist;
 import hrsystemoop.modle.Employee;
 import hrsystemoop.modle.EmployeeImpl;
 import hrsystemoop.modle.Level;
@@ -20,7 +21,10 @@ import static org.junit.Assert.*;
  */
 public class DatabaseTest {
 
+    Database instance;
+
     public DatabaseTest() {
+        instance = Database.getInstance();
     }
 
     private static Employee createMockEmployee(int i) {
@@ -29,6 +33,7 @@ public class DatabaseTest {
 
     @BeforeClass
     public static void setUpClass() throws Exception {
+
         System.out.println("set up");
 
         Employee emp = createMockEmployee(1);
@@ -67,7 +72,7 @@ public class DatabaseTest {
     public void testGetEmployee_int() throws Exception {
         System.out.println("getEmployee byID");
         int id = 1;
-        Employee result = Database.getInstance().getEmployee(id);
+        Employee result = instance.getEmployee(id);
         assertNotNull(result);
         System.out.println("	retreved for id=" + id + " emp=" + result);
         assertEquals(id, result.getId());
@@ -80,18 +85,15 @@ public class DatabaseTest {
     public void testGetEmployee_String() throws Exception {
         System.out.println("getEmployee byUserName");
         String name = "uname1";
-        Database instance = Database.getInstance();
         Employee result = instance.getEmployee(name);
         assertNotNull(result);
         System.out.println("	retreved for uname=" + name + " emp=" + result);
         assertEquals(name, result.getUserName());
+    }
 
-
-        try {
-            result = instance.getEmployee("non existing user name");
-            assertTrue(false);
-        } catch (DatabaseExeption databaseExeption) {
-        }
+    @Test(expected = EmployeeDoesNotExist.class)
+    public void testGetEmployee_String_Error() throws Exception {
+        instance.getEmployee("non existing user name");
     }
 
     /**
@@ -100,7 +102,6 @@ public class DatabaseTest {
     @Test
     public void testUpdateEmployee() throws Exception {
         System.out.println("updateEmployee");
-        Database instance = Database.getInstance();
 
         int id = 3;
         System.out.println("	with same id, id=" + id);
@@ -119,20 +120,15 @@ public class DatabaseTest {
         resalt = instance.getEmployee(diffId);
         assertNotNull(resalt);
         assertEquals(emp.getName(), resalt.getName());
+    }
 
-        System.out.println("        with confiling user names");
-        id = 2;
-        emp = createMockEmployee(1);
+    @Test(expected = DatabaseConflict.class)
+    public void testUpdateEmployee_Conflict() throws Exception {
+        System.out.println("UpdateEmployee with confiling user names");
+        int id = 2;
+        Employee emp = createMockEmployee(1);
         emp.setID(id);
-        System.out.println(instance.getEmployee(1).getUserName());
-        System.out.println(emp.getUserName());
-
-        try {
-            instance.updateEmployee(id, emp);
-            assertTrue(false);
-        } catch (DatabaseConflict databaseConflict) {
-        }
-
+        instance.updateEmployee(id, emp);
     }
 
     /**
@@ -141,7 +137,6 @@ public class DatabaseTest {
     @Test
     public void testAddEmployee() throws Exception {
         System.out.println("addEmployee");
-        Database instance = Database.getInstance();
 
         Employee emp = createMockEmployee(6);
         int result = instance.addEmployee(emp);
@@ -152,18 +147,12 @@ public class DatabaseTest {
     /**
      * Test of deleteEmployee method, of class Database.
      */
-    @Test
+    @Test(expected = EmployeeDoesNotExist.class)
     public void testDeleteEmployee() throws Exception {
         System.out.println("deleteEmployee");
         int id = 1;
-        Database instance = Database.getInstance();
         Employee result = instance.deleteEmployee(id);
         assertNotNull(result);
-
-        try {
-            Employee emp = instance.getEmployee(id);
-            assertTrue(false);
-        } catch (DatabaseExeption databaseExeption) {
-        }
+        Employee emp = instance.getEmployee(id);
     }
 }
