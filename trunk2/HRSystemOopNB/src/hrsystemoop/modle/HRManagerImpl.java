@@ -72,4 +72,12 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
 
     private TeamImpl team;
 
+    public TeamImpl getTeam() {
+        return team;
+    }
+
+    public void setTeam(TeamImpl team) {
+        this.team = team;
+    }
+
 }
