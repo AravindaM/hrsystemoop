@@ -1,4 +1,4 @@
-package hrsystemoop.actions.showgloble;
+package hrsystemoop.actions.showglobal;
 
 import hrsystemoop.actions.CommandContext;
 import hrsystemoop.modle.Employee;
@@ -7,9 +7,9 @@ import hrsystemoop.modle.Employee;
  *
  * @author R.C.M. Perera
  */
-public class ShowGlobleNameCommand extends ShowGlobleCommand {
+public class ShowGlobalNameCommand extends ShowGlobalCommand {
 
-    public ShowGlobleNameCommand() {
+    public ShowGlobalNameCommand() {
         super("name");
     }
 

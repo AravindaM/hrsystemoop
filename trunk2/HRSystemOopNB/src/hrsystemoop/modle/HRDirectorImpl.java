@@ -12,8 +12,8 @@ import hrsystemoop.actions.RemoveEmployeeCommand;
 import hrsystemoop.actions.RequestLoanCommand;
 import hrsystemoop.actions.RequestMedicalLeaveCommand;
 import hrsystemoop.actions.UserCommands;
-import hrsystemoop.actions.showgloble.ShowGlobleAttendanceSummaryCommand;
-import hrsystemoop.actions.showgloble.ShowGlobleNameCommand;
+import hrsystemoop.actions.showglobal.ShowGlobalAttendanceSummaryCommand;
+import hrsystemoop.actions.showglobal.ShowGlobalNameCommand;
 import hrsystemoop.actions.showself.ShowSelfAttendanceFullDetailsCommand;
 import hrsystemoop.actions.showself.ShowSelfAttendanceSummaryCommand;
 import hrsystemoop.actions.showself.ShowSelfIDCommand;
@@ -53,8 +53,8 @@ public class HRDirectorImpl extends HREmployerImpl implements HRDirector {
         new RemoveEmployeeCommand(),
 
         //globles
-        new ShowGlobleNameCommand(),
-        new ShowGlobleAttendanceSummaryCommand()
+        new ShowGlobalNameCommand(),
+        new ShowGlobalAttendanceSummaryCommand()
 
 
     });

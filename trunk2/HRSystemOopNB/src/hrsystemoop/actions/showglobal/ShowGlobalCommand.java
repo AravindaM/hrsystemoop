@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package hrsystemoop.actions.showgloble;
+package hrsystemoop.actions.showglobal;
 
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.CommandContext;
@@ -14,12 +14,12 @@ import hrsystemoop.modle.Employee;
  *
  * @author R.C.M. Perera
  */
-public abstract class ShowGlobleCommand implements Command {
+public abstract class ShowGlobalCommand implements Command {
 
     String attribName;
     private final static String EMPLOYEE_ID = "empoyee id";
 
-    public ShowGlobleCommand(String attributeName) {
+    public ShowGlobalCommand(String attributeName) {
         this.attribName = attributeName;
     }
 

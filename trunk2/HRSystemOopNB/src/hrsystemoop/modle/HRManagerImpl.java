@@ -12,14 +12,14 @@ import hrsystemoop.actions.RemoveEmployeeCommand;
 import hrsystemoop.actions.RequestMedicalLeaveCommand;
 import hrsystemoop.actions.RequestLoanCommand;
 import hrsystemoop.actions.UserCommands;
-import hrsystemoop.actions.showgloble.ShowGlobleAttendanceSummaryCommand;
+import hrsystemoop.actions.showglobal.ShowGlobalAttendanceSummaryCommand;
 import hrsystemoop.actions.showself.ShowSelfAttendanceFullDetailsCommand;
 import hrsystemoop.actions.showself.ShowSelfAttendanceSummaryCommand;
 import hrsystemoop.actions.showself.ShowSelfIDCommand;
 import hrsystemoop.actions.showself.ShowSelfNameCommand;
 import hrsystemoop.actions.showself.ShowSelfSalaryCommand;
 import hrsystemoop.actions.showself.ShowSelfUserNameCommand;
-import hrsystemoop.actions.showgloble.ShowGlobleNameCommand;
+import hrsystemoop.actions.showglobal.ShowGlobalNameCommand;
 import hrsystemoop.actions.updates.UpdateSelfBirthdayCommand;
 import hrsystemoop.actions.updates.UpdateSelfNameCommand;
 import hrsystemoop.actions.updates.UpdateSelfUserNameCommand;
@@ -55,8 +55,8 @@ public class HRManagerImpl extends HREmployerImpl implements HRManager {
         new RemoveEmployeeCommand(),
 
         //globles
-        new ShowGlobleNameCommand(),
-        new ShowGlobleAttendanceSummaryCommand()
+        new ShowGlobalNameCommand(),
+        new ShowGlobalAttendanceSummaryCommand()
 
 
     });
