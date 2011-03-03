@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author araLDAM
  */
-public class LoanProcessor implements Cloneable {
+public class LoanProcessor  {
 
     private String userId;
     ArrayList<String> loanDetails;
@@ -22,6 +22,7 @@ public class LoanProcessor implements Cloneable {
     LoanProcessor loanProc;
     private double totalLoanAmount;
     ArrayList<LoanImpl> loans;
+    String LoanType;
 
     public LoanProcessor() {
 
@@ -35,17 +36,60 @@ public class LoanProcessor implements Cloneable {
      * loan borrowed date, due date and the loan duration.Here check weather the maximum no of loans
      * that can be borrowed by a employee is exceeded before creating a loan Object.
      */
-    public boolean addLoan(String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
+    public boolean addLoan(String loanType,String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration){
 
         if (noOfLoansBorrowed < 3) {
-            LoanImpl newLoan = new LoanImpl(loanId, loanAmount, borrowedDate, dueDate, loanDuration);
-            loans.add(newLoan);
-            noOfLoansBorrowed++;
-            return true;
-        } else {
-            return false;
+            if(LoanType=="Housing Loan"){
+              if(loanProc.checkIfRequestedtypeLoanBorrowed(loanType)==true){
+                return false;
+              }
+              else {
+              LoanImpl newLoan = new HousingLoan( loanType,loanId, loanAmount, borrowedDate, dueDate, loanDuration);
+              loans.add(newLoan);
+              noOfLoansBorrowed++;
+              return true;
+              }
+            }
+
+           else if(LoanType=="Wedding Loan"){
+                if(loanProc.checkIfRequestedtypeLoanBorrowed(loanType)==true){
+                return false;
+              }
+              else {
+              LoanImpl newLoan = new WeddingLoan( loanType,loanId, loanAmount, borrowedDate, dueDate, loanDuration);
+              loans.add(newLoan);
+              noOfLoansBorrowed++;
+              return true;
+              }
+              }
+
+           else if(LoanType=="Travel Loan"){
+                if(loanProc.checkIfRequestedtypeLoanBorrowed(loanType)==true){
+                return false;
+              }
+              else {
+              LoanImpl newLoan = new TravelLoan( loanType,loanId, loanAmount, borrowedDate, dueDate, loanDuration);
+              loans.add(newLoan);
+              noOfLoansBorrowed++;
+              return true;
+              }
+              }
+
         }
+            return false;
+           
     }
+
+
+    public boolean checkIfRequestedtypeLoanBorrowed(String loanType){
+        for (int i=0;i<loans.size();i++){
+            if(loanType.equals(loans.get(i).getLoanType())){
+                return true;
+            }
+            
+        }
+        return false;
+     }
 
     /**
      *
@@ -178,8 +222,6 @@ public class LoanProcessor implements Cloneable {
         this.aLoan = aLoan;
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
-}
+    
+ }
+
