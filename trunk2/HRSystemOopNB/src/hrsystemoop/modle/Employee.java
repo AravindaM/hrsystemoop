@@ -68,7 +68,9 @@ public interface Employee extends Cloneable {
      * @return if the hash check files <code>false</code> otherwise <code>true</code>
      */
     boolean checkPass(String password);
-
+    /*
+     *@return The level of the employee
+     */
     Level getLevel();
 
     void setLevel(Level level);
