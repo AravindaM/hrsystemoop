@@ -9,7 +9,7 @@ package hrsystemoop.loanscheme;
  * @author araLDAM
  */
 public class LoanImpl implements LoanInt {
-
+    private String loanType;
     private String loanId;
     private String borrowedDate;
     private String dueDate;
@@ -19,7 +19,8 @@ public class LoanImpl implements LoanInt {
     private double installementValue;
     private double loanDuration;
 
-    public LoanImpl(String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
+    public LoanImpl(String loanType,String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
+        this.loanType = loanType;
         this.loanId = loanId;
         this.loanAmount = loanAmount;
         this.borrowedDate = borrowedDate;
@@ -120,6 +121,20 @@ public class LoanImpl implements LoanInt {
      */
     public void setLoanDuration(double loanDuration) {
         this.loanDuration = loanDuration;
+    }
+
+    /**
+     * @return the loanType
+     */
+    public String getLoanType() {
+        return loanType;
+    }
+
+    /**
+     * @param loanType the loanType to set
+     */
+    public void setLoanType(String loanType) {
+        this.loanType = loanType;
     }
 
 

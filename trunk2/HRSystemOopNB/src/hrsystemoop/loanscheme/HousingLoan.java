@@ -6,7 +6,6 @@
 package hrsystemoop.loanscheme;
 
 import hrsystemoop.modle.Employee;
-import java.util.Date;
 import java.util.logging.Level;
 
 /**
@@ -19,35 +18,55 @@ public class HousingLoan extends LoanImpl{
     double acceptedAmount;
     Level level;
 
-    public HousingLoan(String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
-        super(loanId, loanAmount, borrowedDate, dueDate,loanDuration);
+    public HousingLoan(String loanType,String loanId, double loanAmount, String borrowedDate, String dueDate, int loanDuration) {
+        super( loanType,loanId, loanAmount, borrowedDate, dueDate,loanDuration);
     }
 
-    public Double calHouseLoanValue(Employee employ){
+
+
+    public boolean checkHouseLoanValue(Employee employ,Double loanAmount){
 
     if (employ.getLevel().equals(hrsystemoop.modle.Level.LEVELONE))
     {
-    acceptedAmount = houseEstimateValue*.4;
+        acceptedAmount = houseEstimateValue*.4;
+        return checkLoanAmount(acceptedAmount,loanAmount);
     }
+
     else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTWO))
     {
     acceptedAmount = houseEstimateValue*.45;
+     return checkLoanAmount(acceptedAmount,loanAmount);
     }
 
     else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTHREE))
     {
     acceptedAmount = houseEstimateValue*.5;
+     return checkLoanAmount(acceptedAmount,loanAmount);
     }
 
     else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFOUR))
     {
     acceptedAmount = houseEstimateValue*.55;
+    return checkLoanAmount(acceptedAmount,loanAmount);
     }
 
     else if(employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFIVE))
     {
     acceptedAmount = houseEstimateValue*.6;
+    return checkLoanAmount(acceptedAmount,loanAmount);
     }
-    return acceptedAmount;
+    return false;
     }
+
+
+    public boolean checkLoanAmount(double acceptedAmount,double loanAmount){
+
+      if(loanAmount<acceptedAmount){
+          return true;
+      }
+      return false;
+
+    }
+
+
 }

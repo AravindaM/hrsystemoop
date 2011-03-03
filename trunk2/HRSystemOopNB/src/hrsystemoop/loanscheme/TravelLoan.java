@@ -24,26 +24,48 @@ public class TravelLoan extends LoanImpl {
 
     
 
-public TravelLoan(String loanId, double loanAmount, String  borrowedDate, String dueDate,int loanDuration) {
-        super(loanId, loanAmount, borrowedDate, dueDate,loanDuration);
+public TravelLoan(String loanType,String loanId, double loanAmount, String  borrowedDate, String dueDate,int loanDuration) {
+        super(loanType,loanId, loanAmount, borrowedDate, dueDate,loanDuration);
 
     }
-public Double calHouseLoanValue(Employee employ){
+public boolean  calHouseLoanValue(Employee employ, double loanAmount){
 
     if ((employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFIVE))&(traType==TravelType.ABROADONEMONTH))
-    { acceptedAmount = 200000;}
+    { acceptedAmount = 200000;
+    return checkLoanAmount(acceptedAmount,loanAmount);}
+
     else if((employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFIVE))&(traType==TravelType.ABROADTWOWEEKS))
-    { acceptedAmount = 100000;}
+    { acceptedAmount = 100000;
+    return checkLoanAmount(acceptedAmount,loanAmount);}
+
     else if((employ.getLevel().equals(hrsystemoop.modle.Level.LEVELFOUR))&(traType==TravelType.ABROADTWOWEEKS))
-    {acceptedAmount = 100000;}
+    {acceptedAmount = 100000;
+    return checkLoanAmount(acceptedAmount,loanAmount);}
     else if((employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTHREE))&(traType==TravelType.LOCALONEWEEK))
-    {acceptedAmount = 20000;}
+    {acceptedAmount = 20000;
+    return checkLoanAmount(acceptedAmount,loanAmount);}
+
     else if((employ.getLevel().equals(hrsystemoop.modle.Level.LEVELTWO))&(traType==TravelType.LOCALONEWEEK))
-    {acceptedAmount = 20000;}
+    {acceptedAmount = 20000;
+    return checkLoanAmount(acceptedAmount,loanAmount);}
+
     else if((employ.getLevel().equals(hrsystemoop.modle.Level.LEVELONE))&(traType==TravelType.LOCALTHREEDAYS))
-    {acceptedAmount = 10000;}
-    return acceptedAmount;
+    {acceptedAmount = 10000;
+    return checkLoanAmount(acceptedAmount,loanAmount);}
+
+    return false;
     }
+
+
+public boolean checkLoanAmount(double acceptedAmount,double loanAmount){
+
+      if(loanAmount<acceptedAmount){
+          return true;
+      }
+      return false;
+
+    }
+
 
 public enum TravelType {
     ABROADONEMONTH,
