@@ -5,6 +5,7 @@
 
 package hrsystemoop.modle;
 
+import java.util.ArrayList;
 import java.util.Vector;
 
 /**
@@ -13,13 +14,13 @@ import java.util.Vector;
  */
 public class TeamImpl {
 
-    Vector<HRAssistantImpl> teamMembers;
+    private ArrayList<HRAssistant> teamMembers;
 
     public TeamImpl() {
-        teamMembers = new Vector<HRAssistantImpl>();
+        teamMembers = new ArrayList<HRAssistant>();
     }
 
-    public void addTeamMember(HRAssistantImpl assistant) {
+    public void addTeamMember(HRAssistant assistant) {
         teamMembers.add(assistant);
     }
 

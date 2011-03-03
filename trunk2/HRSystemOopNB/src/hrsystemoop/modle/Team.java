@@ -11,6 +11,6 @@ package hrsystemoop.modle;
  */
 public interface Team {
 
-    
+    public void addTeamMember(HRAssistantImpl assitant);
 
 }
