@@ -25,7 +25,7 @@ public class RequestLoanCommand implements Command{
 
 public RequestLoanCommand(){
     database = database.getInstance();
-    attributesList = new String[] {"Username","Designation","Name"};
+    attributesList = new String[] {"Amount","Type","Data", "Duration"};
 }
 
 /**

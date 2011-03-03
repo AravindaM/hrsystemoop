@@ -59,7 +59,7 @@ public class HRMain {
             try {
                 command = scanner.nextInt();
             } catch (InputMismatchException e) {
-                System.out.print("[ERROR]: Invalid Command. Try again");
+                System.out.println("[ERROR]: Invalid Command. Try again");
                 scanner.next();
                 continue;
             }
@@ -71,7 +71,7 @@ public class HRMain {
                     System.exit(0);
                     break;
                 default:
-                    System.out.print("[ERROR]: Invalid Command. Try again");
+                    System.out.println("[ERROR]: Invalid Command. Try again");
                     break;
             }
         }
@@ -126,7 +126,9 @@ public class HRMain {
             System.out.println(i + " - Logout");
             System.out.print("Enter your choice: ");
             int action = scanner.nextInt();
-            if (action == commandNamesArr.length) {
+            if (action < 0 || action > commandNamesArr.length) {
+                System.out.println("[ERROR]: No such command");
+            } else if (action == commandNamesArr.length) {
                 //logout command
                 break;
             } else {
@@ -143,7 +145,7 @@ public class HRMain {
                 CommandContext context = invoker.perform(selectedAction, responseList);
 
                 if (context.getReturnStatus() == false) {
-                    System.out.print("[ERROR]: There was an error executing that command");
+                    System.out.println("[ERROR]: There was an error executing that command");
                 } else {
 
 

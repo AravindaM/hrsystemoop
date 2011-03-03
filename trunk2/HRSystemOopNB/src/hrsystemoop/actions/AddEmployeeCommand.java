@@ -33,8 +33,7 @@ public class AddEmployeeCommand implements Command {
 
     /**
      * Adds the new employee to the system and updates the context with result status
-     * @param context context containing required info
-     * @return none
+     * @param context contains parameters and required info to execute command
      */
     public void execute(CommandContext context) {
         Map<String, String> inputList = context.getArgList();

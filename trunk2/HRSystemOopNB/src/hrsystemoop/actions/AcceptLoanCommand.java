@@ -23,11 +23,6 @@ public AcceptLoanCommand(){
     attributesList = new String[] {};
 }
 
-/**
- * Adds the new employee to the system
- * @param inputList List of attributes of employee
- * @return Success or Failure
- */
 
 
     /**
@@ -42,6 +37,10 @@ public AcceptLoanCommand(){
         return "Accept Loan";
     }
 
+    /**
+     * Command to accept a loan
+     * @param context contains parameters and required info to execute command
+     */
     public void execute(CommandContext context) {
       //  Employee newEmployee = new EmployeeImpl(context.getArgList().get("Name")
        //         , Level.LEVELTWO, null, null);
