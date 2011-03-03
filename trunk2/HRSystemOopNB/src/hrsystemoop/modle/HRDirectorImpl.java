@@ -5,7 +5,7 @@
 
 package hrsystemoop.modle;
 
-import hrsystemoop.actions.AcceptLoanCommand;
+import hrsystemoop.actions.AddLoanCommand;
 import hrsystemoop.actions.AddEmployeeCommand;
 import hrsystemoop.actions.Command;
 import hrsystemoop.actions.RemoveEmployeeCommand;
@@ -49,7 +49,7 @@ public class HRDirectorImpl extends HREmployerImpl implements HRDirector {
 
         // unique commands
         new AddEmployeeCommand(),
-        new AcceptLoanCommand(),
+        new AddLoanCommand(),
         new RemoveEmployeeCommand(),
 
         //globles

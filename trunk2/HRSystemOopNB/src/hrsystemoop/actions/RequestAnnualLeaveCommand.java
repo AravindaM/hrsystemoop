@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hrsystemoop.actions;
 
 import hrsystemoop.modle.*;
@@ -15,18 +12,15 @@ import java.util.*;
  */
 public class RequestAnnualLeaveCommand implements Command {
 
-    private Database database;
     private String[] attributesList;
 
     public RequestAnnualLeaveCommand() {
-        database = database.getInstance();
         attributesList = new String[]{"Date", "Reason"};
     }
 
     /**
-     * Adds the new employee to the system
-     * @param inputList List of attributes of employee
-     * @return Success or Failure
+     * When user requests annual leave, updates the system
+     * @param inputList List of attributes for leave
      */
     public void execute(CommandContext context) {
         Map inputList = context.getArgList();
@@ -50,10 +44,10 @@ public class RequestAnnualLeaveCommand implements Command {
         return attributesList;
     }
 
-    public boolean execute(Map<String, String> argList, Employee currentUser) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
+    /**
+     * Returns the name of the command to display on UI
+     * @return name of the command
+     */
     public String getName() {
         return "Request Annual Leave";
     }

@@ -68,6 +68,10 @@ public class AddEmployeeCommand implements Command {
         }
     }
 
+    /**
+     * Returns the name of the command to display on UI
+     * @return name of the command
+     */
     public String getName() {
         return "Add New Employee";
     }

@@ -26,6 +26,7 @@ public class LoanProcessor implements Cloneable {
     public LoanProcessor() {
 
         maxNoOfLoans = 3;
+        this.loans = new ArrayList<LoanImpl>();
     }
 
     /**

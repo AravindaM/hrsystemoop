@@ -39,7 +39,7 @@ public class HRAssistantImpl extends HREmployerImpl implements HRAssistant {
                 new ShowSelfAttendanceSummaryCommand(),
                 // unique commands
                 new AddEmployeeCommand(),
-                new AcceptLoanCommand(),
+                new AddLoanCommand(),
                 new RemoveEmployeeCommand(),
                 //globles
                 new ShowGlobleNameCommand(),

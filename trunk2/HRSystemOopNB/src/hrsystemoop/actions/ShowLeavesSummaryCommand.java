@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package hrsystemoop.actions;
 
 import hrsystemoop.modle.*;
@@ -24,9 +21,8 @@ public class ShowLeavesSummaryCommand implements Command {
     }
 
     /**
-     * Adds the new employee to the system
-     * @param inputList List of attributes of employee
-     * @return Success or Failure
+     * Shows the list of leaves
+     * @param context
      */
     public void execute(CommandContext context) {
         Map inputList = context.getArgList();
@@ -50,10 +46,10 @@ public class ShowLeavesSummaryCommand implements Command {
         return attributesList;
     }
 
-    public boolean execute(Map<String, String> argList, Employee currentUser) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
+    /**
+     * Returns the name of the command to display on UI
+     * @return name of the command
+     */
     public String getName() {
         return "Show Leaves Summary";
     }

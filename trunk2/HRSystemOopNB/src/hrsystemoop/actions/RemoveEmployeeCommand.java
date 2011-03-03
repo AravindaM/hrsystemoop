@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package hrsystemoop.actions;
 
@@ -29,7 +25,6 @@ public RemoveEmployeeCommand(){
 /**
  * Removes the specified employee from the system
  * @param inputList List of attributes of employee
- * @return Success or Failure
  */
     public void execute(CommandContext context) {
 
@@ -54,7 +49,10 @@ public RemoveEmployeeCommand(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-
+    /**
+     * Returns the name of the command to display on UI
+     * @return name of the command
+     */
     public String getName() {
         return "Remove Employee";
     }

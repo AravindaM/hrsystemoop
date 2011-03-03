@@ -10,7 +10,8 @@ import java.util.*;
 /**
  *
  * @author Amila Manoj
- * stores the attributes needed to execute commands and results after executing
+ * stores the attributes needed to execute commands 
+ * and stores results after executing
  */
 public class CommandContext {
     private Employee currentuser;
