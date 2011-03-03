@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class ShowSelfAttendanceFullDetailsCommand extends ShowSelfCommand {
 
     public ShowSelfAttendanceFullDetailsCommand() {
-        super("attendance details");
+        super("Attendance details");
     }
 
     @Override
